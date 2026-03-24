@@ -1,0 +1,170 @@
+/**
+ * Postmate Client — Custom VitePress Theme
+ * Extends the default theme; override CSS variables to match the brand.
+ * All values mirror the single-page prototype: dark bg, #6d8aff accent, Syne headers.
+ */
+
+/* ─── Fonts ──────────────────────────────────────────────────────────────── */
+:root {
+  --vp-font-family-base: 'Geist', 'Segoe UI', system-ui, sans-serif;
+  --vp-font-family-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* ─── Brand Colors ───────────────────────────────────────────────────────── */
+:root {
+  --vp-c-brand-1: #6d8aff;
+  --vp-c-brand-2: #5a75f0;
+  --vp-c-brand-3: #8ba0ff;
+  --vp-c-brand-soft: rgba(109, 138, 255, 0.14);
+}
+
+/* ─── Dark mode surface colors ───────────────────────────────────────────── */
+.dark {
+  --vp-c-bg: #0d0f14;
+  --vp-c-bg-soft: #111318;
+  --vp-c-bg-mute: #161820;
+  --vp-c-bg-elv: #1c1f28;
+  --vp-c-divider: rgba(255, 255, 255, 0.07);
+  --vp-c-text-1: #e8eaf0;
+  --vp-c-text-2: #9ca3af;
+  --vp-c-text-3: #6b7280;
+}
+
+/* ─── Nav bar ────────────────────────────────────────────────────────────── */
+.dark .VPNav {
+  background: rgba(13, 15, 20, 0.88);
+  backdrop-filter: blur(12px);
+  border-bottom-color: rgba(255, 255, 255, 0.07);
+}
+
+/* ─── Sidebar ────────────────────────────────────────────────────────────── */
+.dark .VPSidebar {
+  background: #111318;
+  border-right-color: rgba(255, 255, 255, 0.07);
+}
+
+/* Active sidebar item accent line */
+.dark .VPSidebarItem.is-active>.item .link {
+  color: var(--vp-c-brand-1);
+}
+
+.dark .VPSidebarItem.is-active>.item .indicator {
+  background: var(--vp-c-brand-1);
+}
+
+/* ─── Headings use Syne ──────────────────────────────────────────────────── */
+.vp-doc h1,
+.vp-doc h2,
+.vp-doc h3 {
+  font-family: 'DM Serif Display', serif;
+  letter-spacing: -0.02em;
+}
+
+.vp-doc h1 {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.vp-doc h2 {
+  font-weight: 700;
+  border-top: 1px solid var(--vp-c-divider);
+  padding-top: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* ─── Code blocks ────────────────────────────────────────────────────────── */
+.dark .vp-code-group .tabs,
+.dark div[class*='language-'] {
+  background: #111318;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* Inline code */
+.dark .vp-doc code:not(pre code) {
+  background: rgba(109, 138, 255, 0.1);
+  color: #a8b8ff;
+  border: 1px solid rgba(109, 138, 255, 0.2);
+  border-radius: 4px;
+  padding: 0.15em 0.4em;
+  font-size: 0.87em;
+}
+
+/* ─── Custom containers (tip / warning / danger / info) ──────────────────── */
+.dark .custom-block.tip {
+  background: rgba(109, 138, 255, 0.08);
+  border-color: rgba(109, 138, 255, 0.3);
+}
+
+.dark .custom-block.warning {
+  background: rgba(251, 146, 60, 0.08);
+  border-color: rgba(251, 146, 60, 0.3);
+}
+
+.dark .custom-block.danger {
+  background: rgba(248, 113, 113, 0.08);
+  border-color: rgba(248, 113, 113, 0.3);
+}
+
+/* ─── Tables ─────────────────────────────────────────────────────────────── */
+.dark .vp-doc table {
+  border-color: rgba(255, 255, 255, 0.07);
+}
+
+.dark .vp-doc tr:nth-child(2n) {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.dark .vp-doc th {
+  background: rgba(109, 138, 255, 0.08);
+  color: var(--vp-c-brand-1);
+  font-family: 'DM Serif Display', serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ─── Home page hero ─────────────────────────────────────────────────────── */
+.dark .VPHero .name {
+  font-family: 'DM Serif Display', serif;
+  font-weight: 800;
+  background: linear-gradient(135deg, #e8eaf0 0%, #6d8aff 60%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dark .VPHero .tagline {
+  color: #9ca3af;
+}
+
+/* Feature cards */
+.dark .VPFeature {
+  background: #111318;
+  border-color: rgba(255, 255, 255, 0.07);
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.dark .VPFeature:hover {
+  border-color: rgba(109, 138, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+/* ─── "Edit this page" / prev-next footer ────────────────────────────────── */
+.dark .VPDocFooter {
+  border-top-color: rgba(255, 255, 255, 0.07);
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 99px;
+}
