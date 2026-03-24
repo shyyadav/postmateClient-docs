@@ -50,5 +50,5 @@ Use **<span v-pre>{{variableName}}</span>** anywhere in your request URL, header
 |---|---|
 | VS Code Marketplace | [Install Postmate Client](https://marketplace.visualstudio.com/items?itemName=PostMate-lab.postmate) |
 | Video Tutorials | [YouTube Channel](https://www.youtube.com/channel/UCNDd2dOwC80m_2VdGPmwKDQ) |
-| Report an Issue | [GitHub Issues](https://github.com/shyyadav/postmate-docs/issues) |
-| Wiki | [GitHub Wiki](https://github.com/shyyadav/postmate-docs/wiki) |
+| Report an Issue | [GitHub Issues](https://github.com/shyyadav/postmateClient-docs/issues) |
+| Wiki | [GitHub Wiki](https://github.com/shyyadav/postmateClient-docs/wiki) |

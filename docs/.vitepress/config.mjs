@@ -103,7 +103,7 @@ export default defineConfig({
     ],
 
     editLink: {
-      pattern: 'https://github.com/shyyadav/postmate-docs/edit/main/docs/:path',
+      pattern: 'https://github.com/shyyadav/postmateClient-docs/edit/main/docs/:path',
       text: 'Edit this page on GitHub'
     },
 

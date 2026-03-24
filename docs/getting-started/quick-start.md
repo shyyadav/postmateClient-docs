@@ -1,43 +1,85 @@
-# Quick Start
+# Quick Start: Postmate Client (Free Postman Alternative for VS Code)
 
-Go from zero to your first successful API test in under 5 minutes.
+Get started with **Postmate Client**, a fast and secure **API testing tool for VS Code**, and send your first API request in under 5 minutes — no login, no cloud sync, and no setup required.
+
+If you're looking for a **Postman alternative** or a **Thunder Client alternative** that runs completely locally, you're in the right place.
 
 ## Prerequisites
 
-You only need Visual Studio Code. No additional runtimes, Node.js versions, or external dependencies are required.
+To use Postmate Client, you only need:
 
-## Step-by-Step
+- Visual Studio Code (VS Code)
+- No Node.js
+- No external dependencies
+- No account or login required
 
-**1. Install the Extension**
+This makes Postmate Client one of the easiest **local API clients for developers**.
 
-Open VS Code, press `Ctrl+P` (or `⌘P` on Mac), paste the command below, and press Enter:
+## Step-by-Step Guide to Send Your First API Request
+
+**1. Install Postmate Client Extension**
+
+Open VS Code, press:
+- `Ctrl+P` (Windows/Linux)
+- `⌘P`(Mac)
+
+Paste the command below and hit Enter:
 
 ```
 ext install PostMate-lab.postmate
 ```
 
-**2. Open Postmate Client**
+**2. Open Postmate Client in VS Code**
 
-Click the **Postmate icon** in the VS Code Activity Bar (left sidebar). The panel opens within your editor.
+Click the **Postmate Client icon** in the VS Code Activity Bar (left sidebar). 
+The API client will open directly inside VS Code — no separate app needed.
 
-**3. Create Your First Request**
+**3. Create Your First API Request**
 
-Click **New Request**. Enter a URL such as `https://jsonplaceholder.typicode.com/posts/1` and select **GET**.
+Click New Request and enter a sample API endpoint URL:
 
-**4. Send the Request**
+```
+https://jsonplaceholder.typicode.com/posts/1
+``` 
+Select the HTTP method as GET.
 
-Click **Send**. The response panel shows the status code, body, headers, and response time instantly.
+**4. Send the API Request**
 
-**5. Save to a Collection**
+Click **Send**. 
+You’ll instantly see:
 
-Click **Save** to add the request to a collection for reuse and automation.
+- ✅ Status code
+- 📦 Response body
+- 📄 Headers
+- ⏱ Response time
+
+This is everything you need for **API testing and debugging** in one place.
+
+**5. Save Request to a Collection**
+
+Anytime press `Ctrl + s` to store your request in a collection.
+
+##Collections help you:
+
+- Organize API requests
+- Reuse endpoints
+- Run automated API tests
 
 ::: tip
-Once installed, you'll see the Postmate icon in your activity bar. Your first request takes less than 30 seconds to send.
+Once installed, Postmate Client appears in your VS Code sidebar. You can send your first API request in under 30 seconds.
 :::
+
+## Why Use Postmate Client?
+- 100% local (no cloud sync, no data sharing)
+- No login required
+- Lightweight and fast
+- Built for developers who care about API security and privacy
+- Perfect Postman alternative for teams with strict data policies
 
 ## Next Steps
 
-- Learn about [Environments & Variables](/core-concepts/environments) to manage dev vs production configs
-- Explore [Tests & Assertions](/testing/tests-assertions) to validate responses
-- Set up [CI/CD with the CLI](/ci-cd/cli-reference) to run tests in your pipeline
+Now that you've sent your first request, explore more powerful features:
+
+- [Environments & Variables](/core-concepts/environments) — manage dev, staging, and production configs
+- [Tests & Assertions](/testing/tests-assertions) — validate API responses automatically
+- [CI/CD with CLI](/ci-cd/cli-reference) — run API tests in your pipeline
