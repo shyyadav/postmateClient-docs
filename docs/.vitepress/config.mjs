@@ -44,6 +44,7 @@ export default defineConfig({
           { text: 'Introduction', link: '/getting-started/introduction' },
           { text: 'Quick Start', link: '/getting-started/quick-start' },
           { text: 'Installation', link: '/getting-started/installation' },
+          { text: 'The 3-Second Workflow', link: '/getting-started/three-second-workflow' },
         ]
       },
       {

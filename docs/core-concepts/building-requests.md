@@ -1,5 +1,5 @@
 # Building Requests
-
+By now you alredy know how to send your first request in Postmate Client.
 Construct HTTP requests with full control over method, URL, headers, body, and auth.
 
 ## HTTP Methods
