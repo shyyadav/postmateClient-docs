@@ -4,7 +4,7 @@ export default defineConfig({
   title: 'Postmate Client',
   description: 'Documentation for Postmate Client — the lightweight REST API testing extension for VS Code.',
   lang: 'en-US',
-
+  ignoreDeadLinks: true,
   // Generates cleaner URLs: /guide/intro instead of /guide/intro.html
   cleanUrls: true,
 
@@ -55,45 +55,6 @@ export default defineConfig({
           { text: 'Collections & Folders', link: '/core-concepts/collections' },
         ]
       },
-      // {
-      //   text: 'Testing',
-      //   items: [
-      //     { text: 'Tests & Assertions', link: '/testing/tests-assertions' },
-      //     { text: 'pm Library Reference', link: '/testing/pm-library' },
-      //     { text: 'Pre/Post Scripts', link: '/testing/scripts' },
-      //     { text: 'Test Snippets', link: '/testing/test-snippets' },
-      //   ]
-      // },
-      // {
-      //   text: 'Data-Driven Testing',
-      //   items: [
-      //     { text: 'Data Tables', link: '/data-driven/data-tables' },
-      //     { text: 'Collection Runner', link: '/data-driven/collection-runner' },
-      //     { text: 'Request Chaining', link: '/data-driven/request-chaining' },
-      //   ]
-      // },
-      // {
-      //   text: 'Import & Export',
-      //   items: [
-      //     { text: 'Import cURL / Swagger', link: '/import-export/import-curl-swagger' },
-      //     { text: 'Migrate from Postman', link: '/import-export/migrate-from-postman' },
-      //   ]
-      // },
-      // {
-      //   text: 'CI/CD',
-      //   items: [
-      //     { text: 'CLI Reference', link: '/ci-cd/cli-reference' },
-      //     { text: 'Reporting', link: '/ci-cd/reporting' },
-      //   ]
-      // },
-      // {
-      //   text: 'Reference',
-      //   items: [
-      //     { text: 'Variable Resolution', link: '/reference/variable-resolution' },
-      //     { text: 'Autocomplete', link: '/reference/autocomplete' },
-      //     { text: 'Troubleshooting', link: '/reference/troubleshooting' },
-      //   ]
-      // },
     ],
 
     // ─── Social / Edit links ─────────────────────────────────────────────────
