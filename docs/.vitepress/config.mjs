@@ -8,14 +8,33 @@ export default defineConfig({
   // Generates cleaner URLs: /guide/intro instead of /guide/intro.html
   cleanUrls: true,
 
+  sitemap: {
+    hostname: 'https://www.postmateclient.com'
+  },
+  
   head: [
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
     ['link', { href: 'https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap', rel: 'stylesheet' }],
     ['link', { href: 'https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap', rel: 'stylesheet' }],
     ['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }],
+    ['meta', { name: "google-site-verification", content: "TToDQLv0g9hbaJ4irXR95tJrM-W2zr4U8a7Pqor-9Fo" }],
+    ['meta', { name: 'robots', content: 'index, follow' }],
+    ['meta', { name: 'description', content: 'Postmate Client — Lightweight REST API testing client for VS Code. Fast, local-first Postman alternative.' }],
+    ['meta', { property: 'og:title', content: 'Postmate Client - VS Code API Client' }],
+    ['meta', { property: 'og:description', content: 'Fast and lightweight REST API testing tool for Visual Studio Code.' }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:url', content: 'https://www.postmateclient.com' }],
+    ['meta', { property: 'og:image', content: 'https://www.postmateclient.com/runner-results.png' }], 
+    ['link', { rel: 'canonical', href: 'https://www.postmateclient.com' }],
+    // Twitter Cards
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { name: 'twitter:title', content: 'Postmate Client - VS Code API Client' }],
+    ['meta', { name: 'twitter:description', content: 'Fast and lightweight REST API testing tool for Visual Studio Code.' }],
+    ['meta', { name: 'twitter:image', content: 'https://www.postmateclient.com/runner-results.png' }], // Replace with your actual image
   ],
-
+  
+  
   themeConfig: {
     // ─── Logo ────────────────────────────────────────────────────────────────
     logo: { svg: '<svg width="24" height="24" viewBox="0 0 26 26" fill="none"><rect width="26" height="26" rx="7" fill="#6d8aff"/><path d="M7 8h7a4 4 0 0 1 0 8H7V8z" fill="white" opacity=".9"/><circle cx="18" cy="18" r="3.5" fill="white" opacity=".5"/></svg>' },
@@ -103,4 +122,6 @@ export default defineConfig({
       label: 'On this page'
     },
   }
+
+
 })
