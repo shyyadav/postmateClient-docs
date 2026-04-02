@@ -68,7 +68,7 @@ See [Environments & Variables](/core-concepts/environments) for the full guide.
 
 Go to the environment's **Data Tables** section, create a table, and add rows for each test user or data set. Attach the table to the environment.
 
-See [Data Tables](/data-driven/data-tables) for the full guide.
+See **Data Tables** for the full guide.
 
 **Step 3 — Use <span v-pre>`{{variables}}`</span> in your requests**
 

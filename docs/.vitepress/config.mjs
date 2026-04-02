@@ -53,6 +53,19 @@ export default defineConfig({
           { text: 'Building Requests', link: '/core-concepts/building-requests' },
           { text: 'Environments & Variables', link: '/core-concepts/environments' },
           { text: 'Collections & Folders', link: '/core-concepts/collections' },
+          { text: 'Headers', link: '/core-concepts/headers' },
+        ]
+      },
+      {
+        text: 'Data-Driven Testing',
+        items: [
+          { text: 'Collection Runner', link: '/data-driven/collection-runner' },
+        ]
+      },
+      {
+        text: 'Reference',
+        items: [
+          { text: 'Variable Resolution', link: '/reference/variable-resolution' },
         ]
       },
     ],

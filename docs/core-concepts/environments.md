@@ -88,7 +88,7 @@ At the bottom of the Environment Details panel, a **dropdown** lists all availab
 
 Once attached, the data table's columns become available as variables in any request running under this environment, and the **Select Data** dropdown on the request panel will show the table's rows for quick selection.
 
-See the full data-driven API testing guide in [Data Tables](/data-driven/data-tables)
+See the full data-driven API testing guide in **Data Tables**
 
 ### Managing Variables via Scripts
 
