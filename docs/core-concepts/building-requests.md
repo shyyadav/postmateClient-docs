@@ -6,8 +6,6 @@ Postmate Client provides a request panel designed to minimise typing and maximis
 
 Unlike Postman or Thunder Client, Postmate Client runs entirely locally, keeping your API data private.
 
-Learn more about [API testing in Postmate Client](/testing/tests-assertions).
-
 ## The Request Panel
 
 Every request is split into two sides:
