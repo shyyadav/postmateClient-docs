@@ -106,6 +106,12 @@ export default defineConfig({
         ]
       },
       {
+        text: 'CI/CD',
+        items: [
+            { text: 'CLI Reference', link: '/ci-cd/cli-reference' },
+        ]
+      },
+      {
         text: 'Reference',
         items: [
           { text: 'Variable Resolution', link: '/reference/variable-resolution' },
