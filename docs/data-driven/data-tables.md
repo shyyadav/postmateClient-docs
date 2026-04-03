@@ -22,7 +22,7 @@ Postmate Client is a privacy-first **Postman alternative** that keeps all your t
 
 This makes Postmate Client ideal for **data-driven API testing in VS Code**, similar to Postman Collection Runner with CSV data — but fully local and privacy-first.
 
-<img src="../datatableRequest.gif" alt="Select individual row of data while sending request" width="100%" style="border-radius:8px;border:1px solid rgba(255,255,255,0.08);margin:1rem 0" />
+<img src="/datatableRequest.gif" alt="Select individual row of data while sending request" width="100%" style="border-radius:8px;border:1px solid rgba(255,255,255,0.08);margin:1rem 0" />
 
 ## What is a Data Table in API Testing?
 
@@ -117,7 +117,7 @@ Use the **Collection Runner** to execute API tests across all rows automatically
 * Regression testing
 * Bulk validation**
 
-<img src="../collectionRunDatatable.gif" alt="Select any data table in collection run" width="100%" style="border-radius:8px;border:1px solid rgba(255,255,255,0.08);margin:1rem 0" />
+<img src="/collectionRunDatatable.gif" alt="Select any data table in collection run" width="100%" style="border-radius:8px;border:1px solid rgba(255,255,255,0.08);margin:1rem 0" />
 
 ## Import CSV for API Testing
 
