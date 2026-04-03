@@ -50,7 +50,7 @@ export default defineConfig({
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
     ['link', { href: 'https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap', rel: 'stylesheet' }],
     ['link', { href: 'https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap', rel: 'stylesheet' }],
-    ['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }],
+    ['link', { rel: 'icon', href: '/titleLogo5.png', type: 'image/png' }],
     ['meta', { name: 'google-site-verification', content: 'TToDQLv0g9hbaJ4irXR95tJrM-W2zr4U8a7Pqor-9Fo' }],
     ['meta', { name: 'robots', content: 'index, follow' }],
     // Shared OG tags that don't change per page
