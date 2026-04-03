@@ -154,7 +154,7 @@ And you run 5 iterations
 
 Each iteration loops through the **entire dataset from start to end**.
 
-See **Data Tables** for how to create and attach data tables to environments.
+See [Data Tables](/data-driven/data-tables) for how to create and attach data tables to environments.
 
 ## 💡 Why Use Postmate Client Collection Runner?
 
