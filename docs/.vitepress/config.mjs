@@ -4,43 +4,67 @@ export default defineConfig({
   title: 'Postmate Client',
   description: 'Documentation for Postmate Client — the lightweight REST API testing extension for VS Code.',
   lang: 'en-US',
+  titleTemplate: ':title',
   ignoreDeadLinks: true,
-  // Generates cleaner URLs: /guide/intro instead of /guide/intro.html
   cleanUrls: true,
 
   sitemap: {
     hostname: 'https://www.postmateclient.com'
   },
-  
+
+  transformPageData(pageData) {
+    const base = 'https://www.postmateclient.com'
+    const canonicalPath = pageData.relativePath
+        .replace(/index\.md$/, '')
+        .replace(/\.md$/, '')
+    const canonicalUrl = `${base}/${canonicalPath}`.replace(/\/$/, '') || base
+
+    const pageTitle = pageData.frontmatter.title
+        ? pageData.frontmatter.title
+        : 'Postmate Client — Lightweight Postman Alternative for VS Code'
+
+    const pageDescription =
+        pageData.frontmatter.description ||
+        'Fast and lightweight Postman alternative for VS Code. Test REST APIs locally with collections, environments, variables, data-driven testing & powerful scripting — 100% private, no cloud, no login.'
+
+    pageData.frontmatter.head ??= []
+    pageData.frontmatter.head.push(
+        // Unique title (overrides the global <title>)
+        ['title', {}, pageTitle],
+        // Meta description
+        ['meta', { name: 'description', content: pageDescription }],
+        // Open Graph
+        ['meta', { property: 'og:title', content: pageTitle }],
+        ['meta', { property: 'og:description', content: pageDescription }],
+        ['meta', { property: 'og:url', content: canonicalUrl }],
+        // Twitter
+        ['meta', { name: 'twitter:title', content: pageTitle }],
+        ['meta', { name: 'twitter:description', content: pageDescription }],
+        // Canonical
+        ['link', { rel: 'canonical', href: canonicalUrl }],
+    )
+  },
+
   head: [
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
     ['link', { href: 'https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap', rel: 'stylesheet' }],
     ['link', { href: 'https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap', rel: 'stylesheet' }],
     ['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }],
-    ['meta', { name: "google-site-verification", content: "TToDQLv0g9hbaJ4irXR95tJrM-W2zr4U8a7Pqor-9Fo" }],
+    ['meta', { name: 'google-site-verification', content: 'TToDQLv0g9hbaJ4irXR95tJrM-W2zr4U8a7Pqor-9Fo' }],
     ['meta', { name: 'robots', content: 'index, follow' }],
-    ['meta', { name: 'description', content: 'Postmate Client — Lightweight REST API testing client for VS Code. Fast, local-first Postman alternative.' }],
-    ['meta', { property: 'og:title', content: 'Postmate Client - VS Code API Client' }],
-    ['meta', { property: 'og:description', content: 'Fast and lightweight REST API testing tool for Visual Studio Code.' }],
+    // Shared OG tags that don't change per page
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:url', content: 'https://www.postmateclient.com' }],
-    ['meta', { property: 'og:image', content: 'https://www.postmateclient.com/runner-results.png' }], 
-    ['link', { rel: 'canonical', href: 'https://www.postmateclient.com' }],
-    // Twitter Cards
+    ['meta', { property: 'og:image', content: 'https://www.postmateclient.com/runner-results.png' }],
+    // Twitter shared tags
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
-    ['meta', { name: 'twitter:title', content: 'Postmate Client - VS Code API Client' }],
-    ['meta', { name: 'twitter:description', content: 'Fast and lightweight REST API testing tool for Visual Studio Code.' }],
-    ['meta', { name: 'twitter:image', content: 'https://www.postmateclient.com/runner-results.png' }], // Replace with your actual image
+    ['meta', { name: 'twitter:image', content: 'https://www.postmateclient.com/runner-results.png' }],
   ],
-  
-  
+
   themeConfig: {
-    // ─── Logo ────────────────────────────────────────────────────────────────
     logo: { svg: '<svg width="24" height="24" viewBox="0 0 26 26" fill="none"><rect width="26" height="26" rx="7" fill="#6d8aff"/><path d="M7 8h7a4 4 0 0 1 0 8H7V8z" fill="white" opacity=".9"/><circle cx="18" cy="18" r="3.5" fill="white" opacity=".5"/></svg>' },
     siteTitle: 'Postmate Client',
 
-    // ─── Top Nav ─────────────────────────────────────────────────────────────
     nav: [
       { text: 'Guide', link: '/getting-started/introduction' },
       { text: 'pm API', link: '/testing/pm-library' },
@@ -55,7 +79,6 @@ export default defineConfig({
       }
     ],
 
-    // ─── Sidebar ─────────────────────────────────────────────────────────────
     sidebar: [
       {
         text: 'Getting Started',
@@ -78,6 +101,7 @@ export default defineConfig({
       {
         text: 'Data-Driven Testing',
         items: [
+          { text: 'Data Tables', link: '/data-driven/data-tables' },
           { text: 'Collection Runner', link: '/data-driven/collection-runner' },
         ]
       },
@@ -89,7 +113,6 @@ export default defineConfig({
       },
     ],
 
-    // ─── Social / Edit links ─────────────────────────────────────────────────
     socialLinks: [
       { icon: 'github', link: 'https://github.com/shyyadav/postmate-docs' },
       { icon: 'youtube', link: 'https://www.youtube.com/channel/UCNDd2dOwC80m_2VdGPmwKDQ' },
@@ -100,18 +123,15 @@ export default defineConfig({
       text: 'Edit this page on GitHub'
     },
 
-    // ─── Footer ──────────────────────────────────────────────────────────────
     footer: {
       message: 'Released under the Postmate Client Proprietary License.',
-      copyright: 'Copyright © 2025 Shyam Narayan Yadav'
+      copyright: 'Copyright © 2026 Postmate Client'
     },
 
-    // ─── Search ──────────────────────────────────────────────────────────────
     search: {
       provider: 'local'
     },
 
-    // ─── Prev/Next labels ───────────────────────────────────────────────────
     docFooter: {
       prev: '← Previous',
       next: 'Next →'
@@ -122,6 +142,4 @@ export default defineConfig({
       label: 'On this page'
     },
   }
-
-
 })

@@ -1,4 +1,4 @@
-# Variable Resolution
+# Variable Resolution in Postmate Client
 
 Understand how Postmate resolves <span v-pre>`{{variableName}}`</span> at send time.
 

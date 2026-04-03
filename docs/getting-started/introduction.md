@@ -1,4 +1,4 @@
-# Introduction
+# Postmate Client — Introduction
 
 **Postmate Client** is a lightweight, privacy-first **API testing tool for Visual Studio Code** and a powerful **Postman alternative** for developers who want to test APIs directly inside their editor.
 
