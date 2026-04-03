@@ -82,7 +82,7 @@ Once attached:
 
 Reference columns using standard variable syntax:
 
-Reference any column name exactly like an environment variable using `{{variableName}}` syntax:
+Reference any column name exactly like an environment variable using <span v-pre>`{{variableName}}`</span> syntax:
 
 ```http
 POST {{baseUrl}}/auth/login
@@ -136,7 +136,7 @@ Import it instantly:
 - **Unlimited tables** — create as many tables as your project needs, with no row or column limits.
 - **Environment-scoped** — each table is attached to one environment; switching environments automatically switches the active table.
 - **Always attached** — once a table is linked to an environment it stays linked across sessions.
-- **Works anywhere variables work** — use `{{columnName}}` in URLs, headers, request bodies, and test scripts.
+- **Works anywhere variables work** — use <span v-pre>`{{columnName}}`</span> in URLs, headers, request bodies, and test scripts.
 
 ## Why Use Data Tables in Postmate Client?
 
