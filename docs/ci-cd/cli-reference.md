@@ -56,7 +56,7 @@ pmc run --collection <collectionName> --env <environmentName>
 pmc run --collection school --env Dev
 ```
 
-Each row in the data file will execute the collection once. Variables like `{{id}}` and `{{username}}` resolve per row.
+Each row in the data file will execute the collection once. Variables like <span v-pre>`{{id}}`</span> and <span v-pre>`{{username}}`</span> resolve per row.
 
 ## Execution Output
 

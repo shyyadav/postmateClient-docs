@@ -99,6 +99,12 @@ export default defineConfig({
         ]
       },
       {
+        text: 'Testing',
+        items: [
+          { text: 'pm Library Reference', link: '/testing/pm-library' },
+        ]
+      },
+      {
         text: 'Data-Driven Testing',
         items: [
           { text: 'Data Tables', link: '/data-driven/data-tables' },
