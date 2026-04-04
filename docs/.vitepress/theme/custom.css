@@ -37,6 +37,29 @@
   border-bottom-color: rgba(255, 255, 255, 0.07);
 }
 
+/* Fix: mobile nav screen clipping in dark mode */
+.dark .VPNav {
+  background: rgba(13, 15, 20, 0.88);
+  backdrop-filter: blur(12px);
+  border-bottom-color: rgba(255, 255, 255, 0.07);
+  overflow: visible !important;
+  z-index: 100 !important;
+  position: relative !important;
+}
+
+.dark .VPNavScreen {
+  z-index: 9999 !important;
+  position: fixed !important;
+  top: var(--vp-nav-height) !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  height: calc(100dvh - var(--vp-nav-height)) !important;
+  background: #0d0f14 !important;
+  overflow-y: auto !important;
+  padding-top: 0 !important;
+}
+
 /* ─── Sidebar ────────────────────────────────────────────────────────────── */
 .dark .VPSidebar {
   background: #111318;
