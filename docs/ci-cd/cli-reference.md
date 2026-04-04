@@ -161,12 +161,12 @@ It is designed to be:
 - Developer-focused (simple CLI, no GUI required)
 
 ## Learn more:
-- [Collection Runner](/data-driven/collection-runner)
+- [Collection Runner](/core-concepts/collections)
 - [Environments and variables](/core-concepts/environments)
 - [Data Tables](/data-driven/data-tables)
-- [Postmate Client Requests](/core-concepts/requests)
+- [Postmate Client Requests](/core-concepts/building-requests)
 
-:::info FAQ
+## FAQ
 ### Is Postmate Client CLI a Postman CLI alternative?
 Yes. Postmate Client CLI is a lightweight, local-first alternative to Postman CLI for running API collections, automated testing, and CI/CD workflows.
 ### Can I run API tests in CI/CD using Postmate Client CLI?
@@ -175,6 +175,6 @@ Yes. Postmate Client CLI returns standard exit codes (`0` for success, `1` for f
 Yes. You can pass a data file using the `--data` option. Each row in the file runs the collection with different inputs.
 ### Where are Postmate Client CLI reports stored?
 Reports are automatically saved in the `.postmate/reports/` directory in JSON format after each run.
-:::
+
 
 *Made with ❤️ using Postmate Client
