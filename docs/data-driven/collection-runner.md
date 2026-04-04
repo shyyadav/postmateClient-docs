@@ -117,7 +117,7 @@ After execution, Postmate Client automatically generates a self-contained HTML r
 - CI/CD artifacts
 - Audit and test evidence
 
-<img src="/retport1.png" alt="Run Result tab showing live execution with pass/fail stats, request list and response panel" width="100%" style="border-radius:8px;border:1px solid rgba(255,255,255,0.08);margin:1rem 0" />
+<img src="/report1.png" alt="Run Result tab showing live execution with pass/fail stats, request list and response panel" width="100%" style="border-radius:8px;border:1px solid rgba(255,255,255,0.08);margin:1rem 0" />
 
 ## Step 5 — Debug with Console Logs
 
