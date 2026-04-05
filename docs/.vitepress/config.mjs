@@ -110,6 +110,7 @@ export default defineConfig({
         items: [
           { text: 'Data Tables', link: '/data-driven/data-tables' },
           { text: 'Collection Runner', link: '/data-driven/collection-runner' },
+          { text: 'Request Chaining', link: '/data-driven/request-chaining' },
         ]
       },
       {
