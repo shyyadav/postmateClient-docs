@@ -101,6 +101,7 @@ export default defineConfig({
       {
         text: 'Testing',
         items: [
+          { text: 'Tests & Assertions', link: '/testing/tests-assertions' },
           { text: 'pm Library Reference', link: '/testing/pm-library' },
           { text: 'Reporting', link: '/testing/reporting' },
         ]
