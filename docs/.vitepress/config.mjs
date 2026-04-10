@@ -115,6 +115,14 @@ export default defineConfig({
         ]
       },
       {
+        text: 'Import & Export',
+        items: [
+          { text: 'Import from Swagger', link: '/import-export/import-swagger' },
+          { text: 'Import from Curl', link: '/import-export/Import-curl' },
+          { text: 'Migrate from Postman', link: '/import-export/migrate-from-postman' },
+        ]
+      },
+      {
         text: 'CI/CD',
         items: [
             { text: 'CLI Reference', link: '/ci-cd/cli-reference' },
