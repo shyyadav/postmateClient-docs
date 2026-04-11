@@ -16,7 +16,7 @@ head:
         "name": "How to Import cURL in Postmate Client (PMC)",
         "description": "Learn how to import cURL commands into Postmate Client (PMC) and instantly generate API requests inside VS Code.",
         "thumbnailUrl": "https://img.youtube.com/vi/K0TjOP-nPZM/maxresdefault.jpg",
-        "uploadDate": "2026-04-10",
+        "uploadDate": "2026-04-10T00:00:00Z",
         "contentUrl": "https://www.youtube.com/watch?v=K0TjOP-nPZM",
         "embedUrl": "https://www.youtube.com/embed/K0TjOP-nPZM"
       }
