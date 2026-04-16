@@ -14,7 +14,6 @@ head:
         "description": "Learn how to import Swagger or OpenAPI into Postmate Client (PMC) and instantly generate fully structured, parameterized API collections inside VS Code without manual setup.",
         "thumbnailUrl": "https://img.youtube.com/vi/I7Grx8RIWzw/maxresdefault.jpg",
         "uploadDate": "2026-04-10T00:00:00Z",
-        "contentUrl": "https://www.youtube.com/watch?v=I7Grx8RIWzw",
         "embedUrl": "https://www.youtube.com/embed/I7Grx8RIWzw",
         "author": {
           "@type": "Person",
