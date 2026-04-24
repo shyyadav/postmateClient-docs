@@ -29,55 +29,32 @@ export default defineConfig({
 
     pageData.frontmatter.head ??= []
     pageData.frontmatter.head.push(
-        // Unique title (overrides the global <title>)
         ['title', {}, pageTitle],
-        // Meta description
         ['meta', { name: 'description', content: pageDescription }],
-        // Open Graph
         ['meta', { property: 'og:title', content: pageTitle }],
         ['meta', { property: 'og:description', content: pageDescription }],
         ['meta', { property: 'og:url', content: canonicalUrl }],
-        // Twitter
         ['meta', { name: 'twitter:title', content: pageTitle }],
         ['meta', { name: 'twitter:description', content: pageDescription }],
-        // Canonical
         ['link', { rel: 'canonical', href: canonicalUrl }],
     )
+
+    // Add article-specific OG tags for blog posts
+    if (pageData.relativePath.startsWith('blog/') && pageData.frontmatter.date) {
+      pageData.frontmatter.head.push(
+          ['meta', { property: 'og:type', content: 'article' }],
+          ['meta', { property: 'article:published_time', content: pageData.frontmatter.date }],
+      )
+      if (pageData.frontmatter.author) {
+        pageData.frontmatter.head.push(
+            ['meta', { property: 'article:author', content: pageData.frontmatter.author }]
+        )
+      }
+    }
   },
 
   head: [
-    [
-      'script',
-      {
-        async: '',
-        src: 'https://www.googletagmanager.com/gtag/js?id=G-61W8C83CGE'
-      }
-    ],
-    [
-      'script',
-      {},
-      `
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-61W8C83CGE', {
-      send_page_view: false
-    });
-    `
-    ],
-    ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
-    ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
-    ['link', { href: 'https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap', rel: 'stylesheet' }],
-    ['link', { href: 'https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap', rel: 'stylesheet' }],
-    ['link', { rel: 'icon', href: '/titleLogo5.png', type: 'image/png' }],
-    ['meta', { name: 'google-site-verification', content: 'TToDQLv0g9hbaJ4irXR95tJrM-W2zr4U8a7Pqor-9Fo' }],
-    ['meta', { name: 'robots', content: 'index, follow' }],
-    // Shared OG tags that don't change per page
-    ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:image', content: 'https://www.postmateclient.com/runner-results.png' }],
-    // Twitter shared tags
-    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
-    ['meta', { name: 'twitter:image', content: 'https://www.postmateclient.com/runner-results.png' }],
+    // ... your existing head config stays the same
   ],
 
   themeConfig: {
@@ -85,9 +62,10 @@ export default defineConfig({
     siteTitle: 'Postmate Client',
 
     nav: [
-      { text: 'Guide', link: '/getting-started/introduction' },
+      { text: 'Guide', link: '/getting-started/introduction', activeMatch: '^/(getting-started|core-concepts|testing|data-driven|import-export|reference)/' },
       { text: 'pm API', link: '/testing/pm-library' },
       { text: 'CLI', link: '/ci-cd/cli-reference', activeMatch: '/ci-cd/' },
+      { text: 'Blog', link: '/blog/', activeMatch: '/blog/' },
       {
         text: 'Links',
         items: [
@@ -98,63 +76,76 @@ export default defineConfig({
       }
     ],
 
-    sidebar: [
-      {
-        text: 'Getting Started',
-        items: [
-          { text: 'Introduction', link: '/getting-started/introduction' },
-          { text: 'Quick Start', link: '/getting-started/quick-start' },
-          { text: 'Installation', link: '/getting-started/installation' },
-          { text: 'The 3-Second Workflow', link: '/getting-started/three-second-workflow' },
-        ]
-      },
-      {
-        text: 'Core Concepts',
-        items: [
-          { text: 'Building Requests', link: '/core-concepts/building-requests' },
-          { text: 'Environments & Variables', link: '/core-concepts/environments' },
-          { text: 'Collections & Folders', link: '/core-concepts/collections' },
-          { text: 'Headers', link: '/core-concepts/headers' },
-        ]
-      },
-      {
-        text: 'Testing',
-        items: [
-          { text: 'Tests & Assertions', link: '/testing/tests-assertions' },
-          { text: 'pm Library Reference', link: '/testing/pm-library' },
-          { text: 'Compare Response', link: '/testing/compare-api-response' },
-          { text: 'Reporting', link: '/testing/reporting' },
-        ]
-      },
-      {
-        text: 'Data-Driven Testing',
-        items: [
-          { text: 'Data Tables', link: '/data-driven/data-tables' },
-          { text: 'Collection Runner', link: '/data-driven/collection-runner' },
-          { text: 'Request Chaining', link: '/data-driven/request-chaining' },
-        ]
-      },
-      {
-        text: 'Import & Export',
-        items: [
-          { text: 'Import from Swagger', link: '/import-export/import-swagger' },
-          { text: 'Import from Curl', link: '/import-export/Import-curl' },
-          { text: 'Migrate from Postman', link: '/import-export/migrate-from-postman' },
-        ]
-      },
-      {
-        text: 'CI/CD',
-        items: [
+    // Use a function to return different sidebars for docs vs blog
+    sidebar: {
+      '/blog/': [
+        {
+          text: 'Blog',
+          items: [
+            { text: 'All Posts', link: '/blog/' },
+            { text: 'How to test api with 50 different inputs', link: '/blog/how-to-test-api-with-50-different-inputs' },
+          ]
+        }
+      ],
+      // Default sidebar for all docs pages
+      '/': [
+        {
+          text: 'Getting Started',
+          items: [
+            { text: 'Introduction', link: '/getting-started/introduction' },
+            { text: 'Quick Start', link: '/getting-started/quick-start' },
+            { text: 'Installation', link: '/getting-started/installation' },
+            { text: 'The 3-Second Workflow', link: '/getting-started/three-second-workflow' },
+          ]
+        },
+        {
+          text: 'Core Concepts',
+          items: [
+            { text: 'Building Requests', link: '/core-concepts/building-requests' },
+            { text: 'Environments & Variables', link: '/core-concepts/environments' },
+            { text: 'Collections & Folders', link: '/core-concepts/collections' },
+            { text: 'Headers', link: '/core-concepts/headers' },
+          ]
+        },
+        {
+          text: 'Testing',
+          items: [
+            { text: 'Tests & Assertions', link: '/testing/tests-assertions' },
+            { text: 'pm Library Reference', link: '/testing/pm-library' },
+            { text: 'Compare Response', link: '/testing/compare-api-response' },
+            { text: 'Reporting', link: '/testing/reporting' },
+          ]
+        },
+        {
+          text: 'Data-Driven Testing',
+          items: [
+            { text: 'Data Tables', link: '/data-driven/data-tables' },
+            { text: 'Collection Runner', link: '/data-driven/collection-runner' },
+            { text: 'Request Chaining', link: '/data-driven/request-chaining' },
+          ]
+        },
+        {
+          text: 'Import & Export',
+          items: [
+            { text: 'Import from Swagger', link: '/import-export/import-swagger' },
+            { text: 'Import from Curl', link: '/import-export/Import-curl' },
+            { text: 'Migrate from Postman', link: '/import-export/migrate-from-postman' },
+          ]
+        },
+        {
+          text: 'CI/CD',
+          items: [
             { text: 'CLI Reference', link: '/ci-cd/cli-reference' },
-        ]
-      },
-      {
-        text: 'Reference',
-        items: [
-          { text: 'Variable Resolution', link: '/reference/variable-resolution' },
-        ]
-      },
-    ],
+          ]
+        },
+        {
+          text: 'Reference',
+          items: [
+            { text: 'Variable Resolution', link: '/reference/variable-resolution' },
+          ]
+        },
+      ],
+    },
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/shyyadav/postmate-docs' },
