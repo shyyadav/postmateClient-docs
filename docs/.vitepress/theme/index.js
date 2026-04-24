@@ -1,12 +1,14 @@
-// .vitepress/theme/index.js
-// Extend the default VitePress theme and inject custom styles.
 import DefaultTheme from 'vitepress/theme'
 import './custom.css'
 import { useRoute } from 'vitepress'
 import { watch } from 'vue'
+import YouTubeEmbed from './YouTubeEmbed.vue'
 
 export default {
   extends: DefaultTheme,
+  enhanceApp({ app }) {
+    app.component('YouTubeEmbed', YouTubeEmbed)
+  },
   setup() {
     const route = useRoute()
 

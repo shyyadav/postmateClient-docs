@@ -70,16 +70,10 @@ Select **"From Swagger..."** from the list.
 > - From Postman OR postmate...
 
 ## 🎥 Video Walkthrough
-Watch the full tutorial on how to import Swagger/OpenAPI into Postmate Client
 
-<iframe
-width="100%"
-height="400"
-src="https://www.youtube.com/embed/I7Grx8RIWzw"
-title="Import Swagger into Postmate Client"
-frameborder="0"
-allowfullscreen>
-</iframe>
+Watch how to import a Swagger / OpenAPI spec into Postmate Client.
+
+<YouTubeEmbed id="I7Grx8RIWzw" title="How to import Swagger into Postmate Client" />
 
 ## Step 2: Configure the Import from Swagger Form
 
