@@ -11,7 +11,7 @@ head:
 
 # How to Test an API with 50 Different Inputs Without Writing a Loop
 
-*Published April 23, 2026*
+*Published April 24, 2026*
 
 You've written the request. It works. **Now your tech lead says:**
 
