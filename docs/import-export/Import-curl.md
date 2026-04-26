@@ -84,18 +84,10 @@ If the request looks good and you want to keep it, press **Ctrl+S**. PMC will pr
 No pressure to save upfront — test first, organize later.
 
 ## 🎥 Video Walkthrough
-Watch how to import cURL into Postmate Client (PMC) in seconds.
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-  <iframe
-    src="https://www.youtube.com/embed/K0TjOP-nPZM"
-    title="How to Import cURL in Postmate Client (PMC)"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen
-    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-  </iframe>
-</div>
+Watch how to import cURL into Postmate Client in seconds.
+
+<YouTubeEmbed id="K0TjOP-nPZM" title="How to import cURL into Postmate Client" />
 
 ## Method 2: Import cURL Directly Into a Collection or Folder
 
