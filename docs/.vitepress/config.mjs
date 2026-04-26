@@ -84,6 +84,8 @@ export default defineConfig({
           items: [
             { text: 'All Posts', link: '/blog/' },
             { text: 'How to test api with 50 different inputs', link: '/blog/how-to-test-api-with-50-different-inputs' },
+            { text: 'Postmate Client: A Privacy-First Postman Alternative for VS Code', link: '/blog/Privacy-First-Postman-Alternative' },
+            
           ]
         }
       ],
