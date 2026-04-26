@@ -21,6 +21,8 @@ canonical: https://www.postmateclient.com/blog/postman-alternative-vs-code
 
 # Postmate Client: A Privacy-First Postman Alternative for VS Code
 
+![Postmate Client running inside Visual Studio Code as a Postman alternative](/public/requestPanel.png)
+
 If you have ever found yourself alt-tabbing between Postman and VS Code fifty times an hour, A fast, privacy-first Postman alternative that runs natively inside VS Code — no login, no cloud sync, no context switching., or wondering why a simple GET request requires a cloud account, you are not alone. The tools developers use to test APIs every day have quietly grown heavier, more invasive, and more disconnected from the editor where actual work happens.
 
 Postmate Client is a lightweight, privacy-first **Postman alternative for VS Code** designed to fix exactly these problems. This article walks through what it does, why it exists, and how it compares to the API testing tools most teams use today.
@@ -65,6 +67,7 @@ Postmate Client takes the opposite stance from cloud-synced tools:
 This is not a premium feature or a paid tier. It is the default behavior. For teams that need to keep client data, internal endpoints, or pre-release APIs out of third-party infrastructure, this single design choice removes an entire category of risk.
 
 ### Compare API Responses Without Leaving Your Editor
+![Compare API responses with semantic JSON diff in Postmate Client](/public/compare1.png)
 
 One of the most common API testing tasks — comparing responses across environments or versions — is also one of the most painful in traditional tools. The usual workflow involves sending two requests, copying both JSON responses, opening an online diff website, manually stripping out sensitive tokens, and reading a line-based diff that was not designed for JSON semantics.
 
@@ -89,6 +92,7 @@ request using the same <span v-pre>`{{variableName}}`</span> syntax that already
 collection through every row, and the included CLI generates HTML reports for CI/CD pipelines.
 
 The result: running the same request against 50 different inputs takes seconds, not an afternoon — and you don't write a single line of looping code.
+![Data Table attached to environment in Postmate Client showing row selector and CSV import](/public/threeSteps.gif)
 
 ## Postmate Client vs Postman: A Quick Comparison
 
