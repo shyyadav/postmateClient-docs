@@ -13,3 +13,9 @@ Tutorials, product updates, and deep dives on fast, local-first API testing.
 *April 24, 2026 · 5 min read*
 
 Still manually editing the same API request 50 times to test different inputs? There's a faster way inside VS Code — no scripts, no loops, no Postman gymnastics.
+
+### [Postmate Client: A Privacy-First Postman Alternative for VS Code](/blog/Privacy-First-Postman-Alternative)
+*April 26, 2026 · 6 min read*
+
+A fast, privacy-first Postman alternative that runs natively inside VS Code — no login, no cloud sync, no context switching.
+
