@@ -115,8 +115,10 @@ export default defineConfig({
           items: [
             { text: 'Tests & Assertions', link: '/testing/tests-assertions' },
             { text: 'pm Library Reference', link: '/testing/pm-library' },
-            { text: 'Compare Response', link: '/testing/compare-api-response' },
             { text: 'Reporting', link: '/testing/reporting' },
+            { text: 'Compare Response', link: '/testing/compare-api-response' },
+            { text: 'Compare Response With Bulk Data', link: '/testing/compare-api-response-bulk-data' },
+            
           ]
         },
         {
