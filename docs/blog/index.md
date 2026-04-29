@@ -24,3 +24,8 @@ A fast, privacy-first Postman alternative that runs natively inside VS Code — 
 
 A 2026 guide to the 7 best free Postman alternatives for developers — featuring lightweight, local-first, and open-source API clients.
 
+### [How to Compare JSON Responses: 3 Practical Methods](/blog/How-to-compare-json-response)
+*April 26, 2026 · 5 min read*
+
+A 2026 guide to the 7 best free Postman alternatives for developers — featuring lightweight, local-first, and open-source API clients.
+
