@@ -6,12 +6,7 @@ If you're looking for a **Postman alternative** or a **Thunder Client alternativ
 
 ## Prerequisites
 
-To use Postmate Client, you only need:
-
-- Visual Studio Code (VS Code)
-- No Node.js
-- No external dependencies
-- No account or login required
+Just Visual Studio Code. That's it. No accounts, no dependencies, no CLI setup.
 
 This makes Postmate Client one of the easiest **local API clients for developers**.
 
@@ -19,15 +14,12 @@ This makes Postmate Client one of the easiest **local API clients for developers
 
 **1. Install Postmate Client Extension**
 
-Open VS Code, press:
-- `Ctrl+P` (Windows/Linux)
-- `⌘P`(Mac)
+1. Open VS Code.
+2. Click the Setting Wheel (bottom left corner of screen) -> Extensions.
+3. Search for Postmate Client.
+4. Click Install.
 
-Paste the command below and hit Enter:
-
-```
-ext install PostMate-lab.postmate
-```
+![Postmate Client Extension in VS Code Marketplace](/public/extensions.png)
 
 **2. Open Postmate Client in VS Code**
 
@@ -48,12 +40,14 @@ Select the HTTP method as GET.
 Click **Send**. 
 You’ll instantly see:
 
-- ✅ Status code
-- 📦 Response body
-- 📄 Headers
-- ⏱ Response time
+- Status code
+- Response body
+- Headers
+- Response time
 
 This is everything you need for **API testing and debugging** in one place.
+
+![Postmate Client API Response in VS Code](/public/requestPanel.png)
 
 **5. Save Request to a Collection**
 
