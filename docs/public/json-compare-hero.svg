@@ -1,0 +1,78 @@
+<svg width="1200" height="680" viewBox="0 0 1200 680" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">How to compare JSON responses</title>
+  <desc id="desc">Two JSON code blocks side by side, staging and prod, with three differing lines highlighted in amber and connected by arrows, illustrating JSON response comparison.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <style>
+      .heading { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-weight: 500; fill: #1a1a1a; }
+      .sub { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-weight: 400; fill: #6b6b6b; }
+      .label { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-weight: 500; fill: #1a1a1a; font-size: 18px; }
+      .code { font-family: "SF Mono", Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 18px; fill: #1a1a1a; }
+      .neq { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 14px; fill: #b45309; font-weight: 500; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="680" fill="#fafaf7"/>
+
+  <text x="600" y="78" class="heading" text-anchor="middle" font-size="38">How to compare JSON responses</text>
+  <text x="600" y="112" class="sub" text-anchor="middle" font-size="18">Spot what changed between two API calls — instantly</text>
+
+  <rect x="80" y="170" width="470" height="430" rx="12" fill="#eaf2fb" stroke="#7ba7d9" stroke-width="1"/>
+  <text x="108" y="208" class="label">Response A · staging</text>
+  <line x1="108" y1="222" x2="522" y2="222" stroke="#7ba7d9" stroke-width="1" opacity="0.5"/>
+
+  <text x="108" y="256" class="code">{</text>
+  <text x="128" y="284" class="code">"user": "shyam",</text>
+  <text x="128" y="312" class="code">"env": "dev",</text>
+  <text x="128" y="340" class="code">"status": 200,</text>
+  <text x="128" y="368" class="code">"passed": true,</text>
+  <text x="128" y="396" class="code">"latency": 287,</text>
+  <text x="128" y="424" class="code">"build": "1.0.0",</text>
+  <text x="128" y="452" class="code">"errors": null,</text>
+  <text x="128" y="480" class="code">"region": "us-east"</text>
+  <text x="108" y="508" class="code">}</text>
+
+  <rect x="120" y="296" width="420" height="24" rx="4" fill="#fbbf24" opacity="0.22"/>
+  <rect x="120" y="380" width="420" height="24" rx="4" fill="#fbbf24" opacity="0.22"/>
+  <rect x="120" y="436" width="420" height="24" rx="4" fill="#fbbf24" opacity="0.22"/>
+
+  <text x="128" y="312" class="code">"env": "dev",</text>
+  <text x="128" y="396" class="code">"latency": 287,</text>
+  <text x="128" y="452" class="code">"errors": null,</text>
+
+  <rect x="650" y="170" width="470" height="430" rx="12" fill="#e8f4ec" stroke="#6ba585" stroke-width="1"/>
+  <text x="678" y="208" class="label">Response B · prod</text>
+  <line x1="678" y1="222" x2="1092" y2="222" stroke="#6ba585" stroke-width="1" opacity="0.5"/>
+
+  <text x="678" y="256" class="code">{</text>
+  <text x="698" y="284" class="code">"user": "shyam",</text>
+  <text x="698" y="312" class="code">"env": "prod",</text>
+  <text x="698" y="340" class="code">"status": 200,</text>
+  <text x="698" y="368" class="code">"passed": true,</text>
+  <text x="698" y="396" class="code">"latency": 612,</text>
+  <text x="698" y="424" class="code">"build": "1.0.0",</text>
+  <text x="698" y="452" class="code">"errors": ["DB_CONN"],</text>
+  <text x="698" y="480" class="code">"region": "us-east"</text>
+  <text x="678" y="508" class="code">}</text>
+
+  <rect x="690" y="296" width="420" height="24" rx="4" fill="#fbbf24" opacity="0.22"/>
+  <rect x="690" y="380" width="420" height="24" rx="4" fill="#fbbf24" opacity="0.22"/>
+  <rect x="690" y="436" width="420" height="24" rx="4" fill="#fbbf24" opacity="0.22"/>
+
+  <text x="698" y="312" class="code">"env": "prod",</text>
+  <text x="698" y="396" class="code">"latency": 612,</text>
+  <text x="698" y="452" class="code">"errors": ["DB_CONN"],</text>
+
+  <line x1="554" y1="308" x2="646" y2="308" stroke="#d97706" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="554" y1="392" x2="646" y2="392" stroke="#d97706" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="554" y1="448" x2="646" y2="448" stroke="#d97706" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <text x="600" y="304" class="neq" text-anchor="middle">≠</text>
+  <text x="600" y="388" class="neq" text-anchor="middle">≠</text>
+  <text x="600" y="444" class="neq" text-anchor="middle">≠</text>
+
+  <text x="600" y="650" class="sub" text-anchor="middle" font-size="14">3 differences detected · status code · latency · errors</text>
+</svg>

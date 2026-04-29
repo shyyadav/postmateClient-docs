@@ -85,8 +85,8 @@ export default defineConfig({
             { text: 'All Posts', link: '/blog/' },
             { text: 'How to test api with 50 different inputs', link: '/blog/how-to-test-api-with-50-different-inputs' },
             { text: 'Postmate Client: A Privacy-First Postman Alternative for VS Code', link: '/blog/Privacy-First-Postman-Alternative' },
-            { text: 'Postmate Client: A Privacy-First Postman Alternative for VS Code', link: '/blog/Best-Free-PostmanAlternatives-2026' },
-              
+            { text: '7 Best Free Postman Alternatives for Developers in 2026', link: '/blog/Best-Free-PostmanAlternatives-2026' },
+            { text: 'How to Compare JSON Responses: 3 Practical Methods', link: '/blog/How-to-compare-json-response' },
           ]
         }
       ],
