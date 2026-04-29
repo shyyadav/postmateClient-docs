@@ -21,6 +21,8 @@ And suddenly you're staring at your API client wondering if you're really about 
 
 There's a better way. And no, **it doesn't involve writing a JavaScript loop or learning a new CLI**.
 
+![Postmate Client data-driven API testing — one GET request running against a 50-row data table with 48 passed and 2 failed results](/public/data-driven-testing-workflow.svg)
+
 ## The Problem Nobody Talks About
 
 Every API tester hits this wall eventually. **You need to run the *same* request with *different* inputs —** different user IDs, different product SKUs, different country codes, different payloads. The API itself is fine. You just need to hammer it with variations.
