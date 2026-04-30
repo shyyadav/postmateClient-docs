@@ -40,7 +40,7 @@ The usual options all have problems:
 
 Postman and Thunder Client can do a version of this through their collection runners — but the workflow is clunky. The data file lives *separately* from your request and from your environment. Every time you want to run it, you're re-uploading a CSV. And if you want to re-run just one specific row? You have to run the whole collection and then hunt through the logs to find iteration #11.
 
-> **In Postmate Client, you just pick the 11th row from a dropdown inside the request and hit Send. No re-upload, no log parsing, no extra steps.**
+> **In [Postmate Client](https://marketplace.visualstudio.com/items?itemName=PostMate-lab.postmate), you just pick the 11th row from a dropdown inside the request and hit Send. No re-upload, no log parsing, no extra steps.**
 
 ![Send request with different rows of data](/public/threeSteps.gif)
 
@@ -52,7 +52,7 @@ Here's the idea that makes everything else click.
 In most API clients, the pieces you work with live in separate silos:
 
 - The **request** (URL, method, body, headers)
-- The **environment** (base URL, auth tokens, per-env variables)
+- The **[environment](/core-concepts/environments)** (base URL, auth tokens, per-env variables)
 - The **data file** (your 50 inputs) — uploaded only when you launch a runner
 
 Every time you want to test the same endpoint in Staging with a different user ID, you're manually juggling all three.
