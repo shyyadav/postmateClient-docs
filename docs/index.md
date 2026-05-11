@@ -39,43 +39,51 @@ hero:
       text: Discussion Forum ↗
       link: https://github.com/shyyadav/postmateClient-docs/discussions
 features:
-  - icon: 🔒
+  - icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>'
     title: Privacy-First by Design
     details: No cloud sync, no login, no telemetry. Your requests, tokens, and payloads never leave your machine. Built for teams that take data seriously.
-  - icon: ⚡
+
+  - icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>'
     title: Native VS Code Performance
     details: A fully native REST API client inside your editor. No Electron wrapper, no external runtime. Instant startup, zero overhead.
-  - icon: 🔍
+
+  - icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="6" r="3"/><path d="M12 6h5a2 2 0 0 1 2 2v7"/><path d="m15 9-3-3 3-3"/><circle cx="19" cy="18" r="3"/><path d="M12 18H7a2 2 0 0 1-2-2V9"/><path d="m9 15 3 3-3 3"/></svg>'
     title: Side-by-Side Response Compare
     details: Diff two API responses with differences highlighted in clean JSONPath notation. Run single comparisons or bulk comparisons across CSV data tables — perfect for staging vs prod regression checks.
     link: /testing/compare-api-response
-    linkText: See it in action →
-  - icon: 📊
+    linkText: See it in action
+
+  - icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/></svg>'
     title: Data Tables, Out of the Box
     details: Attach a CSV data table to any individual request — no collection runner needed. Tables stay linked to your environment, so the same dataset works across dev, staging, and prod. Unique to Postmate Client.
     link: /data-driven/data-tables
-    linkText: Learn more →
-  - icon: 🌍
+    linkText: Learn more
+
+  - icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></svg>'
     title: Environments & Variables
-    details: Manage dev, staging, and production configs with named environments. Reference values anywhere with {{variableName}} — secrets stay local.
+    details: "Manage dev, staging, and production configs with named environments. Reference values anywhere with {{variableName}} — secrets stay local."
     link: /core-concepts/environments
-    linkText: Learn more →
-  - icon: 📂
+    linkText: Learn more
+
+  - icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1h-2.5a1 1 0 0 1-.8-.4l-.9-1.2A1 1 0 0 0 15 3h-2a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1Z"/><path d="M20 21a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-2.9a1 1 0 0 1-.88-.55l-.42-.85a1 1 0 0 0-.92-.6H13a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1Z"/><path d="M3 5a2 2 0 0 0 2 2h3"/><path d="M3 3v13a2 2 0 0 0 2 2h3"/></svg>'
     title: Collections & Folders
     details: Organise requests into collections and nested folders. Share, export, and version-control your entire API suite alongside your code.
     link: /core-concepts/collections
-    linkText: Learn more →
-  - icon: 🧪
+    linkText: Learn more
+
+  - icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>'
     title: Tests & Assertions
     details: Write tests in plain English with the tabular test editor, or use the full pm scripting library for advanced assertions and chained workflows.
     link: /testing/tests-assertions
-    linkText: Learn more →
-  - icon: 🚀
+    linkText: Learn more
+
+  - icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>'
     title: CI/CD Ready
     details: Run collections from the command line, automate API tests in any pipeline, and generate HTML reports for stakeholders.
     link: /ci-cd/cli-reference
-    linkText: CLI reference →
-  - icon: 💸
+    linkText: CLI reference
+
+  - icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4Zm0 0c2 2.67 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.33-6 4Z"/></svg>'
     title: Free, Forever
     details: Every feature, every collection, every environment — free. No paid tiers, no team seats, no surprise paywalls on the features you actually need.
 ---
