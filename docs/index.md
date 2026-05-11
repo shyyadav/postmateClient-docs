@@ -36,8 +36,8 @@ hero:
       text: Get Started
       link: /getting-started/introduction
     - theme: alt
-      text: View on GitHub ↗
-      link: https://github.com/shyyadav/postmate-docs
+      text: Discussion Forum ↗
+      link: https://github.com/shyyadav/postmateClient-docs/discussions
 features:
   - icon: 🔒
     title: Privacy-First by Design
@@ -58,12 +58,18 @@ features:
   - icon: 🌍
     title: Environments & Variables
     details: Manage dev, staging, and production configs with named environments. Reference values anywhere with {{variableName}} — secrets stay local.
+    link: /core-concepts/environments
+    linkText: Learn more →
   - icon: 📂
     title: Collections & Folders
     details: Organise requests into collections and nested folders. Share, export, and version-control your entire API suite alongside your code.
+    link: /core-concepts/collections
+    linkText: Learn more →
   - icon: 🧪
     title: Tests & Assertions
     details: Write tests in plain English with the tabular test editor, or use the full pm scripting library for advanced assertions and chained workflows.
+    link: /testing/tests-assertions
+    linkText: Learn more →
   - icon: 🚀
     title: CI/CD Ready
     details: Run collections from the command line, automate API tests in any pipeline, and generate HTML reports for stakeholders.
@@ -141,6 +147,7 @@ Most API clients were built for the cloud era — sync everything, log in everyw
 Postmate Client gives you a full visual request builder inside VS Code — tabs for params, headers, body, auth, tests, and pre-request scripts. Build the most complex API call without writing any boilerplate.
 
 Every input field supports **dynamic variables** out of the box, so you can keep tests realistic without hardcoding data:
+
 ![Postmate Client UI](/public/postmateClientUI.png)
 
 Combine with environments to switch between dev, staging, and prod without touching the request. Chain requests, write tests, and compare responses — all from the same visual editor.
