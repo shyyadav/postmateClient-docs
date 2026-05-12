@@ -6,6 +6,7 @@
  * Editorial, restrained, "vintage stationery" feel — pairs with the envelope mark.
  * Typography: DM Serif Display for display, Geist for UI.
  */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
 
 /* ─── Fonts ──────────────────────────────────────────────────────────────── */
 :root {
@@ -196,25 +197,75 @@
   text-transform: uppercase;
 }
 
-/* ─── Home page hero ─────────────────────────────────────────────────────── */
-/* Light mode: solid forest green for crisp readability */
+/* ─── Hero typography — unified editorial voice, tight lockup ────────────── */
+/* Light mode */
 .VPHero .name {
-  font-family: 'DM Serif Display', serif;
-  font-weight: 800;
-  color: #14532d;
+  font-family: 'DM Serif Display', Georgia, serif !important;
+  font-weight: 800 !important;
+  font-size: 60px !important;
+  line-height: 1.0 !important;
+  letter-spacing: -0.02em !important;
+  margin: 0 0 4px !important;
+  color: #14532d !important;
+}
+/* Dark mode: restore the editorial gradient on the hero title */
+.dark .VPHero .name {
+  background: linear-gradient(135deg, #e8ebe5 0%, #34d399 55%, #f5e6c8 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: transparent !important;
+}
+.VPHero .text {
+  font-family: 'DM Serif Display', Georgia, serif !important;
+  font-weight: 400 !important;
+  font-size: 38px !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.005em !important;
+  color: #4a5258 !important;
+  margin: 0 0 16px !important;
 }
 
-/* Dark mode: gradient from warm off-white into emerald + cream highlight */
-.dark .VPHero .name {
-  background: linear-gradient(135deg, #e8ebe5 0%, #34d399 55%, #f5e6c8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
+.VPHero .tagline {
+  margin: 0 0 24px !important;
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+  color: #6b7280 !important;
+}
+
+.VPHero .actions {
+  margin-top: 0 !important;
+}
+
+/* Dark mode hero overrides — readable on green-tinted black */
+.dark .VPHero .text {
+  color: #b8bcb5 !important;   /* warm light gray */
 }
 
 .dark .VPHero .tagline {
-  color: #9ca39a;
+  color: #8a908a !important;   /* dimmer warm gray, still readable */
+}
+
+/* Primary CTA button in dark mode — dark text on bright emerald for contrast */
+.dark .VPButton.brand {
+  background: var(--vp-c-brand-1) !important;
+  color: #0d100d !important;
+  border-color: var(--vp-c-brand-1) !important;
+}
+
+.dark .VPButton.brand:hover {
+  background: var(--vp-c-brand-2) !important;
+  border-color: var(--vp-c-brand-2) !important;
+}
+
+/* Responsive scaling */
+@media (max-width: 768px) {
+  .VPHero .name {
+    font-size: 40px !important;
+  }
+  .VPHero .text {
+    font-size: 26px !important;
+  }
 }
 
 /* ─── Feature cards (light + dark) ───────────────────────────────────────── */
