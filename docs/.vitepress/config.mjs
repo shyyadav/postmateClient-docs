@@ -12,6 +12,43 @@ export default defineConfig({
     hostname: 'https://www.postmateclient.com'
   },
 
+  // ────────────────────────────────────────────────────────────
+  // Site-wide <head> tags
+  //   - Favicons in every common size
+  //   - Apple touch icon for iOS home screen
+  //   - Web app manifest for installable PWA
+  //   - theme-color for mobile browser chrome (forest green)
+  //   - Default OG image for social previews
+  // Drop the matching files in /public/ (from postmate-client-icons-forest.zip)
+  // ────────────────────────────────────────────────────────────
+  head: [
+    // Favicons
+    ['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/icon-16.png' }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/icon-32.png' }],
+
+    // iOS home screen
+    ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' }],
+
+    // PWA manifest
+    ['link', { rel: 'manifest', href: '/site.webmanifest' }],
+
+    // Mobile browser chrome — forest green
+    ['meta', { name: 'theme-color', content: '#14532d' }],
+
+    // Default OG image (used as fallback when a page doesn't set its own)
+    // Create /public/og-image.png at 1200×630 with the envelope + wordmark
+    ['meta', { property: 'og:image', content: 'https://www.postmateclient.com/og-image.png' }],
+    ['meta', { property: 'og:image:width', content: '1200' }],
+    ['meta', { property: 'og:image:height', content: '630' }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:site_name', content: 'Postmate Client' }],
+
+    // Twitter card
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { name: 'twitter:image', content: 'https://www.postmateclient.com/og-image.png' }],
+  ],
+
   transformPageData(pageData) {
     const base = 'https://www.postmateclient.com'
     const canonicalPath = pageData.relativePath
@@ -53,12 +90,9 @@ export default defineConfig({
     }
   },
 
-  head: [
-    // ... your existing head config stays the same
-  ],
-
   themeConfig: {
-    logo: { svg: '<svg width="24" height="24" viewBox="0 0 26 26" fill="none"><rect width="26" height="26" rx="7" fill="#6d8aff"/><path d="M7 8h7a4 4 0 0 1 0 8H7V8z" fill="white" opacity=".9"/><circle cx="18" cy="18" r="3.5" fill="white" opacity=".5"/></svg>' },
+    // No logo in nav — the wordmark in DM Serif Display does brand work cleanly
+    // (envelope mark is used as favicon, marketplace icon, social avatar only)
     siteTitle: 'Postmate Client',
 
     nav: [
@@ -76,7 +110,6 @@ export default defineConfig({
       }
     ],
 
-    // Use a function to return different sidebars for docs vs blog
     sidebar: {
       '/blog/': [
         {
@@ -90,7 +123,6 @@ export default defineConfig({
           ]
         }
       ],
-      // Default sidebar for all docs pages
       '/': [
         {
           text: 'Getting Started',
@@ -118,7 +150,6 @@ export default defineConfig({
             { text: 'Reporting', link: '/testing/reporting' },
             { text: 'Compare Response', link: '/testing/compare-api-response' },
             { text: 'Compare Response With Bulk Data', link: '/testing/compare-api-response-bulk-data' },
-            
           ]
         },
         {
