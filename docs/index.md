@@ -42,10 +42,14 @@ features:
   - icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>'
     title: Privacy-First by Design
     details: No cloud sync, no login, no telemetry. Your requests, tokens, and payloads never leave your machine. Built for teams that take data seriously.
+    link: /getting-started/introduction
+    linkText: How it works
 
   - icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>'
     title: Native VS Code Performance
     details: A fully native REST API client inside your editor. No Electron wrapper, no external runtime. Instant startup, zero overhead.
+    link: https://marketplace.visualstudio.com/items?itemName=PostMate-lab.postmate
+    linkText: Install free
 
   - icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="6" r="3"/><path d="M12 6h5a2 2 0 0 1 2 2v7"/><path d="m15 9-3-3 3-3"/><circle cx="19" cy="18" r="3"/><path d="M12 18H7a2 2 0 0 1-2-2V9"/><path d="m9 15 3 3-3 3"/></svg>'
     title: Side-by-Side Response Compare
@@ -86,6 +90,8 @@ features:
   - icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4Zm0 0c2 2.67 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.33-6 4Z"/></svg>'
     title: Free, Forever
     details: Every feature, every collection, every environment — free. No paid tiers, no team seats, no surprise paywalls on the features you actually need.
+    link: '#postmate-client-vs-postman-vs-thunder-client'
+    linkText: Compare plans
 ---
 
 <script setup>
@@ -124,12 +130,12 @@ const compareMode = ref('single')
     <div class="flagship-image-wrap">
       <img
         v-show="compareMode === 'single'"
-        src="/public/compare1.png"
+        src="/compare1.png"
         alt="Postmate Client comparing two API responses side-by-side with diff highlights"
       />
       <img
         v-show="compareMode === 'bulk'"
-        src="/public/compare2.png"
+        src="/compare2.png"
         alt="Postmate Client running bulk comparison across CSV data table rows with summary of total, passed, and failed"
       />
     </div>
@@ -156,7 +162,7 @@ Postmate Client gives you a full visual request builder inside VS Code — tabs 
 
 Every input field supports **dynamic variables** out of the box, so you can keep tests realistic without hardcoding data:
 
-![Postmate Client UI](/public/postmateClientUI.png)
+![Postmate Client UI](/postmateClientUI.png)
 
 Combine with environments to switch between dev, staging, and prod without touching the request. Chain requests, write tests, and compare responses — all from the same visual editor.
 </div>
@@ -239,6 +245,51 @@ Combine with environments to switch between dev, staging, and prod without touch
 </div>
 
 <style scoped>
+/* ---------- Feature grid refinements ---------- */
+:deep(.VPFeature) {
+  background: var(--vp-c-bg) !important;
+  border: 1px solid var(--vp-c-divider) !important;
+  border-radius: 12px !important;
+  transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+:deep(.VPFeature:hover) {
+  border-color: var(--vp-c-brand-1) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px -8px rgba(0, 0, 0, 0.08);
+}
+
+/* Kill the gray icon container, let the icon breathe */
+:deep(.VPFeature .icon) {
+  background: transparent !important;
+  border: none !important;
+  width: auto !important;
+  height: auto !important;
+  font-size: 0 !important;
+  margin-bottom: 16px !important;
+  padding: 0 !important;
+}
+
+/* Style the SVG itself: brand color, proper size */
+:deep(.VPFeature .icon svg) {
+  width: 26px !important;
+  height: 26px !important;
+  color: var(--vp-c-brand-1) !important;
+  stroke: currentColor !important;
+}
+
+/* Slightly tighten the title weight and spacing */
+:deep(.VPFeature .title) {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* Remove underline from CTA on hover for cleaner feel */
+:deep(.VPFeature:hover .link-text) {
+  text-decoration: none;
+}
+
 /* ---------- Flagship feature section ---------- */
 .flagship-section {
   background: var(--vp-c-bg-soft);
