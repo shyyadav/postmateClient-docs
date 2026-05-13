@@ -143,6 +143,7 @@ export default defineConfig({
             { text: 'Environments & Variables', link: '/core-concepts/environments' },
             { text: 'Collections & Folders', link: '/core-concepts/collections' },
             { text: 'Headers', link: '/core-concepts/headers' },
+            { text: 'GraphQL', link: '/core-concepts/graphql' },
           ]
         },
         {
@@ -159,6 +160,7 @@ export default defineConfig({
           text: 'Data-Driven Testing',
           items: [
             { text: 'Data Tables', link: '/data-driven/data-tables' },
+            { text: 'Data Tagging', link: '/data-driven/data-tagging' },
             { text: 'Collection Runner', link: '/data-driven/collection-runner' },
             { text: 'Request Chaining', link: '/data-driven/request-chaining' },
           ]

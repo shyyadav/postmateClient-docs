@@ -357,3 +357,22 @@
   background: rgba(255, 255, 255, 0.1);
   border-radius: 99px;
 }
+/* Signal that docs images are clickable */
+.main img {
+  cursor: zoom-in;
+}
+
+/* While zoomed, click to close */
+.medium-zoom-image--opened {
+  cursor: zoom-out;
+}
+/* Lift the zoom overlay and zoomed image above the VitePress sidebar,
+   nav bar, and any other chrome. VitePress sidebar sits around z-index 20–25,
+   so anything well above that is safely on top. */
+.medium-zoom-overlay {
+  z-index: 9998 !important;
+}
+
+.medium-zoom-image--opened {
+  z-index: 9999 !important;
+}
