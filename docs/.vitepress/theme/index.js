@@ -16,10 +16,13 @@ export default {
     // Initialise medium-zoom on docs content images.
     // Re-runs after client-side navigation so newly rendered pages get it too.
     const initZoom = () => {
-      mediumZoom('.main img:not(.no-zoom)', {
-        background: 'rgba(0, 0, 0, 0.85)',
-        margin: 24
-      })
+      mediumZoom(
+          '.main img:not(.no-zoom), .VPHome img:not(.no-zoom)',
+          {
+            background: 'rgba(0, 0, 0, 0.85)',
+            margin: 24
+          }
+      )
     }
 
     onMounted(() => {
