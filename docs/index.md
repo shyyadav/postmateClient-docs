@@ -1,17 +1,20 @@
 ---
 layout: home
 title: Postmate Client — Privacy-First Postman Alternative for VS Code
-description: Privacy-first REST API client built natively into Visual Studio Code. No cloud sync, no login, no telemetry. Test, compare, and automate APIs locally with collections, environments, data-driven testing, and side-by-side response comparison.
+description: Privacy-first REST and GraphQL API client built natively into VS Code. Import Postman, OpenAPI, and Swagger collections. Data-driven testing, response comparison, CLI for CI/CD. No cloud sync, no login, no telemetry — free forever.
 head:
   - - meta
     - name: description
-      content: Privacy-first REST API client built natively into Visual Studio Code. No cloud sync, no login, no telemetry. Test, compare, and automate APIs locally with collections, environments, data-driven testing, and side-by-side response comparison.
+      content: Privacy-first REST and GraphQL API client built natively into VS Code. Import Postman, OpenAPI, and Swagger collections. Data-driven testing, response comparison, CLI for CI/CD. No cloud sync, no login, no telemetry — free forever.
+  - - meta
+    - name: keywords
+      content: postman alternative, vs code api client, graphql vs code, import postman collection, data-driven api testing, free api client, privacy-first api testing, rest client vs code, thunder client alternative
   - - meta
     - property: og:title
       content: Postmate Client — Privacy-First Postman Alternative for VS Code
   - - meta
     - property: og:description
-      content: Privacy-first REST API client built natively into Visual Studio Code. No cloud sync, no login, no telemetry. Test, compare, and automate APIs locally.
+      content: Privacy-first REST and GraphQL API client built natively into VS Code. Import Postman collections, run data-driven tests, compare responses — free forever.
   - - meta
     - property: og:url
       content: https://www.postmateclient.com
@@ -20,14 +23,14 @@ head:
       content: Postmate Client — Privacy-First Postman Alternative for VS Code
   - - meta
     - name: twitter:description
-      content: Privacy-first REST API client built natively into Visual Studio Code. No cloud sync, no login, no telemetry. Test, compare, and automate APIs locally.
+      content: Privacy-first REST and GraphQL API client built natively into VS Code. Import Postman collections, run data-driven tests, compare responses — free forever.
   - - link
     - rel: canonical
       href: https://www.postmateclient.com
 hero:
   name: Postmate Client
   text: Your APIs. Your Machine. Your Data.
-  tagline: A privacy-first REST API client built natively into VS Code. No cloud sync, no login, no telemetry — just fast, local API testing that respects your data.
+  tagline: A privacy-first REST and GraphQL API client built natively into VS Code. No cloud sync, no login, no telemetry — just fast, local API testing that respects your data.
   actions:
     - theme: brand
       text: Install Free →
@@ -39,17 +42,17 @@ hero:
       text: Discussion Forum ↗
       link: https://github.com/shyyadav/postmateClient-docs/discussions
 features:
-  - icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>'
-    title: Privacy-First by Design
-    details: No cloud sync, no login, no telemetry. Your requests, tokens, and payloads never leave your machine. Built for teams that take data seriously.
-    link: /getting-started/introduction
-    linkText: How it works
+  - icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>'
+    title: Import from Postman, OpenAPI & Swagger
+    details: Bring your work with you. Import Postman v2.1 collections, OpenAPI 3.0, Swagger 2.0, and cURL commands in one click. Stay productive from minute one — no rebuilding.
+    link: /import-export/migrate-from-postman
+    linkText: Migrate from Postman
 
-  - icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>'
-    title: Native VS Code Performance
-    details: A fully native REST API client inside your editor. No Electron wrapper, no external runtime. Instant startup, zero overhead.
-    link: https://marketplace.visualstudio.com/items?itemName=PostMate-lab.postmate
-    linkText: Install free
+  - icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m21 16-9 5-9-5V8l9-5 9 5z"/><path d="m12 3 9 5-9 5-9-5 9-5z"/><circle cx="12" cy="13" r="1.5"/></svg>'
+    title: GraphQL, Built-In
+    details: Send GraphQL queries and mutations with a dedicated Query and Variables editor. Same builder as your REST calls. Variable autocomplete works inside both editors.
+    link: /core-concepts/graphql
+    linkText: GraphQL guide
 
   - icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="6" r="3"/><path d="M12 6h5a2 2 0 0 1 2 2v7"/><path d="m15 9-3-3 3-3"/><circle cx="19" cy="18" r="3"/><path d="M12 18H7a2 2 0 0 1-2-2V9"/><path d="m9 15 3 3-3 3"/></svg>'
     title: Side-by-Side Response Compare
@@ -57,39 +60,33 @@ features:
     link: /testing/compare-api-response
     linkText: See it in action
 
-  - icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/></svg>'
-    title: Data Tables, Out of the Box
-    details: Attach a CSV data table to any individual request — no collection runner needed. Tables stay linked to your environment, so the same dataset works across dev, staging, and prod. Unique to Postmate Client.
-    link: /data-driven/data-tables
-    linkText: Learn more
-
-  - icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></svg>'
-    title: Environments & Variables
-    details: "Manage dev, staging, and production configs with named environments. Reference values anywhere with {{variableName}} — secrets stay local."
-    link: /core-concepts/environments
-    linkText: Learn more
-
-  - icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1h-2.5a1 1 0 0 1-.8-.4l-.9-1.2A1 1 0 0 0 15 3h-2a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1Z"/><path d="M20 21a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-2.9a1 1 0 0 1-.88-.55l-.42-.85a1 1 0 0 0-.92-.6H13a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1Z"/><path d="M3 5a2 2 0 0 0 2 2h3"/><path d="M3 3v13a2 2 0 0 0 2 2h3"/></svg>'
-    title: Collections & Folders
-    details: Organise requests into collections and nested folders. Share, export, and version-control your entire API suite alongside your code.
-    link: /core-concepts/collections
-    linkText: Learn more
+  - icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="m17.5 17.5 3 3"/><circle cx="15.5" cy="15.5" r="2.5"/></svg>'
+    title: Data Tables & Per-Request Tagging
+    details: "Attach a CSV data table to any environment — automatically active across every request. Tag rows with a _dtag column to filter which rows appear per request. Unique to Postmate Client."
+    link: /data-driven/data-tagging
+    linkText: Learn about tagging
 
   - icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>'
-    title: Tests & Assertions
-    details: Write tests in plain English with the tabular test editor, or use the full pm scripting library for advanced assertions and chained workflows.
+    title: Tests, Assertions & Scripts
+    details: Write tests in plain English with the tabular editor, or use the full pm scripting library. Pre/post-request scripts, built-in test snippets, one-click JSON Schema generator — all without leaving VS Code.
     link: /testing/tests-assertions
+    linkText: Testing guide
+
+  - icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1h-2.5a1 1 0 0 1-.8-.4l-.9-1.2A1 1 0 0 0 15 3h-2a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1Z"/><path d="M20 21a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-2.9a1 1 0 0 1-.88-.55l-.42-.85a1 1 0 0 0-.92-.6H13a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1Z"/><path d="M3 5a2 2 0 0 0 2 2h3"/><path d="M3 3v13a2 2 0 0 0 2 2h3"/></svg>'
+    title: Collections, Environments & Chaining
+    details: "Organise requests into collections and nested folders. Manage dev, staging, and prod with named environments and {{variables}}. Chain requests visually to pass tokens and IDs between calls."
+    link: /core-concepts/collections
     linkText: Learn more
 
   - icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>'
     title: CI/CD Ready
-    details: Run collections from the command line, automate API tests in any pipeline, and generate HTML reports for stakeholders.
+    details: Run collections from the command line, automate API tests in any pipeline, and generate HTML reports for stakeholders. Free CLI — no paid tier required.
     link: /ci-cd/cli-reference
     linkText: CLI reference
 
-  - icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4Zm0 0c2 2.67 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.33-6 4Z"/></svg>'
-    title: Free, Forever
-    details: Every feature, every collection, every environment — free. No paid tiers, no team seats, no surprise paywalls on the features you actually need.
+  - icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>'
+    title: Local-First. VS Code Native. Free Forever.
+    details: Runs entirely inside VS Code with zero external runtime. Every feature, every collection, every environment — free. No cloud sync, no login, no telemetry, no paid tiers.
     link: '#postmate-client-vs-postman-vs-thunder-client'
     linkText: Compare plans
 ---
@@ -98,6 +95,26 @@ features:
 import { ref } from 'vue'
 const compareMode = ref('single')
 </script>
+
+<!-- ============================================ -->
+<!-- TRUST BAND: marketplace rating + switcher    -->
+<!-- ============================================ -->
+<div class="trust-band">
+  <a
+    class="trust-badge"
+    href="https://marketplace.visualstudio.com/items?itemName=PostMate-lab.postmate&ssr=false#review-details"
+    target="_blank"
+    rel="noopener"
+    aria-label="5-star rating on the VS Code Marketplace"
+  >
+    <span class="trust-badge-stars" aria-hidden="true">★★★★★</span>
+    <span class="trust-badge-text">5.0 on the VS Code Marketplace</span>
+  </a>
+  <div class="trust-switcher">
+    Switching from Postman?
+    <a href="/import-export/migrate-from-postman">Import your collections in one click →</a>
+  </div>
+</div>
 
 <!-- ============================================ -->
 <!-- FLAGSHIP FEATURE: side-by-side compare        -->
@@ -131,12 +148,12 @@ const compareMode = ref('single')
       <img
         v-show="compareMode === 'single'"
         src="/compare1.png"
-        alt="Postmate Client comparing two API responses side-by-side with diff highlights"
+        alt="Postmate Client comparing two API responses side-by-side with diff highlights — Postman alternative for VS Code"
       />
       <img
         v-show="compareMode === 'bulk'"
         src="/compare2.png"
-        alt="Postmate Client running bulk comparison across CSV data table rows with summary of total, passed, and failed"
+        alt="Postmate Client running bulk API response comparison across CSV data table rows with summary of total, passed, and failed results"
       />
     </div>
     <div class="flagship-cta">
@@ -158,13 +175,13 @@ Most API clients were built for the cloud era — sync everything, log in everyw
 
 ### A real request builder, not a text file
 
-Postmate Client gives you a full visual request builder inside VS Code — tabs for params, headers, body, auth, tests, and pre-request scripts. Build the most complex API call without writing any boilerplate.
+Postmate Client gives you a full visual request builder inside VS Code — tabs for params, headers, body, auth, tests, and pre/post-request scripts. Build REST and GraphQL calls without writing any boilerplate.
 
 Every input field supports **dynamic variables** out of the box, so you can keep tests realistic without hardcoding data:
 
-![Postmate Client UI](/postmateClientUI.png)
+![Postmate Client UI — privacy-first Postman alternative running inside VS Code with request builder, response panel, and data tables](/postmateClientUI.png)
 
-Combine with environments to switch between dev, staging, and prod without touching the request. Chain requests, write tests, and compare responses — all from the same visual editor.
+Combine with environments to switch between dev, staging, and prod without touching the request. Chain requests, write tests, compare responses, filter test data by tag — all from the same visual editor.
 </div>
 
 <!-- ============================================ -->
@@ -174,21 +191,22 @@ Combine with environments to switch between dev, staging, and prod without touch
 
 ## Postmate Client vs Postman vs Thunder Client
 
-|  |               Postmate Client | Postman                    |       Thunder Client |
-| --- |------------------------------|----------------------------|---------------------|
-| Runs inside VS Code |                      ✅ Native | ❌ Separate desktop app     |             ✅ Native |
-| Works offline | ✅ Always (no telemetry calls) | ⚠️ Limited                 |   ⚠️ Sends telemetry |
-| Cloud sync required |                       ✅ Never | ❌ Default                  |              ✅ Never |
-| Login required |                       ✅ Never | ❌ Required to use          | ⚠️ For paid features |
-| Side-by-side response compare |                    ✅ Built-in | ❌ Manual                   |      ❌ Not available |
-| Bulk response comparison |                    ✅ Built-in | ❌ Scripting required       |      ❌ Not available |
-| Data-driven testing |                        ✅ Free | ⚠️ Paid tiers              |         ⚠️ Paid tier |
-| Data tables (per-request) |                        ✅ Built-in, free | ⚠️ Collection runner only              |         ⚠️ Collection runner only |
-| Data tables linked to environments |                        ✅  Built-in | ⚠️ Not available              |         ⚠️ Not available |
-| CLI for CI/CD |                        ✅ Free | ⚠️ Paid (Newman/Enterprise) |         ⚠️ Paid tier |
-| Telemetry |                        ✅ None | ❌ Yes                      |                ❌ Yes |
-| Price |                ✅ Free forever | 💰 Paid plans              | 💰 Free + paid plans |
-
+|  | Postmate Client | Postman | Thunder Client |
+| --- | --- | --- | --- |
+| Runs inside VS Code | ✅ Native | ❌ Separate desktop app | ✅ Native |
+| Works offline | ✅ Always | ⚠️ Limited | ⚠️ Limited |
+| Works without login | ✅ Always | ❌ Required to use | ⚠️ For paid features |
+| No cloud sync | ✅ Local-only | ❌ Cloud default | ✅ Local |
+| No telemetry | ✅ None | ❌ Yes | ❌ Yes |
+| GraphQL support | ✅ Built-in | ✅ Yes | ⚠️ Limited |
+| Import Postman / OpenAPI / Swagger / cURL | ✅ Built-in | ⚠️ Partial | ⚠️ Partial |
+| Pre/post-request scripts | ✅ Built-in | ✅ Yes | ⚠️ Limited |
+| Side-by-side response compare | ✅ Built-in | ❌ Manual | ❌ Not available |
+| Bulk response comparison (CSV-driven) | ✅ Built-in | ❌ Scripting required | ❌ Not available |
+| Data tables linked to environments | ✅ Built-in | ❌ Not available | ❌ Not available |
+| Per-request data tag filtering | ✅ Built-in | ❌ Not available | ❌ Not available |
+| CLI for CI/CD | ✅ Free | 💰 Paid (Newman / Enterprise) | 💰 Paid tier |
+| Price | ✅ Free forever | 💰 Paid plans | 💰 Free + paid plans |
 
 </div>
 
@@ -199,11 +217,11 @@ Combine with environments to switch between dev, staging, and prod without touch
 
 ## Get started in under a minute
 
-1. Install the **[Postmate Client extension](https://marketplace.visualstudio.com/items?itemName=PostMate-lab.postmate)** from the VS Code Marketplace
-2. Open the Postmate Client sidebar and create your first collection
-3. Send a request, write a test, compare two environments — all without leaving your editor
+1. Install the **[Postmate Client extension](https://marketplace.visualstudio.com/items?itemName=PostMate-lab.postmate)** from the VS Code Marketplace.
+2. Click the **Postmate Client** icon in the VS Code Activity Bar, then click **New Request**.
+3. Paste a URL, hit **Send** — your first API call without leaving the editor.
 
-[Read the Getting Started guide →](/getting-started/introduction)
+[Read the Getting Started guide →](/getting-started/introduction) &nbsp; · &nbsp; [Or import everything you already have →](/import-export/migrate-from-postman)
 
 ### Explore the docs
 
@@ -211,6 +229,14 @@ Combine with environments to switch between dev, staging, and prod without touch
   <a href="/getting-started/introduction" class="docs-card">
     <div class="docs-card-title">Getting Started</div>
     <div class="docs-card-desc">Install, first request, first collection</div>
+  </a>
+  <a href="/core-concepts/graphql" class="docs-card">
+    <div class="docs-card-title">GraphQL</div>
+    <div class="docs-card-desc">Queries, mutations, and variables in VS Code</div>
+  </a>
+  <a href="/import-export/migrate-from-postman" class="docs-card">
+    <div class="docs-card-title">Migrate from Postman</div>
+    <div class="docs-card-desc">Bring your existing collections across</div>
   </a>
   <a href="/testing/compare-api-response" class="docs-card">
     <div class="docs-card-title">Compare API Responses</div>
@@ -220,13 +246,17 @@ Combine with environments to switch between dev, staging, and prod without touch
     <div class="docs-card-title">Bulk Response Comparison</div>
     <div class="docs-card-desc">CSV-driven diffs across hundreds of inputs</div>
   </a>
-  <a href="/data-driven/collection-runner" class="docs-card">
-    <div class="docs-card-title">Collection Runner</div>
-    <div class="docs-card-desc">Run hundreds of requests in sequence</div>
-  </a>
   <a href="/data-driven/data-tables" class="docs-card">
     <div class="docs-card-title">Data Tables</div>
     <div class="docs-card-desc">Data-driven testing with CSV</div>
+  </a>
+  <a href="/data-driven/data-tagging" class="docs-card">
+    <div class="docs-card-title">Data Tagging</div>
+    <div class="docs-card-desc">Filter rows per request with the _dtag column</div>
+  </a>
+  <a href="/data-driven/collection-runner" class="docs-card">
+    <div class="docs-card-title">Collection Runner</div>
+    <div class="docs-card-desc">Run hundreds of requests in sequence</div>
   </a>
   <a href="/core-concepts/building-requests" class="docs-card">
     <div class="docs-card-title">Building Requests</div>
@@ -288,6 +318,57 @@ Combine with environments to switch between dev, staging, and prod without touch
 /* Remove underline from CTA on hover for cleaner feel */
 :deep(.VPFeature:hover .link-text) {
   text-decoration: none;
+}
+
+/* ---------- Trust band: rating badge + switcher link ---------- */
+.trust-band {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin: 48px auto 0;
+  padding: 0 24px;
+}
+
+.trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--vp-c-text-1);
+  text-decoration: none !important;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.trust-badge:hover {
+  border-color: var(--vp-c-brand-1);
+  transform: translateY(-1px);
+}
+.trust-badge-stars {
+  color: #f5a623;
+  letter-spacing: 1px;
+  font-size: 13px;
+}
+.trust-badge-text {
+  color: var(--vp-c-text-1);
+}
+
+.trust-switcher {
+  font-size: 14px;
+  color: var(--vp-c-text-2);
+}
+.trust-switcher a {
+  color: var(--vp-c-brand-1);
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 4px;
+}
+.trust-switcher a:hover {
+  text-decoration: underline;
 }
 
 /* ---------- Flagship feature section ---------- */
@@ -438,6 +519,8 @@ Combine with environments to switch between dev, staging, and prod without touch
 
 /* ---------- Mobile ---------- */
 @media (max-width: 768px) {
+  .trust-band { margin-top: 32px; }
+  .trust-badge { padding: 7px 14px; font-size: 13px; }
   .flagship-section { padding: 48px 16px; }
   .flagship-title { font-size: 24px; }
   .flagship-subtitle { font-size: 15px; }
