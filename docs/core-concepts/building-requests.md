@@ -56,10 +56,23 @@ Click the **Body** tab to set the request body. Choose your content type using t
 | **x-www-form-urlencoded** | HTML form submissions |
 | **Text** | Plain text payloads |
 | **multipart/form-data** | File uploads and mixed content |
+| **GraphQL** | GraphQL queries and mutations with a separate Variables editor |
 
 **Auto-format** — after writing a JSON or XML body, click the **Format** link to instantly pretty-print and indent the content. No manual formatting needed.
 
 Variable autocomplete works across all fields in the Postmate Client request panel — type <span v-pre>{{</span> anywhere to insert environment or data-table variables instantly.
+
+### GraphQL Body
+
+Select the **GraphQL** option to switch the Body tab into GraphQL mode. The editor splits into two sections: **Query** for your `query` or `mutation`, and **Variables** for a JSON object of operation variables.
+
+<img src="/request-body-graphql.png" alt="Postmate Client Body tab with GraphQL query and Variables editors" width="100%" style="border-radius:8px;border:1px solid rgba(255,255,255,0.08);margin:1rem 0" />
+
+Postmate Client automatically sets `Content-Type: application/json` and wraps the query and variables into the correct request payload at send time — no manual JSON wrapping needed.
+
+Variable autocomplete (<span v-pre>`{{...}}`</span>) works inside both the Query and Variables editors, so you can pass environment values like `{{userId}}` or `{{authToken}}` directly into your GraphQL operations.
+
+→ See [GraphQL Requests](/core-concepts/graphql) for the full GraphQL guide
 
 
 ## Auth Tab
@@ -156,6 +169,9 @@ Use the request panel to define URL, method, headers, and body. Autocomplete hel
 
 ### Does Postmate support environment variables?
 Yes, Postmate supports environment variables and data tables. You can use `{{variable}}` anywhere in your request.
+
+### Does Postmate Client support GraphQL?
+Yes. Select **GraphQL** in the Body tab to write queries and mutations with a dedicated Variables editor. Postmate handles the JSON payload wrapping automatically. See [GraphQL Requests](/core-concepts/graphql) for details.
 
 ### Is Postmate Client a Postman alternative?
 Yes, Postmate Client is a lightweight, privacy-first Postman alternative that runs entirely inside VS Code without requiring login or cloud sync.
