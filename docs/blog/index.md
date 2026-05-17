@@ -9,6 +9,9 @@ Tutorials, product updates, and deep dives on fast, local-first API testing.
 
 ## Latest Posts
 
+### [WebSocket Support is Live in Postmate Client — Free, Local, Native to VS Code](/blog/websocket-support-launch)
+*May 17, 2026 · 3 min read*
+
 ### [How to test api with 50 different inputs](/blog/how-to-test-api-with-50-different-inputs)
 *April 24, 2026 · 5 min read*
 

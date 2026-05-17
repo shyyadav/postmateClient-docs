@@ -1,20 +1,20 @@
 ---
 layout: home
 title: Postmate Client — Privacy-First Postman Alternative for VS Code
-description: Privacy-first REST and GraphQL API client built natively into VS Code. Import Postman, OpenAPI, and Swagger collections. Data-driven testing, response comparison, CLI for CI/CD. No cloud sync, no login, no telemetry — free forever.
+description: Privacy-first REST, GraphQL, and WebSocket API client built natively into VS Code. Import Postman, OpenAPI, and Swagger collections. Data-driven testing, response comparison, CLI for CI/CD. No cloud sync, no login, no telemetry — free forever.
 head:
   - - meta
     - name: description
-      content: Privacy-first REST and GraphQL API client built natively into VS Code. Import Postman, OpenAPI, and Swagger collections. Data-driven testing, response comparison, CLI for CI/CD. No cloud sync, no login, no telemetry — free forever.
+      content: Privacy-first REST, GraphQL, and WebSocket API client built natively into VS Code. Import Postman, OpenAPI, and Swagger collections. Data-driven testing, response comparison, CLI for CI/CD. No cloud sync, no login, no telemetry — free forever.
   - - meta
     - name: keywords
-      content: postman alternative, vs code api client, graphql vs code, import postman collection, data-driven api testing, free api client, privacy-first api testing, rest client vs code, thunder client alternative
+      content: postman alternative, vs code api client, graphql vs code, vscode websocket client, import postman collection, data-driven api testing, free api client, privacy-first api testing, rest client vs code, thunder client alternative, websocket testing vs code
   - - meta
     - property: og:title
       content: Postmate Client — Privacy-First Postman Alternative for VS Code
   - - meta
     - property: og:description
-      content: Privacy-first REST and GraphQL API client built natively into VS Code. Import Postman collections, run data-driven tests, compare responses — free forever.
+      content: Privacy-first REST, GraphQL, and WebSocket API client built natively into VS Code. Import Postman collections, run data-driven tests, compare responses — free forever.
   - - meta
     - property: og:url
       content: https://www.postmateclient.com
@@ -23,14 +23,14 @@ head:
       content: Postmate Client — Privacy-First Postman Alternative for VS Code
   - - meta
     - name: twitter:description
-      content: Privacy-first REST and GraphQL API client built natively into VS Code. Import Postman collections, run data-driven tests, compare responses — free forever.
+      content: Privacy-first REST, GraphQL, and WebSocket API client built natively into VS Code. Import Postman collections, run data-driven tests, compare responses — free forever.
   - - link
     - rel: canonical
       href: https://www.postmateclient.com
 hero:
   name: Postmate Client
   text: Your APIs. Your Machine. Your Data.
-  tagline: A privacy-first REST and GraphQL API client built natively into VS Code. No cloud sync, no login, no telemetry — just fast, local API testing that respects your data.
+  tagline: A privacy-first REST, GraphQL, and WebSocket API client built natively into VS Code. No cloud sync, no login, no telemetry — just fast, local API testing that respects your data.
   actions:
     - theme: brand
       text: Install Free →
@@ -53,6 +53,12 @@ features:
     details: Send GraphQL queries and mutations with a dedicated Query and Variables editor. Same builder as your REST calls. Variable autocomplete works inside both editors.
     link: /core-concepts/graphql
     linkText: GraphQL guide
+
+  - icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/><path d="M19 12h-4"/><path d="M5 5v14"/></svg>'
+    title: WebSocket & WSS Testing
+    details: "Connect to any ws:// or wss:// endpoint, send messages, and watch responses stream in real time. Pick TEXT, JSON, XML, or HTML mode with inline validation. Save WebSocket requests to collections — free, no paid tier."
+    link: /core-concepts/websocket
+    linkText: WebSocket guide
 
   - icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="6" r="3"/><path d="M12 6h5a2 2 0 0 1 2 2v7"/><path d="m15 9-3-3 3-3"/><circle cx="19" cy="18" r="3"/><path d="M12 18H7a2 2 0 0 1-2-2V9"/><path d="m9 15 3 3-3 3"/></svg>'
     title: Side-by-Side Response Compare
@@ -175,13 +181,13 @@ Most API clients were built for the cloud era — sync everything, log in everyw
 
 ### A real request builder, not a text file
 
-Postmate Client gives you a full visual request builder inside VS Code — tabs for params, headers, body, auth, tests, and pre/post-request scripts. Build REST and GraphQL calls without writing any boilerplate.
+Postmate Client gives you a full visual request builder inside VS Code — tabs for params, headers, body, auth, tests, and pre/post-request scripts. Build REST, GraphQL, and WebSocket calls without writing any boilerplate.
 
 Every input field supports **dynamic variables** out of the box, so you can keep tests realistic without hardcoding data:
 
 ![Postmate Client UI — privacy-first Postman alternative running inside VS Code with request builder, response panel, and data tables](/postmateClientUI.png)
 
-Combine with environments to switch between dev, staging, and prod without touching the request. Chain requests, write tests, compare responses, filter test data by tag — all from the same visual editor.
+Combine with environments to switch between dev, staging, and prod without touching the request. Chain requests, write tests, compare responses, stream WebSocket messages, filter test data by tag — all from the same visual editor.
 </div>
 
 <!-- ============================================ -->
@@ -199,6 +205,7 @@ Combine with environments to switch between dev, staging, and prod without touch
 | No cloud sync | ✅ Local-only | ❌ Cloud default | ✅ Local |
 | No telemetry | ✅ None | ❌ Yes | ❌ Yes |
 | GraphQL support | ✅ Built-in | ✅ Yes | ⚠️ Limited |
+| WebSocket / WSS support | ✅ Free | ⚠️ Yes (login required) | 💰 Paid tier only |
 | Import Postman / OpenAPI / Swagger / cURL | ✅ Built-in | ⚠️ Partial | ⚠️ Partial |
 | Pre/post-request scripts | ✅ Built-in | ✅ Yes | ⚠️ Limited |
 | Side-by-side response compare | ✅ Built-in | ❌ Manual | ❌ Not available |
@@ -233,6 +240,10 @@ Combine with environments to switch between dev, staging, and prod without touch
   <a href="/core-concepts/graphql" class="docs-card">
     <div class="docs-card-title">GraphQL</div>
     <div class="docs-card-desc">Queries, mutations, and variables in VS Code</div>
+  </a>
+  <a href="/core-concepts/websocket" class="docs-card">
+    <div class="docs-card-title">WebSocket Testing</div>
+    <div class="docs-card-desc">Connect, stream, and save ws:// and wss:// requests</div>
   </a>
   <a href="/import-export/migrate-from-postman" class="docs-card">
     <div class="docs-card-title">Migrate from Postman</div>
