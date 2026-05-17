@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   title: 'Postmate Client',
-  description: 'Documentation for Postmate Client — the lightweight REST API testing extension for VS Code.',
+  description: 'Documentation for Postmate Client — the lightweight REST, GraphQL, and WebSocket API testing extension for VS Code.',
   lang: 'en-US',
   titleTemplate: ':title',
   ignoreDeadLinks: true,
@@ -119,6 +119,7 @@ export default defineConfig({
           text: 'Blog',
           items: [
             { text: 'All Posts', link: '/blog/' },
+            { text: 'WebSocket Support is Live in Postmate Client', link: '/blog/websocket-support-launch' },
             { text: 'How to test api with 50 different inputs', link: '/blog/how-to-test-api-with-50-different-inputs' },
             { text: 'Postmate Client: A Privacy-First Postman Alternative for VS Code', link: '/blog/Privacy-First-Postman-Alternative' },
             { text: '7 Best Free Postman Alternatives for Developers in 2026', link: '/blog/Best-Free-PostmanAlternatives-2026' },
@@ -140,10 +141,12 @@ export default defineConfig({
           text: 'Core Concepts',
           items: [
             { text: 'Building Requests', link: '/core-concepts/building-requests' },
+            { text: 'GraphQL', link: '/core-concepts/graphql' },
+            { text: 'WebSocket Testing', link: '/core-concepts/websocket' },
             { text: 'Environments & Variables', link: '/core-concepts/environments' },
             { text: 'Collections & Folders', link: '/core-concepts/collections' },
             { text: 'Headers', link: '/core-concepts/headers' },
-            { text: 'GraphQL', link: '/core-concepts/graphql' },
+           
           ]
         },
         {
