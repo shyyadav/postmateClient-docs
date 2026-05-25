@@ -124,6 +124,8 @@ export default defineConfig({
             { text: 'Postmate Client: A Privacy-First Postman Alternative for VS Code', link: '/blog/Privacy-First-Postman-Alternative' },
             { text: '7 Best Free Postman Alternatives for Developers in 2026', link: '/blog/Best-Free-PostmanAlternatives-2026' },
             { text: 'How to Compare JSON Responses: 3 Practical Methods', link: '/blog/How-to-compare-json-response' },
+            { text: 'Postmate Client vs Postman vs Thunder Client: Scripting Compared', link: '/blog/pre-post-request-scripts-vs-code' },
+           
           ]
         }
       ],

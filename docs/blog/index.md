@@ -30,5 +30,12 @@ A 2026 guide to the 7 best free Postman alternatives for developers — featurin
 ### [How to Compare JSON Responses: 3 Practical Methods](/blog/How-to-compare-json-response)
 *April 29, 2026 · 5 min read*
 
-hree practical ways to compare JSON responses: online diff tools, custom scripts, and Postmate Client — with tradeoffs for each.
+Three practical ways to compare JSON responses: online diff tools, custom scripts, and Postmate Client — with tradeoffs for each.
+
+### [Postmate Client vs Postman vs Thunder Client: Scripting Compared](/blog/pre-post-request-scripts-vs-code)
+*May 25, 2026 · 8 min read*
+
+A complete guide to writing pre and post-request scripts in VS Code with Postmate Client — Postman-compatible pm library, response-aware IntelliSense, and JSON Schema validation built in.
+
+
 
