@@ -1,0 +1,8 @@
+{
+  "name": "Postmate Client",
+  "short_name": "Postmate Client",
+  "theme_color": "#14532d",
+  "background_color": "#ffffff",
+  "display": "browser",
+  "start_url": "/"
+}
