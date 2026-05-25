@@ -26,7 +26,6 @@ export default defineConfig({
     ['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     ['link', { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/icon-16.png' }],
     ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/icon-32.png' }],
-// in .vitepress/config.ts head array:
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
     ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap' }],
@@ -50,6 +49,14 @@ export default defineConfig({
     // Twitter card
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
     ['meta', { name: 'twitter:image', content: 'https://www.postmateclient.com/og-image.png' }],
+
+    // Google Analytics 4
+    ['script', { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-61W8C83CGE' }],
+    ['script', {}, `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-61W8C83CGE');`]
+      
   ],
 
   transformPageData(pageData) {
