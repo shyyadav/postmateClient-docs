@@ -376,3 +376,413 @@
 .medium-zoom-image--opened {
   z-index: 9999 !important;
 }
+   /* ---------- Feature grid refinements ---------- */
+ :deep(.VPFeature) {
+   background: var(--vp-c-bg) !important;
+   border: 1px solid var(--vp-c-divider) !important;
+   border-radius: 12px !important;
+   transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+ }
+
+:deep(.VPFeature:hover) {
+  border-color: var(--vp-c-brand-1) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px -8px rgba(0, 0, 0, 0.08);
+}
+
+/* Kill the gray icon container, let the icon breathe */
+:deep(.VPFeature .icon) {
+  background: transparent !important;
+  border: none !important;
+  width: auto !important;
+  height: auto !important;
+  font-size: 0 !important;
+  margin-bottom: 16px !important;
+  padding: 0 !important;
+}
+
+/* Style the SVG itself: brand color, proper size */
+:deep(.VPFeature .icon svg) {
+  width: 26px !important;
+  height: 26px !important;
+  color: var(--vp-c-brand-1) !important;
+  stroke: currentColor !important;
+}
+
+/* Slightly tighten the title weight and spacing */
+:deep(.VPFeature .title) {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* Remove underline from CTA on hover for cleaner feel */
+:deep(.VPFeature:hover .link-text) {
+  text-decoration: none;
+}
+
+/* ---------- Trust band: rating badge + switcher link ---------- */
+.trust-band {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin: 48px auto 0;
+  padding: 0 24px;
+}
+
+.trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--vp-c-text-1);
+  text-decoration: none !important;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.trust-badge:hover {
+  border-color: var(--vp-c-brand-1);
+  transform: translateY(-1px);
+}
+.trust-badge-stars {
+  color: #f5a623;
+  letter-spacing: 1px;
+  font-size: 13px;
+}
+.trust-badge-text {
+  color: var(--vp-c-text-1);
+}
+
+.trust-switcher {
+  font-size: 14px;
+  color: var(--vp-c-text-2);
+}
+.trust-switcher a {
+  color: var(--vp-c-brand-1);
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 4px;
+}
+.trust-switcher a:hover {
+  text-decoration: underline;
+}
+
+/* Allow flagship section to break out of layout max-width */
+.VPHome .flagship-section,
+.VPContent .flagship-section {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  width: 100vw;
+}
+/* ---------- Flagship feature section ---------- */
+.flagship-section {
+  background: var(--vp-c-bg-soft);
+  border-top: 1px solid var(--vp-c-divider);
+  border-bottom: 1px solid var(--vp-c-divider);
+  padding: 64px 24px;
+  margin-top: 48px;
+}
+.flagship-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+.flagship-eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--vp-c-brand-1);
+  margin-bottom: 12px;
+}
+.flagship-title,
+.vp-doc .flagship-title,
+.flagship-section h2.flagship-title {
+  font-size: 32px !important;
+  line-height: 1.2 !important;
+  font-weight: 700 !important;
+  color: var(--vp-c-text-1) !important;
+  margin: 0 0 16px !important;
+  border-top: none !important;
+  border: none !important;
+  padding-top: 0 !important;
+  padding: 0 !important;
+}
+.flagship-subtitle,
+.vp-doc .flagship-subtitle,
+.flagship-section .flagship-subtitle {
+  font-size: 17px !important;
+  color: var(--vp-c-text-2) !important;
+  max-width: 640px !important;
+  margin: 0 auto 36px !important;
+  line-height: 1.6 !important;
+  text-align: center !important;
+}
+.flagship-image-wrap {
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 820px;
+  margin: 0 auto;
+}
+.flagship-image-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.flagship-cta {
+  margin-top: 28px;
+  font-size: 15px;
+  font-weight: 600;
+}
+.flagship-cta a {
+  color: var(--vp-c-brand-1);
+  text-decoration: none;
+}
+.flagship-cta a:hover {
+  text-decoration: underline;
+}
+.flagship-cta-divider {
+  color: var(--vp-c-text-3);
+  margin: 0 12px;
+}
+
+/* ---------- Generic prose section wrapper ---------- */
+.prose-section {
+  max-width: 880px;
+  margin: 64px auto;
+  padding: 0 24px;
+}
+.prose-section h2 {
+  font-size: 28px;
+  border: none;
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 1rem;       /* was implicit zero — now explicit gap below heading */
+}
+
+.prose-section h2 + p,
+.prose-section h2 + ul,
+.prose-section h2 + ol {
+  margin-top: 0;
+}
+
+.prose-section h3 {
+  font-size: 20px;
+  margin-top: 40px;          /* was 32px — give the H3 more breathing room above */
+  margin-bottom: 0.75rem;    /* explicit gap below */
+}
+
+.prose-section p,
+.prose-section ul,
+.prose-section ol {
+  margin: 0 0 1rem;          /* consistent paragraph spacing */
+  line-height: 1.7;          /* matches the index page's reading rhythm */
+}
+
+.prose-section ul li,
+.prose-section ol li {
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- Docs grid ---------- */
+.docs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
+.docs-card {
+  display: block;
+  padding: 16px 20px;
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  text-decoration: none !important;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.docs-card:hover {
+  border-color: var(--vp-c-brand-1);
+  transform: translateY(-1px);
+}
+.docs-card-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+  margin-bottom: 4px;
+}
+.docs-card-desc {
+  font-size: 13px;
+  color: var(--vp-c-text-2);
+  line-height: 1.5;
+}
+
+/* ---------- Compare mode toggle ---------- */
+.compare-toggle {
+  display: inline-flex;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 999px;
+  padding: 4px;
+  margin: 0 0 24px;
+  gap: 2px;
+}
+.compare-toggle-btn {
+  background: transparent;
+  border: none;
+  color: var(--vp-c-text-2);
+  padding: 8px 20px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.compare-toggle-btn:hover {
+  color: var(--vp-c-text-1);
+}
+.compare-toggle-btn.active {
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 768px) {
+  .trust-band { margin-top: 32px; }
+  .trust-badge { padding: 7px 14px; font-size: 13px; }
+  .flagship-section { padding: 48px 16px; }
+  .flagship-title { font-size: 24px !important; }
+  .flagship-subtitle { font-size: 15px; }
+  .flagship-image-wrap { padding: 12px; }
+  .prose-section { margin: 48px auto; padding: 0 16px; }
+
+  .flagship-subtitle {
+    font-size: 15px !important;
+    text-align: center !important;
+  }
+}
+
+/* ─── Landing page (postman-alternative-vscode) ─────────────────── */
+.hero-section {
+  text-align: center;
+  padding-top: 32px;
+}
+
+.hero-section h1 {
+  font-size: 48px;
+  line-height: 1.1;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 24px 0 8px;
+}
+
+.final-cta-section {
+  text-align: center;
+  background: var(--vp-c-bg-soft);
+  border-radius: 16px;
+  padding: 48px 24px;
+  margin-top: 64px;
+}
+
+.final-cta-section .hero-actions {
+  margin-top: 16px;
+}
+
+@media (max-width: 768px) {
+  .hero-section h1 { font-size: 34px; }
+}
+
+/* Standalone VPButton-style buttons (outside VPHero context) */
+.hero-actions .VPButton,
+.final-cta-section .VPButton {
+  display: inline-block;
+  border: 1px solid transparent;
+  text-align: center;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: color 0.25s, border-color 0.25s, background-color 0.25s;
+  padding: 0 20px;
+  line-height: 38px;
+  font-size: 14px;
+  border-radius: 20px;
+  text-decoration: none !important;
+}
+
+.hero-actions .VPButton.brand,
+.final-cta-section .VPButton.brand {
+  border-color: var(--vp-c-brand-1);
+  background-color: var(--vp-c-brand-1);
+  color: var(--vp-c-white) !important;
+}
+
+.hero-actions .VPButton.brand:hover,
+.final-cta-section .VPButton.brand:hover {
+  border-color: var(--vp-c-brand-2);
+  background-color: var(--vp-c-brand-2);
+}
+
+.dark .hero-actions .VPButton.brand,
+.dark .final-cta-section .VPButton.brand {
+  color: #0d100d !important;
+}
+
+.hero-actions .VPButton.alt,
+.final-cta-section .VPButton.alt {
+  border-color: var(--vp-c-divider);
+  background-color: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-1) !important;
+}
+
+.hero-actions .VPButton.alt:hover,
+.final-cta-section .VPButton.alt:hover {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1) !important;
+}
+
+/* Landing page hero title */
+.hero-section h1 {
+  font-family: 'DM Serif Display', Georgia, serif !important;
+  font-size: 56px !important;
+  font-weight: 800 !important;
+  line-height: 1.05 !important;
+  letter-spacing: -0.02em !important;
+  color: #14532d !important;
+  margin: 0 0 16px !important;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
+
+/* Dark mode: editorial gradient like the index page */
+.dark .hero-section h1 {
+  background: linear-gradient(135deg, #e8ebe5 0%, #34d399 55%, #f5e6c8 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: transparent !important;
+}
+
+/* Hero subtitle (the paragraph below H1) */
+.hero-section > p {
+  font-size: 17px !important;
+  line-height: 1.6 !important;
+  color: var(--vp-c-text-2) !important;
+  max-width: 620px !important;
+  margin: 0 auto 24px !important;
+  text-align: center !important;
+}
+
+@media (max-width: 768px) {
+  .hero-section h1 { font-size: 36px !important; }
+}
