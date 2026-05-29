@@ -1,8 +1,10 @@
 {
   "name": "Postmate Client",
-  "short_name": "Postmate Client",
+  "short_name": "Postmate",
+  "icons": [
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ],
   "theme_color": "#14532d",
   "background_color": "#ffffff",
-  "display": "browser",
-  "start_url": "/"
+  "display": "standalone"
 }
