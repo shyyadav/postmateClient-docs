@@ -12,15 +12,6 @@ export default defineConfig({
     hostname: 'https://www.postmateclient.com'
   },
 
-  // ────────────────────────────────────────────────────────────
-  // Site-wide <head> tags
-  //   - Favicons in every common size
-  //   - Apple touch icon for iOS home screen
-  //   - Web app manifest for installable PWA
-  //   - theme-color for mobile browser chrome (forest green)
-  //   - Default OG image for social previews
-  // Drop the matching files in /public/ (from postmate-client-icons-forest.zip)
-  // ────────────────────────────────────────────────────────────
   head: [
     // Favicons
     ['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
