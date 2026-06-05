@@ -106,7 +106,7 @@ gtag('config', 'G-61W8C83CGE');`]
         items: [
           { text: 'Install Free ↗', link: 'https://marketplace.visualstudio.com/items?itemName=PostMate-lab.postmate' },
           { text: 'Video Tutorials ↗', link: 'https://www.youtube.com/channel/UCNDd2dOwC80m_2VdGPmwKDQ' },
-          { text: 'Report an Issue ↗', link: 'https://github.com/shyyadav/postmate-docs/issues' },
+          { text: 'Report an Issue ↗', link: 'https://github.com/shyyadav/postmateClient-docs/issues' },
         ]
       }
     ],
@@ -192,7 +192,7 @@ gtag('config', 'G-61W8C83CGE');`]
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/shyyadav/postmate-docs' },
+      { icon: 'github', link: 'https://github.com/shyyadav/postmateClient-docs' },
       { icon: 'youtube', link: 'https://www.youtube.com/channel/UCNDd2dOwC80m_2VdGPmwKDQ' },
     ],
 
