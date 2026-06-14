@@ -180,6 +180,7 @@ gtag('config', 'G-61W8C83CGE');`]
           text: 'CI/CD',
           items: [
             { text: 'CLI Reference', link: '/ci-cd/cli-reference' },
+            { text: 'GitHub Actions', link: '/ci-cd/github-action' },
           ]
         },
         {
