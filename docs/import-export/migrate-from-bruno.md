@@ -13,7 +13,7 @@ title: How to Migrate from Bruno to Postmate Client (Step-by-Step Guide)
 
 # How to Migrate from Bruno to Postmate Client (Step-by-Step Guide)
 
-Already using Bruno and want to switch to Postmate Client (PMC)? You don't need a separate importer — Bruno has a built-in **Export to Postman** option, and PMC already supports importing Postman collections natively. That means migrating from Bruno takes just two short steps.
+Already using Bruno and want to switch to Postmate Client? You don't need a separate importer — Bruno has a built-in **Export to Postman** option, and Postmate Client already supports importing Postman collections natively. That means migrating from Bruno takes just two short steps.
 
 You can also [import from Swagger/OpenAPI](https://www.postmateclient.com/import-export/import-swagger) or [migrate from Postman](https://www.postmateclient.com/import-export/migrate-from-postman) if either of those fits your situation better.
 
@@ -71,7 +71,7 @@ Your Bruno collection will now appear in the Postmate Client sidebar — fully s
 ## What to Double-Check After Import
 
 - ⚠️ **Pre-request / post-response scripts** — Bruno uses its own scripting API (`bru.setVar`, etc.), while Postmate Client uses the [`pm` library](https://www.postmateclient.com/testing/pm-library). Review any imported scripts and adjust syntax where needed.
-- ⚠️ **Assertions** — Bruno's native `assert` blocks may not map one-to-one to PMC's [Tests & Assertions](https://www.postmateclient.com/testing/tests-assertions) format. Re-check and re-test after import.
+- ⚠️ **Assertions** — Bruno's native `assert` blocks may not map one-to-one to Postmate Client's [Tests & Assertions](https://www.postmateclient.com/testing/tests-assertions) format. Re-check and re-test after import.
 
 ## Quick Reference Summary
 
