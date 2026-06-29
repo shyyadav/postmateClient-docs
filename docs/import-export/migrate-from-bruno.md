@@ -104,4 +104,4 @@ Choose **Postman** under Bruno's Share → Export menu. The other formats (Bruno
 ## Share Your Feedback
 
 Tried migrating from Bruno? We'd love to hear what you think.
-> **[Try PMC now →](https://marketplace.visualstudio.com/items?itemName=PostMate-lab.postmate)**
+> **[Try Postmate Client now →](https://marketplace.visualstudio.com/items?itemName=PostMate-lab.postmate)**
