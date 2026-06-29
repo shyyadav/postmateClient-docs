@@ -1,12 +1,19 @@
 ---
-title: How to Test an API with 50 Different Inputs Without Writing a Loop
-description: Tired of manually editing the same request 50 times? Here's a faster way to run parameterized API tests in VS Code — no scripts, no loops, no Postman gymnastics.
-date: 2026-04-23
-author: Postmate Client Team
+title: "How to Test an API with 50 Different Inputs Without Writing a Loop"
+description: "Run the same API request against 50+ inputs without writing a loop or learning a CLI. A practical guide to data-driven testing comparing Postmate Client, Postman, Thunder Client, and Newman."
 head:
   - - meta
-    - name: keywords
-      content: data-driven API testing, parameterized API testing, test API with multiple inputs, VS Code API client, Postman alternative, API testing VS Code
+    - property: og:title
+      content: "How to Test an API with 50 Different Inputs Without Writing a Loop"
+  - - meta
+    - property: og:description
+      content: "Run the same API request against 50+ inputs without writing a loop or learning a CLI. A practical guide to data-driven testing comparing Postmate Client, Postman, Thunder Client, and Newman."
+  - - meta
+    - name: twitter:title
+      content: "How to Test an API with 50 Different Inputs Without Writing a Loop"
+  - - meta
+    - name: twitter:description
+      content: "Run the same API request against 50+ inputs without writing a loop or learning a CLI. A practical guide to data-driven testing comparing Postmate Client, Postman, Thunder Client, and Newman."
 ---
 
 # How to Test an API with 50 Different Inputs Without Writing a Loop
