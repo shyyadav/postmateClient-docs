@@ -174,6 +174,7 @@ gtag('config', 'G-61W8C83CGE');`]
             { text: 'Import from Swagger', link: '/import-export/import-swagger' },
             { text: 'Import from Curl', link: '/import-export/Import-curl' },
             { text: 'Migrate from Postman', link: '/import-export/migrate-from-postman' },
+            { text: 'Migrate from Bruno', link: '/import-export/migrate-from-bruno' },
           ]
         },
         {
