@@ -123,6 +123,7 @@ gtag('config', 'G-61W8C83CGE');`]
             { text: '7 Best Free Postman Alternatives for Developers in 2026', link: '/blog/Best-Free-PostmanAlternatives-2026' },
             { text: 'How to Compare JSON Responses: 3 Practical Methods', link: '/blog/How-to-compare-json-response' },
             { text: 'Postmate Client vs Postman vs Thunder Client: Scripting Compared', link: '/blog/pre-post-request-scripts-vs-code' },
+            {text: 'Postmate Client vs Bruno: An Honest Comparison', link:'/blog/Postmate-Client-vs-bruno'}
            
           ]
         }

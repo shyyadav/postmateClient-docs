@@ -41,66 +41,94 @@ hero:
     - theme: alt
       text: Discussion Forum ↗
       link: https://github.com/shyyadav/postmateClient-docs/discussions
-features:
-  - icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>'
-    title: Import from Postman, OpenAPI & Swagger
-    details: Bring your work with you. Import Postman v2.1 collections, OpenAPI 3.0, Swagger 2.0, and cURL commands in one click. Stay productive from minute one — no rebuilding.
-    link: /import-export/migrate-from-postman
-    linkText: Migrate from Postman
-
-  - icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m21 16-9 5-9-5V8l9-5 9 5z"/><path d="m12 3 9 5-9 5-9-5 9-5z"/><circle cx="12" cy="13" r="1.5"/></svg>'
-    title: GraphQL, Built-In
-    details: Send GraphQL queries and mutations with a dedicated Query and Variables editor. Same builder as your REST calls. Variable autocomplete works inside both editors.
-    link: /core-concepts/graphql
-    linkText: GraphQL guide
-
-  - icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/><path d="M19 12h-4"/><path d="M5 5v14"/></svg>'
-    title: WebSocket & WSS Testing
-    details: "Connect to any ws:// or wss:// endpoint, send messages, and watch responses stream in real time. Pick TEXT, JSON, XML, or HTML mode with inline validation. Save WebSocket requests to collections — free, no paid tier."
-    link: /core-concepts/websocket
-    linkText: WebSocket guide
-
-  - icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="6" r="3"/><path d="M12 6h5a2 2 0 0 1 2 2v7"/><path d="m15 9-3-3 3-3"/><circle cx="19" cy="18" r="3"/><path d="M12 18H7a2 2 0 0 1-2-2V9"/><path d="m9 15 3 3-3 3"/></svg>'
-    title: Side-by-Side Response Compare
-    details: Diff two API responses with differences highlighted in clean JSONPath notation. Run single comparisons or bulk comparisons across CSV data tables — perfect for staging vs prod regression checks.
-    link: /testing/compare-api-response
-    linkText: See it in action
-
-  - icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="m17.5 17.5 3 3"/><circle cx="15.5" cy="15.5" r="2.5"/></svg>'
-    title: Data Tables & Per-Request Tagging
-    details: "Attach a CSV data table to any environment — automatically active across every request. Tag rows with a _dtag column to filter which rows appear per request. Unique to Postmate Client."
-    link: /data-driven/data-tagging
-    linkText: Learn about tagging
-
-  - icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>'
-    title: Tests, Assertions & Scripts
-    details: Write tests in plain English with the tabular editor, or use the full pm scripting library. Pre/post-request scripts, built-in test snippets, one-click JSON Schema generator — all without leaving VS Code.
-    link: /testing/tests-assertions
-    linkText: Testing guide
-
-  - icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1h-2.5a1 1 0 0 1-.8-.4l-.9-1.2A1 1 0 0 0 15 3h-2a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1Z"/><path d="M20 21a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-2.9a1 1 0 0 1-.88-.55l-.42-.85a1 1 0 0 0-.92-.6H13a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1Z"/><path d="M3 5a2 2 0 0 0 2 2h3"/><path d="M3 3v13a2 2 0 0 0 2 2h3"/></svg>'
-    title: Collections, Environments & Chaining
-    details: "Organise requests into collections and nested folders. Manage dev, staging, and prod with named environments and {{variables}}. Chain requests visually to pass tokens and IDs between calls."
-    link: /core-concepts/collections
-    linkText: Learn more
-
-  - icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>'
-    title: CI/CD Ready
-    details: Run collections from the command line, automate API tests in any pipeline, and generate HTML reports for stakeholders. Free CLI — no paid tier required.
-    link: /ci-cd/cli-reference
-    linkText: CLI reference
-
-  - icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>'
-    title: Local-First. VS Code Native. Free Forever.
-    details: Runs entirely inside VS Code with zero external runtime. Every feature, every collection, every environment — free. No cloud sync, no login, no telemetry, no paid tiers.
-    link: '#postmate-client-vs-postman-vs-thunder-client'
-    linkText: Compare plans
 ---
 
 <script setup>
 import { ref } from 'vue'
 const compareMode = ref('single')
 </script>
+
+<!-- ============================================ -->
+<!-- HERO SCREENSHOT                              -->
+<!-- ============================================ -->
+<div class="hero-screenshot">
+  <img
+    src="/hero-screenshot.png"
+    alt="Postmate Client running inside VS Code — request builder, collections sidebar, and response panel"
+    width="1280"
+    loading="eager"
+  />
+</div>
+
+<!-- ============================================ -->
+<!-- FEATURES GRID                               -->
+<!-- ============================================ -->
+<div class="features-grid">
+
+  <a href="/import-export/migrate-from-postman" class="feature-card">
+    <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
+    <div class="feature-title">Import from Postman, OpenAPI & Swagger</div>
+    <div class="feature-details">Bring your work with you. Import Postman v2.1 collections, OpenAPI 3.0, Swagger 2.0, and cURL commands in one click. Stay productive from minute one — no rebuilding.</div>
+    <div class="feature-link">Migrate from Postman →</div>
+  </a>
+
+  <a href="/core-concepts/graphql" class="feature-card">
+    <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m21 16-9 5-9-5V8l9-5 9 5z"/><path d="m12 3 9 5-9 5-9-5 9-5z"/><circle cx="12" cy="13" r="1.5"/></svg></div>
+    <div class="feature-title">GraphQL, Built-In</div>
+    <div class="feature-details">Send GraphQL queries and mutations with a dedicated Query and Variables editor. Same builder as your REST calls. Variable autocomplete works inside both editors.</div>
+    <div class="feature-link">GraphQL guide →</div>
+  </a>
+
+  <a href="/core-concepts/websocket" class="feature-card">
+    <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/><path d="M19 12h-4"/><path d="M5 5v14"/></svg></div>
+    <div class="feature-title">WebSocket & WSS Testing</div>
+    <div class="feature-details">Connect to any ws:// or wss:// endpoint, send messages, and watch responses stream in real time. Pick TEXT, JSON, XML, or HTML mode with inline validation. Save WebSocket requests to collections — free, no paid tier.</div>
+    <div class="feature-link">WebSocket guide →</div>
+  </a>
+
+  <a href="/testing/compare-api-response" class="feature-card">
+    <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="6" r="3"/><path d="M12 6h5a2 2 0 0 1 2 2v7"/><path d="m15 9-3-3 3-3"/><circle cx="19" cy="18" r="3"/><path d="M12 18H7a2 2 0 0 1-2-2V9"/><path d="m9 15 3 3-3 3"/></svg></div>
+    <div class="feature-title">Side-by-Side Response Compare</div>
+    <div class="feature-details">Diff two API responses with differences highlighted in clean JSONPath notation. Run single comparisons or bulk comparisons across CSV data tables — perfect for staging vs prod regression checks.</div>
+    <div class="feature-link">See it in action →</div>
+  </a>
+
+  <a href="/data-driven/data-tagging" class="feature-card">
+    <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/></svg></div>
+    <div class="feature-title">Data Tables & Per-Request Tagging</div>
+    <div class="feature-details">Attach a CSV data table to any environment — automatically active across every request. Tag rows with a _dtag column to filter which rows appear per request. Unique to Postmate Client.</div>
+    <div class="feature-link">Learn about tagging →</div>
+  </a>
+
+  <a href="/testing/tests-assertions" class="feature-card">
+    <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg></div>
+    <div class="feature-title">Tests, Assertions & Scripts</div>
+    <div class="feature-details">Write tests in plain English with the tabular editor, or use the full pm scripting library. Pre/post-request scripts, built-in test snippets, one-click JSON Schema generator — all without leaving VS Code.</div>
+    <div class="feature-link">Testing guide →</div>
+  </a>
+
+  <a href="/core-concepts/collections" class="feature-card">
+    <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1h-2.5a1 1 0 0 1-.8-.4l-.9-1.2A1 1 0 0 0 15 3h-2a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1Z"/><path d="M20 21a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-2.9a1 1 0 0 1-.88-.55l-.42-.85a1 1 0 0 0-.92-.6H13a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1Z"/><path d="M3 5a2 2 0 0 0 2 2h3"/><path d="M3 3v13a2 2 0 0 0 2 2h3"/></svg></div>
+    <div class="feature-title">Collections, Environments & Chaining</div>
+    <div class="feature-details">Organise requests into collections and nested folders. Manage dev, staging, and prod with named environments and variables. Chain requests visually to pass tokens and IDs between calls.</div>
+    <div class="feature-link">Learn more →</div>
+  </a>
+
+  <a href="/ci-cd/cli-reference" class="feature-card">
+    <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg></div>
+    <div class="feature-title">CI/CD Ready</div>
+    <div class="feature-details">Run collections from the command line, automate API tests in any pipeline, and generate HTML reports for stakeholders. Free CLI — no paid tier required.</div>
+    <div class="feature-link">CLI reference →</div>
+  </a>
+
+  <a href="#postmate-client-vs-postman-vs-thunder-client" class="feature-card">
+    <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div>
+    <div class="feature-title">Local-First. VS Code Native. Free Forever.</div>
+    <div class="feature-details">Runs entirely inside VS Code with zero external runtime. Every feature, every collection, every environment — free. No cloud sync, no login, no telemetry, no paid tiers.</div>
+    <div class="feature-link">Compare plans →</div>
+  </a>
+
+</div>
 
 <!-- ============================================ -->
 <!-- TRUST BAND: marketplace rating + switcher    -->
@@ -199,21 +227,19 @@ Combine with environments to switch between dev, staging, and prod without touch
 
 |  | Postmate Client | Postman | Thunder Client |
 | --- | --- | --- | --- |
-| Runs inside VS Code | ✅ Native | ❌ Separate desktop app | ✅ Native |
-| Works offline | ✅ Always | ⚠️ Limited | ⚠️ Limited |
-| Works without login | ✅ Always | ❌ Required to use | ⚠️ For paid features |
-| No cloud sync | ✅ Local-only | ❌ Cloud default | ✅ Local |
-| No telemetry | ✅ None | ❌ Yes | ❌ Yes |
-| GraphQL support | ✅ Built-in | ✅ Yes | ⚠️ Limited |
-| WebSocket / WSS support | ✅ Free | ⚠️ Yes (login required) | 💰 Paid tier only |
-| Import Postman / OpenAPI / Swagger / cURL | ✅ Built-in | ⚠️ Partial | ⚠️ Partial |
-| Pre/post-request scripts | ✅ Built-in | ✅ Yes | ⚠️ Limited |
-| Side-by-side response compare | ✅ Built-in | ❌ Manual | ❌ Not available |
-| Bulk response comparison (CSV-driven) | ✅ Built-in | ❌ Scripting required | ❌ Not available |
-| Data tables linked to environments | ✅ Built-in | ❌ Not available | ❌ Not available |
-| Per-request data tag filtering | ✅ Built-in | ❌ Not available | ❌ Not available |
-| CLI for CI/CD | ✅ Free | 💰 Paid (Newman / Enterprise) | 💰 Paid tier |
-| Price | ✅ Free forever | 💰 Paid plans | 💰 Free + paid plans |
+| Works offline                         | ✅ Always         | ⚠️ Limited                | ⚠️ Limited                 |
+| Works without login                   | ✅ Always         | ❌ Required to use        | ⚠️ For paid features       |
+| No cloud sync                         | ✅ Local-only     | ❌ Cloud default          | ✅ Local                   |
+| Zero telemetry & tracking             | ✅ None           | ❌ Cloud account required | ⚠️ Opt-out (On by default) |
+| WebSocket / WSS support               | ✅ Free           | ⚠️ Yes (login required)   | 💰 Paid tier only          |
+| Pre/post-request scripts              | ✅ Built-in       | ✅ Yes                    | 💰 Paid tier only          |
+| `pm` library                          | ✅ Built-in       | ✅ Native                 | ❌ Not supported           |
+| Side-by-side response compare         | ✅ Built-in       | ❌ Manual                 | ❌ Not available           |
+| Bulk response comparison (CSV-driven) | ✅ Built-in       | ❌ Scripting required     | ❌ Not available           |
+| Data tables linked to environments    | ✅ Built-in       | ❌ Not available          | ❌ Not available           |
+| Per-request data tag filtering        | ✅ Built-in       | ❌ Not available          | ❌ Not available           |
+| CLI for CI/CD                         | ✅ Free, built-in | ⚠️ Separate tool (Newman) | 💰 Paid tier               |
+| Free features                         | ✅ Everything     | ⚠️ Core features free     | 💰 Most features paid      |
 
 </div>
 

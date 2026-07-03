@@ -37,4 +37,7 @@ Three practical ways to compare JSON responses: online diff tools, custom script
 
 A complete guide to writing pre and post-request scripts in VS Code with Postmate Client — Postman-compatible pm library, response-aware IntelliSense, and JSON Schema validation built in.
 
+### [Postmate Client vs Bruno: An Honest Comparison](/blog/Postmate-Client-vs-bruno)
+*July 2, 2026 · 6 min read*
 
+Bruno got local-first right — so why build another one? A fair, side-by-side look at where the two tools differ: telemetry, test data management, response comparison, and reporting.
