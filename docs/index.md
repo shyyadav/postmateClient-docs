@@ -2,31 +2,6 @@
 layout: home
 title: Postmate Client — Privacy-First Postman Alternative for VS Code
 description: Privacy-first REST, GraphQL, and WebSocket API client built natively into VS Code. Import Postman, OpenAPI, and Swagger collections. Data-driven testing, response comparison, CLI for CI/CD. No cloud sync, no login, no telemetry — free forever.
-head:
-  - - meta
-    - name: description
-      content: Privacy-first REST, GraphQL, and WebSocket API client built natively into VS Code. Import Postman, OpenAPI, and Swagger collections. Data-driven testing, response comparison, CLI for CI/CD. No cloud sync, no login, no telemetry — free forever.
-  - - meta
-    - name: keywords
-      content: postman alternative, vs code api client, graphql vs code, vscode websocket client, import postman collection, data-driven api testing, free api client, privacy-first api testing, rest client vs code, thunder client alternative, websocket testing vs code
-  - - meta
-    - property: og:title
-      content: Postmate Client — Privacy-First Postman Alternative for VS Code
-  - - meta
-    - property: og:description
-      content: Privacy-first REST, GraphQL, and WebSocket API client built natively into VS Code. Import Postman collections, run data-driven tests, compare responses — free forever.
-  - - meta
-    - property: og:url
-      content: https://www.postmateclient.com
-  - - meta
-    - name: twitter:title
-      content: Postmate Client — Privacy-First Postman Alternative for VS Code
-  - - meta
-    - name: twitter:description
-      content: Privacy-first REST, GraphQL, and WebSocket API client built natively into VS Code. Import Postman collections, run data-driven tests, compare responses — free forever.
-  - - link
-    - rel: canonical
-      href: https://www.postmateclient.com
 hero:
   name: Postmate Client
   text: Your APIs. Your Machine. Your Data.
