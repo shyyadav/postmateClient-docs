@@ -1,3 +1,7 @@
+---
+title: Collection Runner — Run API Collections in VS Code
+description: Run full API collections in VS Code with iterations, data-driven execution, and HTML reports — a local, private Postman Collection Runner alternative.
+---
 # Collection Runner in Postmate Client (Run API Collections in VS Code)
 
 The Postmate Client Collection Runner lets you **run API collections in VS Code** with full support for automated API testing — with support for **automated API testing, multiple iterations, data-driven execution, and HTML reports**.

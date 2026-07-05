@@ -1,3 +1,8 @@
+---
+title: Compare API Responses Side-by-Side in VS Code
+description: Diff two API responses instantly in VS Code with highlighted differences in JSONPath notation — no copy-paste, no external diff tools.
+---
+
 # Compare API Responses Side-by-Side in VS Code — Instantly in Postmate Client
 
 Stop copying JSON into diff tools or switching between tabs. With Postmate Client, a Postman alternative for API response comparison in VS Code you can compare API responses side-by-side instantly inside VS Code — with **real-time highlighted differences, no manual copy-paste, and no external tools.**

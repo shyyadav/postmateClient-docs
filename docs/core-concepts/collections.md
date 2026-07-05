@@ -1,3 +1,7 @@
+---
+title: Collections & Folders in Postmate Client
+description: Organize API requests into collections and nested folders in VS Code — reusable, version-control friendly, and ready for automated test runs.
+---
 # Collections & Folders in Postmate Client
 
 Organize your API requests into **collections and folders** in Postmate Client for reuse, **team collaboration, version control**, and automated test runs.

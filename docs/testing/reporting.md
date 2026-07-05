@@ -1,3 +1,7 @@
+---
+title: API Test Reports — HTML & JSON Reporting in VS Code
+description: Postmate Client generates HTML and JSON test reports after every collection run — analyze results, share with stakeholders, plug into CI/CD.
+---
 # Reporting in Postmate Client (HTML & JSON Reports for API Testing)
 
 Postmate Client automatically generates **API test reports** after every collection run — making it easy to analyze results, share insights, and integrate with CI/CD pipelines.

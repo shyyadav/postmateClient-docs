@@ -1,7 +1,7 @@
 ---
-canonical: https://www.postmateclient.com/import-export/migrate-from-bruno
-meta-description: Learn how to migrate your Bruno API collections to Postmate Client using Bruno's built-in Postman export — no separate importer needed.
-meta-og:description: Learn how to migrate your Bruno API collections to Postmate Client using Bruno's built-in Postman export — no separate importer needed.
+#canonical: https://www.postmateclient.com/import-export/migrate-from-bruno
+#meta-description: Learn how to migrate your Bruno API collections to Postmate Client using Bruno's built-in Postman export — no separate importer needed.
+#meta-og:description: Learn how to migrate your Bruno API collections to Postmate Client using Bruno's built-in Postman export — no separate importer needed.
 meta-og:title: How to Migrate from Bruno to Postmate Client (Step-by-Step Guide)
 meta-og:type: website
 meta-og:url: https://www.postmateclient.com/import-export/migrate-from-bruno
@@ -9,6 +9,7 @@ meta-twitter:card: summary_large_image
 meta-twitter:description: Learn how to migrate your Bruno API collections to Postmate Client using Bruno's built-in Postman export.
 meta-twitter:title: How to Migrate from Bruno to Postmate Client (Step-by-Step Guide)
 title: How to Migrate from Bruno to Postmate Client (Step-by-Step Guide)
+description: Migrate your Bruno API collections to Postmate Client using Bruno's built-in Postman export — step-by-step guide, no separate importer needed.
 ---
 
 # How to Migrate from Bruno to Postmate Client (Step-by-Step Guide)

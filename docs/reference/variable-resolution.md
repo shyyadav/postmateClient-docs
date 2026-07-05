@@ -1,3 +1,7 @@
+---
+title: Variable Resolution Reference — Postmate Client
+description: How Postmate Client resolves {{variables}} at send time — resolution order across environments, data tables, and request scopes.
+---
 # Variable Resolution in Postmate Client
 
 Understand how Postmate resolves <span v-pre>`{{variableName}}`</span> at send time.

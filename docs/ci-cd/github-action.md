@@ -1,3 +1,7 @@
+---
+title: Run API Tests in GitHub Actions — Postmate Client
+description: Automate Postmate Client API tests on every push or pull request with GitHub Actions and the free pmc CLI — no cloud dependency required.
+---
 # Running Collections with GitHub Actions
 
 Run your Postmate Client API tests automatically on every push, pull request, or on-demand — without any cloud dependency.

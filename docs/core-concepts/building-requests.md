@@ -1,3 +1,8 @@
+---
+title: Building API Requests in Postmate Client (VS Code)
+description: Build and send HTTP and REST API requests in VS Code — params, headers, body, auth, and dynamic variables in a full visual request builder.
+---
+
 # Building Requests in Postmate Client
 
 Build and send HTTP and REST API requests in VS Code using Postmate Client — a fast, privacy-first Postman alternative.

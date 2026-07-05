@@ -1,3 +1,8 @@
+---
+title: The 3-Second Workflow — Fast API Testing in VS Code
+description: Send fully parameterised API requests to any environment with any test data in three steps — no copy-paste, no editing bodies, no file switching.
+---
+
 # The 3-Second Workflow: Send API Requests in Postmate Client (VS Code)
 
 Once your project is set up — environments configured, data tables attached, collections organised — sending a fully parameterised API request to any environment with any test data takes exactly three steps.

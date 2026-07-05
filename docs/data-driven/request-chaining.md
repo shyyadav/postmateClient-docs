@@ -1,3 +1,8 @@
+---
+title: Request Chaining — Build API Workflows in VS Code
+description: Chain API requests in VS Code to pass tokens, IDs, and response data between calls — build complete API workflows without scripts or cloud tools.
+---
+
 # Request Chaining in Postmate Client (Postman Alternative for API Workflows)
 
 Postmate Client makes it easy to chain API requests in VS Code and build complete API workflows
