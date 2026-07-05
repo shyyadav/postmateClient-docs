@@ -55,7 +55,10 @@ gtag('config', 'G-61W8C83CGE');`]
     const canonicalPath = pageData.relativePath
         .replace(/index\.md$/, '')
         .replace(/\.md$/, '')
-    const canonicalUrl = `${base}/${canonicalPath}`.replace(/\/$/, '') || base
+    // const canonicalUrl = `${base}/${canonicalPath}`.replace(/\/$/, '') || base
+    const canonicalUrl = canonicalPath === ''
+        ? `${base}/`
+        : `${base}/${canonicalPath}`
 
     const pageTitle = pageData.frontmatter.title
         ? pageData.frontmatter.title
@@ -67,8 +70,8 @@ gtag('config', 'G-61W8C83CGE');`]
 
     pageData.frontmatter.head ??= []
     pageData.frontmatter.head.push(
-        ['title', {}, pageTitle],
-        ['meta', { name: 'description', content: pageDescription }],
+        // ['title', {}, pageTitle],
+        // ['meta', { name: 'description', content: pageDescription }],
         ['meta', { property: 'og:title', content: pageTitle }],
         ['meta', { property: 'og:description', content: pageDescription }],
         ['meta', { property: 'og:url', content: canonicalUrl }],
