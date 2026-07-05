@@ -1,3 +1,8 @@
+---
+title: What is Postmate Client? — Free API Testing in VS Code
+description: Postmate Client is a free, privacy-first API testing extension for VS Code. Test REST, GraphQL & WebSocket APIs locally — no login, no cloud sync, no telemetry.
+---
+
 # Postmate Client — Introduction
 
 **Postmate Client** is a lightweight, privacy-first **API testing tool for Visual Studio Code** and a powerful **Postman alternative** for developers and QA who want to test APIs directly inside their editor.
