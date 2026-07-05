@@ -1,3 +1,7 @@
+---
+title: Environments, Variables & Data Tables in Postmate Client
+description: Manage environment variables, reusable headers, and CSV data tables in VS Code — switch between dev, staging, and prod without editing requests.
+---
 # Environments, Variables & Data Tables in API Testing (Postman Alternative Guide)
 
 Manage **environment variables, data-driven testing, and reusable headers** in Postmate Client — a powerful **Postman alternative for API testing inside VS Code.**

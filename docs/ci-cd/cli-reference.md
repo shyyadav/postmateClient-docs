@@ -1,3 +1,7 @@
+---
+title: CLI Reference — Run API Collections from the Terminal
+description: Run API collections from your terminal with the free pmc CLI — data-driven runs, tag filtering, HTML reports, and CI/CD integration.
+---
 # Postmate Client CLI — Run API Collections from Terminal (Best Postman CLI Alternative)
 
 Run API collections directly from your terminal using the **Postmate Client CLI** — a fast, lightweight API testing CLI and Postman CLI alternative.

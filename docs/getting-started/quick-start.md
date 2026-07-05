@@ -1,3 +1,8 @@
+---
+title: Quick Start — Send Your First API Request in VS Code
+description: Install Postmate Client and send your first API request in under 5 minutes. No login, no cloud sync, no setup — a free Postman alternative for VS Code.
+---
+
 # Quick Start: Postmate Client (Free Postman Alternative for VS Code)
 
 Get started with **Postmate Client**, a fast and secure **API testing tool for VS Code**, and send your first API request in under 5 minutes — no login, no cloud sync, and no setup required.

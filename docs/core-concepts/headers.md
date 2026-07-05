@@ -1,3 +1,7 @@
+---
+title: HTTP Header Management in Postmate Client
+description: Create, edit, and reuse HTTP headers across API requests in VS Code — fast, local-first header management in a free Postman alternative.
+---
 # Headers in Postmate Client (API Header Management Made Easy)
 
 Managing HTTP headers in REST APIs shouldn’t slow you down. **Postmate Client is a fast, privacy-first VS Code API client** that lets you create, edit, and reuse HTTP headers with ease — making it a powerful Postman alternative for developers who want speed, control, and local-first security.
