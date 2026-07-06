@@ -11,10 +11,10 @@ hero:
       text: Install Free →
       link: https://marketplace.visualstudio.com/items?itemName=PostMate-lab.postmate
     - theme: alt
-      text: Get Started
+      text: Docs
       link: /getting-started/introduction
     - theme: alt
-      text: Discussion Forum ↗
+      text: Community ↗
       link: https://github.com/shyyadav/postmateClient-docs/discussions
 ---
 
