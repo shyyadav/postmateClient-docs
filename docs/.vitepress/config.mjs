@@ -104,6 +104,7 @@ gtag('config', 'G-61W8C83CGE');`]
       { text: 'pm API', link: '/testing/pm-library' },
       { text: 'CLI', link: '/ci-cd/cli-reference', activeMatch: '/ci-cd/' },
       { text: 'Blog', link: '/blog/', activeMatch: '/blog/' },
+      { text: 'Contact', link: '/contact' },
       {
         text: 'Links',
         items: [
@@ -208,7 +209,8 @@ gtag('config', 'G-61W8C83CGE');`]
     },
 
     footer: {
-      message: 'Released under the Postmate Client Proprietary License.',
+      message: 'Questions? <a href="/contact">Contact</a> · <a href="mailto:help@postmateclient.com">help@postmateclient.com</a> · <a href="https://github.com/shyyadav/postmateClient-docs/issues">GitHub Issues</a>',
+      // message: 'Released under the Postmate Client Proprietary License.',
       copyright: 'Copyright © 2026 Postmate Client'
     },
 
