@@ -44,9 +44,9 @@ export default defineConfig({
     // Google Analytics 4
     ['script', { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-61W8C83CGE' }],
     ['script', {}, `window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-61W8C83CGE');`]
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-61W8C83CGE');`]
       
   ],
 
@@ -180,6 +180,12 @@ gtag('config', 'G-61W8C83CGE');`]
             { text: 'Import from Curl', link: '/import-export/Import-curl' },
             { text: 'Migrate from Postman', link: '/import-export/migrate-from-postman' },
             { text: 'Migrate from Bruno', link: '/import-export/migrate-from-bruno' },
+          ]
+        },
+        {
+          text: 'Security',
+          items: [
+            { text: 'Client Certificates', link: '/Security/client-certificates' },
           ]
         },
         {
