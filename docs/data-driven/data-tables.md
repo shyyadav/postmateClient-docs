@@ -2,37 +2,6 @@
 canonical: https://www.postmateclient.com/data-driven/data-tables
 title: Data Tables in VS Code | Postmate Client (Data-Driven API Testing)
 description: Run data-driven API testing in VS Code with Postmate Client. Create CSV data tables, attach them to environments, and parameterise requests — privacy-first, no cloud sync, no login.
-head:
-  - - meta
-    - name: description
-      content: Run data-driven API testing in VS Code with Postmate Client. Create CSV data tables, attach them to environments, and parameterise requests — privacy-first, no cloud sync, no login.
-  - - meta
-    - name: keywords
-      content: data-driven api testing, csv api testing vs code, postman alternative data driven, parameterise api requests, csv test data, api testing with csv, postmate client data tables, environment data tables
-  - - meta
-    - property: og:title
-      content: Data Tables in VS Code | Postmate Client (Data-Driven API Testing)
-  - - meta
-    - property: og:description
-      content: Run data-driven API testing in VS Code with Postmate Client. CSV data tables scoped per environment — no cloud sync, no login.
-  - - meta
-    - property: og:url
-      content: https://www.postmateclient.com/data-driven/data-tables
-  - - meta
-    - property: og:type
-      content: article
-  - - meta
-    - name: twitter:card
-      content: summary_large_image
-  - - meta
-    - name: twitter:title
-      content: Data Tables in VS Code | Postmate Client (Data-Driven API Testing)
-  - - meta
-    - name: twitter:description
-      content: Run data-driven API testing in VS Code with Postmate Client. CSV data tables scoped per environment — no cloud sync, no login.
-  - - link
-    - rel: canonical
-      href: https://www.postmateclient.com/data-driven/data-tables
 ---
 
 # Data Tables in Postmate Client (Data-Driven API Testing in VS Code)
@@ -115,12 +84,53 @@ Other CSV essentials:
 - **Header row required** — first row defines column names
 - **One row per test case** — newlines separate rows
 - **Quote anything with commas, quotes, or newlines** — `"abc, xyz"`, `"he said ""hi"""`
+- **Quoting also controls data types** — quoted values are sent as strings, unquoted numbers as numbers. See [Data Types in CSV Values](#data-types-in-csv-values-numbers-strings-and-arrays) below.
 - **No empty header cells** — every column needs a name
 - **Reserved column name** — `_dtag` is reserved for [Data Tagging](/data-driven/data-tagging)
 
 ::: tip
 Some users pair Postmate Client with the rainbow-csv VS Code extension for colour-coded CSV columns while editing. It is purely a visual aid — Postmate Client does not require any plugins to read or write data tables.
 :::
+
+## Data Types in CSV Values (Numbers, Strings, and Arrays)
+
+When you select a data row and send a request, Postmate Client infers the data type of each value from how it is written in the CSV:
+
+| Value in CSV | Sent in request body as | Type |
+|---|---|---|
+| `123` | `123` | number |
+| `"123"` | `"123"` | string |
+| `hello` | `"hello"` | string |
+| `"123,101"` | `[123, 101]` | array of numbers |
+| `"""123"",""101"""` | `["123", "101"]` | array of strings |
+
+**The rules:**
+
+- **Unquoted numeric values become numbers.** `123` is sent as the number `123`.
+- **Quoted values always stay strings.** Wrap a value in double quotes to prevent number conversion — essential for zip codes, phone numbers, and IDs with leading zeros (`"00042"` is sent as `"00042"`, not `42`).
+- **Quoted values containing commas become arrays.** `"123,101"` is sent as `[123, 101]`. Each element is type-inferred individually — quote an element (escaped as `""123""` in the raw file) to keep it a string.
+
+::: tip
+If you edit data tables in Excel or Google Sheets, the escaping is handled for you. To send an array of strings, type `"123","101"` in the cell — the doubled-quote form (`"""123"",""101"""`) is written to the file automatically on save.
+:::
+
+**Example:**
+
+```csv
+email,password,studentId,studentIds
+m4@example.com,Test@123,"123","456,789"
+```
+
+produces this request body:
+
+```json
+{
+  "email": "m4@example.com",
+  "password": "Test@123",
+  "studentId": "123",
+  "studentIds": [456, 789]
+}
+```
 
 ## How to Attach a Data Table to an Environment
 
@@ -246,6 +256,7 @@ The table is immediately available to attach to any environment.
 - **Keep one table per concern** — a table per resource type (users, orders, products) is easier to maintain than one giant table covering everything.
 - **Commit tables to Git** — since they are plain CSV files, your data tables version-control naturally alongside your code. PR reviewers can see exactly what test inputs changed.
 - **Quote anything risky** — addresses, JSON snippets, full names with commas — wrap in double quotes to be safe.
+- **Quote values that must stay strings** — phone numbers, zip codes, and IDs with leading zeros should be wrapped in double quotes to prevent automatic number conversion. See [Data Types in CSV Values](#data-types-in-csv-values-numbers-strings-and-arrays).
 - **Use tags for large tables** — once a table grows past ~50 rows, add a `_dtag` column to keep the request-side dropdown manageable. See [Data Tagging](/data-driven/data-tagging).
 
 ## Frequently Asked Questions
@@ -267,6 +278,9 @@ Yes. Use the [Collection Runner](/data-driven/collection-runner) to iterate the 
 
 **Does Postmate Client support CSV files with commas inside values?**
 Yes. Standard CSV quoting rules apply — wrap any value containing a comma, quote, or newline in double quotes. See the [CSV Format Rules](#csv-format-rules) section above.
+
+**How do I keep a numeric value as a string (e.g. a zip code or ID)?**
+Wrap it in double quotes in the CSV. Unquoted `78701` is sent as the number `78701`; quoted `"78701"` is sent as the string `"78701"`. Quoted values containing commas are sent as arrays. See [Data Types in CSV Values](#data-types-in-csv-values-numbers-strings-and-arrays).
 
 **Is data-driven testing in Postmate Client free?**
 Yes. Every data-driven testing feature — unlimited data tables, environment scoping, Collection Runner, tagging — is free forever. No paid tiers.
