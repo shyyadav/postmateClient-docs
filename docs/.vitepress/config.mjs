@@ -199,6 +199,7 @@ export default defineConfig({
           text: 'Reference',
           items: [
             { text: 'Variable Resolution', link: '/reference/variable-resolution' },
+            { text: 'Extension Settings', link: '/reference/settings' },
           ]
         },
       ],
