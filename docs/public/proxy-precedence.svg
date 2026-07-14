@@ -1,0 +1,79 @@
+<svg width="760" height="690" viewBox="0 0 760 690" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Postmate proxy resolution order: postmate.proxy.url setting, then VS Code http.proxy, then HTTPS_PROXY environment variable, otherwise direct connection. Localhost and noProxy matches always connect directly.">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M1 1L9 5L1 9" fill="none" stroke="#64748B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <style>
+    .box   { rx: 10; }
+    .lbl   { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; fill: #FFFFFF; }
+    .mono  { font-family: ui-monospace, "Cascadia Code", "SF Mono", Menlo, Consolas, monospace; }
+    .arrow { stroke: #64748B; stroke-width: 2; fill: none; }
+    .pill  { fill: #64748B; }
+  </style>
+
+  <!-- Start -->
+  <rect x="60" y="28" width="280" height="48" rx="24" fill="#334155"/>
+  <text class="lbl" x="200" y="52" font-size="15" font-weight="600" text-anchor="middle" dominant-baseline="central">Outgoing request</text>
+
+  <line class="arrow" x1="200" y1="76" x2="200" y2="116" marker-end="url(#arr)"/>
+
+  <!-- Q1 -->
+  <rect class="box" x="60" y="120" width="280" height="60" fill="#475569"/>
+  <text class="lbl" x="200" y="142" font-size="13.5" text-anchor="middle" dominant-baseline="central"><tspan class="mono" font-size="13">postmate.proxy.url</tspan> set?</text>
+  <text class="lbl" x="200" y="162" font-size="11.5" text-anchor="middle" dominant-baseline="central" opacity="0.75">Postmate's own setting — highest priority</text>
+
+  <rect class="box" x="430" y="122" width="270" height="56" fill="#4F46E5"/>
+  <text class="lbl" x="565" y="150" font-size="14" font-weight="600" text-anchor="middle" dominant-baseline="central">Route through this proxy</text>
+
+  <line class="arrow" x1="340" y1="150" x2="426" y2="150" marker-end="url(#arr)"/>
+  <rect class="pill" x="364" y="138" width="36" height="22" rx="11"/>
+  <text class="lbl" x="382" y="149" font-size="11" font-weight="700" text-anchor="middle" dominant-baseline="central">YES</text>
+
+  <line class="arrow" x1="200" y1="180" x2="200" y2="226" marker-end="url(#arr)"/>
+  <rect class="pill" x="183" y="191" width="34" height="22" rx="11"/>
+  <text class="lbl" x="200" y="202" font-size="11" font-weight="700" text-anchor="middle" dominant-baseline="central">NO</text>
+
+  <!-- Q2 -->
+  <rect class="box" x="60" y="230" width="280" height="60" fill="#475569"/>
+  <text class="lbl" x="200" y="252" font-size="13.5" text-anchor="middle" dominant-baseline="central">VS Code <tspan class="mono" font-size="13">http.proxy</tspan> set?</text>
+  <text class="lbl" x="200" y="272" font-size="11.5" text-anchor="middle" dominant-baseline="central" opacity="0.75">Already configured for your network? It just works</text>
+
+  <rect class="box" x="430" y="232" width="270" height="56" fill="#4F46E5"/>
+  <text class="lbl" x="565" y="260" font-size="14" font-weight="600" text-anchor="middle" dominant-baseline="central">Route through this proxy</text>
+
+  <line class="arrow" x1="340" y1="260" x2="426" y2="260" marker-end="url(#arr)"/>
+  <rect class="pill" x="364" y="248" width="36" height="22" rx="11"/>
+  <text class="lbl" x="382" y="259" font-size="11" font-weight="700" text-anchor="middle" dominant-baseline="central">YES</text>
+
+  <line class="arrow" x1="200" y1="290" x2="200" y2="336" marker-end="url(#arr)"/>
+  <rect class="pill" x="183" y="301" width="34" height="22" rx="11"/>
+  <text class="lbl" x="200" y="312" font-size="11" font-weight="700" text-anchor="middle" dominant-baseline="central">NO</text>
+
+  <!-- Q3 -->
+  <rect class="box" x="60" y="340" width="280" height="60" fill="#475569"/>
+  <text class="lbl" x="200" y="362" font-size="13.5" text-anchor="middle" dominant-baseline="central"><tspan class="mono" font-size="13">HTTPS_PROXY</tspan> env variable set?</text>
+  <text class="lbl" x="200" y="382" font-size="11.5" text-anchor="middle" dominant-baseline="central" opacity="0.75">The CI &amp; corporate Linux convention</text>
+
+  <rect class="box" x="430" y="342" width="270" height="56" fill="#4F46E5"/>
+  <text class="lbl" x="565" y="370" font-size="14" font-weight="600" text-anchor="middle" dominant-baseline="central">Route through this proxy</text>
+
+  <line class="arrow" x1="340" y1="370" x2="426" y2="370" marker-end="url(#arr)"/>
+  <rect class="pill" x="364" y="358" width="36" height="22" rx="11"/>
+  <text class="lbl" x="382" y="369" font-size="11" font-weight="700" text-anchor="middle" dominant-baseline="central">YES</text>
+
+  <line class="arrow" x1="200" y1="400" x2="200" y2="446" marker-end="url(#arr)"/>
+  <rect class="pill" x="183" y="411" width="34" height="22" rx="11"/>
+  <text class="lbl" x="200" y="422" font-size="11" font-weight="700" text-anchor="middle" dominant-baseline="central">NO</text>
+
+  <!-- Direct -->
+  <rect class="box" x="60" y="450" width="280" height="52" fill="#059669"/>
+  <text class="lbl" x="200" y="476" font-size="14.5" font-weight="600" text-anchor="middle" dominant-baseline="central">Direct connection</text>
+
+  <!-- Bypass note -->
+  <rect class="box" x="60" y="556" width="640" height="102" fill="#475569"/>
+  <text class="lbl" x="84" y="584" font-size="13.5" font-weight="700" dominant-baseline="central">⤴ Checked before everything: the bypass list</text>
+  <text class="lbl" x="84" y="608" font-size="12.5" dominant-baseline="central" opacity="0.9">Requests to <tspan class="mono">localhost</tspan>, <tspan class="mono">127.0.0.1</tspan>, and <tspan class="mono">::1</tspan> always connect directly — no configuration needed.</text>
+  <text class="lbl" x="84" y="630" font-size="12.5" dominant-baseline="central" opacity="0.9">Hosts matching <tspan class="mono">postmate.proxy.noProxy</tspan> or the <tspan class="mono">NO_PROXY</tspan> env variable also skip the proxy.</text>
+</svg>
