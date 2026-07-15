@@ -121,6 +121,7 @@ export default defineConfig({
           text: 'Blog',
           items: [
             { text: 'All Posts', link: '/blog/' },
+            { text: 'Postmate Client 1.5.0: Corporate Proxy Support', link: '/blog/postmate-1-5-0-corporate-proxy-support' },
             { text: 'WebSocket Support is Live in Postmate Client', link: '/blog/websocket-support-launch' },
             { text: 'How to test api with 50 different inputs', link: '/blog/how-to-test-api-with-50-different-inputs' },
             { text: 'Postmate Client: A Privacy-First Postman Alternative for VS Code', link: '/blog/Privacy-First-Postman-Alternative' },
