@@ -56,6 +56,10 @@ Click any environment name in the list to open it in the **Environment Details**
 | `accessToken` | _(set at runtime via script)_ |
 | `baseurl_school` | `https://api.school.com` |
 
+::: tip Keep credentials out of this file
+Variables like `password` or API keys shouldn't live in the env file as plaintext. Mark them as **secret** (🔒) and the value is stored in your OS keychain instead — the file keeps only a marker, making it safe to commit and share. See [Secret Variables](/Security/secret-variables).
+:::
+
 ### Using Variables in Requests
 
 In API testing tools like Postman and Thunder Client, variables are referenced using double curly braces. Postmate Client follows the same pattern:
