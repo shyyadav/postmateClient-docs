@@ -20,6 +20,12 @@ Every request is split into two sides:
 
 At the top of the left panel: the **HTTP method** dropdown and the **URL bar**. At the top-right: the **Env** dropdown to switch environments instantly.
 
+Supported methods: **GET, POST, PUT, PATCH, DELETE, and QUERY**.
+
+::: tip QUERY — the newest HTTP method (RFC 10008)
+`QUERY` is **safe and idempotent like GET, but carries a request body like POST** — standardized in June 2026 for exactly the case every API developer knows: a search or filter payload too complex for a URL. Select QUERY from the method dropdown and the body editor works just like it does for POST, with full <span v-pre>`{{variable}}`</span> resolution. Use it instead of `POST /search` when your server supports it — intermediaries can then safely retry and cache the request. *Available from Postmate Client 1.6.0.*
+:::
+
 ## Setting the URL & Environment
 
 Enter your endpoint URL directly, or type <span v-pre>`{{`</span> to trigger variable autocomplete. Postmate lists variables from the active environment and data table instantly — just select one to insert it.

@@ -9,6 +9,14 @@ Tutorials, product updates, and deep dives on fast, local-first API testing.
 
 ## Latest Posts
 
+### [HTTP QUERY Method (RFC 10008): What It Is and How to Send One from VS Code](/blog/http-query-method-support)
+*July 19, 2026 · 4 min read*
+
+HTTP finally has an honest verb for `POST /search`: QUERY is safe and idempotent like GET, but carries a body like POST. Postmate Client supports it first-class — in VS Code and in CI.
+
+### [Postmate 1.5.0: Your VS Code API Client Now Works Behind Corporate Proxies](/blog/postmate-1-5-0-corporate-proxy-support)
+*July 15, 2026 · 6 min read*
+
 ### [WebSocket Support is Live in Postmate Client — Free, Local, Native to VS Code](/blog/websocket-support-launch)
 *May 17, 2026 · 3 min read*
 
