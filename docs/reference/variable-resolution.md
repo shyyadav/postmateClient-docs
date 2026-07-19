@@ -22,6 +22,10 @@ When a request is sent, Postmate resolves variables in this priority order:
 
 Variables are case-sensitive. <span v-pre>`{{authToken}}`</span> and <span v-pre>`{{AuthToken}}`</span> are different variables.
 
+Variable names may contain hyphens, dots, and other characters — <span v-pre>`{{aws-secret}}`</span>, <span v-pre>`{{base.url}}`</span>, and <span v-pre>`{{ spaced }}`</span> (surrounding whitespace is ignored) all resolve. The name is a pure key lookup, never an expression.
+
+[Secret variables](/Security/secret-variables) resolve exactly like plain ones — the value is fetched from the OS keychain (or `POSTMATE_SECRET_<NAME>` in the CLI) at request time. A *referenced* secret with no available value fails the request with an error naming the variable; unreferenced unfilled secrets don't affect the run.
+
 Use them anywhere in a request:
 
 ```
