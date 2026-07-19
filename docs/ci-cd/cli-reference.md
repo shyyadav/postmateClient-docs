@@ -125,16 +125,22 @@ echo $?
 ### `pmc run`
 
 ```bash
-pmc run --collection <name> --env <envName> [--data <dataFile>] [--secret name=value]
+# positional form — collection, env, data in order (env and data optional)
+pmc run test-var QA dataTable
+
+# flag form (or mix both)
+pmc run test-var --env QA --secret password=Test@123 --data dataTable
 ```
 
 | Option | Description |
 |--------|-------------|
-| `--collection` | Name of the collection to run |
-| `--env` | Target environment name |
-| `--data` | Optional data file for iteration |
-| `--secret` | Value for a [secret variable](/Security/secret-variables) as `name=value` (repeatable) |
-| `--report` | Custom report file name |
+| `-c, --collection` | Name of the collection to run (or first positional argument) |
+| `-e, --env` | Target environment name (or second positional argument) |
+| `-d, --data` | Optional data table for iteration (or third positional argument) |
+| `-s, --secret` | Value for a [secret variable](/Security/secret-variables) as `name=value` (repeatable) |
+| `-r, --report` | Custom report file name |
+
+Flags take precedence over positional arguments when both are given.
 
 ## Secret Variables in the CLI
 
