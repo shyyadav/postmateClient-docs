@@ -60,7 +60,11 @@ pmc run --collection <collectionName> --env <environmentName>
 pmc run --collection school --env Dev
 ```
 
-Each row in the data file will execute the collection once. Variables like <span v-pre>`{{id}}`</span> and <span v-pre>`{{username}}`</span> resolve per row.
+For data-driven runs, add a data table with `--data` — each row executes the collection once, and variables like <span v-pre>`{{id}}`</span> and <span v-pre>`{{username}}`</span> resolve per row:
+
+```bash
+pmc run --collection school --env Dev --data dataTable
+```
 
 ## Execution Output
 
@@ -169,7 +173,7 @@ If a request references a secret with no value supplied, the run fails with exit
     POSTMATE_SECRET_APITOKEN: ${{ secrets.API_TOKEN }}
 ```
 
-If any request fails, the pipeline step fails automatically — no extra configuration required. Values passed via `${{ secrets }}` are automatically masked in Actions logs.
+If any request fails, the pipeline step fails automatically — no extra configuration required. Values that come from GitHub's `secrets` context are automatically masked in Actions logs.
 
 ## Best Practices
 
@@ -204,7 +208,7 @@ Yes. Postmate Client CLI returns standard exit codes (`0` for success, `1` for f
 ### Does Postmate Client CLI support data-driven testing?
 Yes. You can pass a data file using the `--data` option. Each row in the file runs the collection with different inputs.
 ### Where are Postmate Client CLI reports stored?
-Reports are automatically saved in the `.postmate/reports/` directory in JSON format after each run.
+Both a JSON and an HTML report are automatically saved in the `.postmate/reports/` directory after each run.
 
 
 *Made with ❤️ using Postmate Client
