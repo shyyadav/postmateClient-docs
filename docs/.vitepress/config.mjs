@@ -187,6 +187,7 @@ export default defineConfig({
           text: 'Security',
           items: [
             { text: 'Security Overview', link: '/Security/secutity-overview' },
+            { text: 'Secret Variables', link: '/Security/secret-variables' },
             { text: 'Client Certificates', link: '/Security/client-certificates' },
             { text: 'Proxy Setup', link: '/Security/corporate-proxy' },
           ]
