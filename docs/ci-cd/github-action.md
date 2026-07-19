@@ -82,6 +82,19 @@ For any sensitive environment variables:
 2. Click **New repository secret**
 3. Add each sensitive value (e.g. `API_KEY`, `AUTH_TOKEN`)
 
+If your Postmate environment uses [secret variables](/Security/secret-variables) (values stored in the OS keychain, `{"$secret": true}` markers in the committed file), expose each one to `pmc` as a `POSTMATE_SECRET_<NAME>` environment variable in the workflow — name uppercased, non-alphanumerics as `_`:
+
+```yaml
+      - name: Run collection
+        working-directory: .postmate
+        run: pmc run -c School -e QA -d dataTable -r report
+        env:
+          POSTMATE_SECRET_APITOKEN: ${{ secrets.API_TOKEN }}
+          POSTMATE_SECRET_AWS_SECRET: ${{ secrets.AWS_SECRET }}
+```
+
+A referenced secret with no value fails the run immediately with an error naming the variable — so a missing workflow secret shows up as a clear failure, not a mysterious 401.
+
 ## Step 3: Create the Workflow File
 
 Create `.github/workflows/api-tests.yml`:

@@ -68,9 +68,27 @@ Secrets follow your environments through their whole lifecycle:
 If a request references a secret with no stored value (e.g. right after importing a teammate's environment), Postmate **fails the request immediately with a clear error naming the variable** — instead of silently sending an unsigned or malformed request you'd debug for an hour:
 
 ```
-Missing secret value in env "dev": apiToken.
-Set the value in the environment panel.
+Missing secret value: "apiToken". Set it in the environment panel,
+or pass --secret apiToken=<value> / POSTMATE_SECRET_APITOKEN when using the CLI.
 ```
+
+This is *fail-at-use*, not fail-at-load: an environment can carry unfilled secrets that a given collection doesn't reference, and those runs proceed normally. Only touching a missing secret fails.
+
+## Secrets in the CLI and CI/CD
+
+The [Postmate CLI](/ci-cd/cli-reference) can't read your VS Code keychain — by design. In the terminal and in CI, secret values come from:
+
+```bash
+# explicit flags (repeatable)
+pmc run school QA --secret apiToken=abc123
+
+# or environment variables — what CI systems inject
+POSTMATE_SECRET_APITOKEN=abc123 pmc run school QA
+```
+
+The env-var name is the variable name uppercased, with any non-alphanumeric character replaced by `_` — so `aws-secret` becomes `POSTMATE_SECRET_AWS_SECRET`. Flags win over env vars when both are set.
+
+The same committed collection and environment files run everywhere: VS Code resolves secrets from the keychain, CI resolves them from its own secret store. See the [GitHub Actions guide](/ci-cd/github-action) for a full workflow.
 
 ## Importing Secrets from Postman
 
@@ -93,7 +111,7 @@ No — and no API client can. Anyone who can send requests from your machine can
 
 ### What happens on another machine?
 
-Keychain values are per-machine and never sync. After cloning a repo or importing an environment, saved secrets show as unfilled — enter the value once and it lands in that machine's keychain.
+Keychain values are per-machine and never sync. After cloning a repo or importing an environment, saved secrets show as unfilled — enter the value once and it lands in that machine's keychain. In CI there is no keychain at all — supply values via `POSTMATE_SECRET_<NAME>` env vars or `--secret` flags instead.
 
 ### Do secret variables work with data tables?
 

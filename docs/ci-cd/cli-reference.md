@@ -125,7 +125,7 @@ echo $?
 ### `pmc run`
 
 ```bash
-pmc run --collection <name> --env <envName> [--data <dataFile>]
+pmc run --collection <name> --env <envName> [--data <dataFile>] [--secret name=value]
 ```
 
 | Option | Description |
@@ -133,6 +133,24 @@ pmc run --collection <name> --env <envName> [--data <dataFile>]
 | `--collection` | Name of the collection to run |
 | `--env` | Target environment name |
 | `--data` | Optional data file for iteration |
+| `--secret` | Value for a [secret variable](/Security/secret-variables) as `name=value` (repeatable) |
+| `--report` | Custom report file name |
+
+## Secret Variables in the CLI
+
+[Secret variables](/Security/secret-variables) store their values in the VS Code keychain — which the CLI can't (and shouldn't) read. In the terminal and CI, supply values via:
+
+```bash
+# explicit flag, repeatable
+pmc run school QA --secret apiToken=abc123 --secret aws-secret=xyz
+
+# or environment variables
+POSTMATE_SECRET_APITOKEN=abc123 pmc run school QA
+```
+
+Env-var naming: variable name uppercased, non-alphanumerics replaced with `_` (`aws-secret` → `POSTMATE_SECRET_AWS_SECRET`). Flags take precedence over env vars.
+
+If a request references a secret with no value supplied, the run fails with exit code `1` and an error naming the variable. Secrets in the environment that the collection never references don't require values.
 
 ## CI/CD Integration
 
@@ -141,9 +159,11 @@ pmc run --collection <name> --env <envName> [--data <dataFile>]
 ```yaml
 - name: Run API Tests
   run: pmc run --collection school --env QA
+  env:
+    POSTMATE_SECRET_APITOKEN: ${{ secrets.API_TOKEN }}
 ```
 
-If any request fails, the pipeline step fails automatically — no extra configuration required.
+If any request fails, the pipeline step fails automatically — no extra configuration required. Values passed via `${{ secrets }}` are automatically masked in Actions logs.
 
 ## Best Practices
 
