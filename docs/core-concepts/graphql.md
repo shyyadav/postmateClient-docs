@@ -30,9 +30,6 @@ head:
   - - meta
     - name: twitter:description
       content: Send GraphQL queries and mutations in VS Code with Postmate Client. A privacy-first, free Postman alternative for GraphQL APIs.
-  - - link
-    - rel: canonical
-      href: https://www.postmateclient.com/core-concepts/graphql
 ---
 
 # GraphQL in Postmate Client (Postman Alternative for GraphQL APIs)

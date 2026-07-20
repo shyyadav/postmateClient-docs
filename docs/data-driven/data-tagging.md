@@ -1,6 +1,6 @@
 ---
 canonical: https://www.postmateclient.com/data-driven/data-tagging
-title: Data Tagging — Filter CSV Test Data Rows by Tag in VS Code | Postmate Client
+title: Data Tagging Filter CSV Test Rows by Tag | Postmate Client
 description: Filter data table rows per request using tags in Postmate Client. Add a _dtag column to your CSV, tag rows, and select tags on each request — a unique feature in this VS Code Postman alternative.
 head:
   - - meta
@@ -30,9 +30,6 @@ head:
   - - meta
     - name: twitter:description
       content: Filter data table rows per request using tags. A unique feature in Postmate Client — no other VS Code API client offers this.
-  - - link
-    - rel: canonical
-      href: https://www.postmateclient.com/data-driven/data-tagging
 ---
 
 # Data Tagging in Postmate Client (Filter CSV Rows per Request)

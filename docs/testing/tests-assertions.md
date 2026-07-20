@@ -1,5 +1,5 @@
 ---
-title: "API Tests & Assertions in VS Code | Postmate Client (Postman Alternative)"
+title: "API Tests & Assertions in VS Code | Postmate Client"
 description: "Write and run API tests in VS Code using Postmate Client. Validate REST API responses with no-code tabular tests or JavaScript assertions (pm library). Fast, private, and no login required."
 keywords: [
   "API testing VS Code",

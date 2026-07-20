@@ -1,5 +1,5 @@
 ---
-title: Migrate from Postman to Postmate Client — Import Collections, Environments & CSV Test Data
+title: Migrate from Postman to Postmate Client Full Guide
 description: Import your Postman collections, environments, and CSV test data files into Postmate Client in seconds, directly inside VS Code. Step-by-step guide with screenshots — no rebuilding, no copy-pasting.
 head:
   - - meta
@@ -20,9 +20,6 @@ head:
   - - meta
     - name: twitter:description
       content: Import Postman collections, environments, and CSV test data into Postmate Client in seconds. Step-by-step guide with screenshots.
-  - - link
-    - rel: canonical
-      href: https://www.postmateclient.com/import-export/migrate-from-postman
 ---
 
 # Migrate from Postman to Postmate Client

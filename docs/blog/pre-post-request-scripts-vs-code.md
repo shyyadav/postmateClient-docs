@@ -1,13 +1,10 @@
 ---
-title: "Pre and Post-Request Scripts in VS Code: A Complete Guide to API Test Automation"
+title: "Pre & Post-Request Scripts in VS Code: Complete Guide"
 description: "Write Postman-style pre-request and post-request scripts directly inside VS Code with Postmate Client. Full tutorial covering pm.test, pm.expect, environment variables, JSON schema validation, and response-aware IntelliSense — the smartest scripting experience in any API client."
 head:
   - - meta
     - name: keywords
       content: "pre-request script vs code, post-request script vs code, pm.test tutorial, pm.expect javascript, postman script alternative, write postman tests in vs code, api testing javascript, json schema validation postman, pm library, postmate client scripting"
-  - - link
-    - rel: canonical
-      href: https://www.postmateclient.com/blog/pre-post-request-scripts-vs-code
   - - meta
     - property: og:title
       content: "Pre and Post-Request Scripts in VS Code: A Complete Guide to API Test Automation"
