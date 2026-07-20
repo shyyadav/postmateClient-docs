@@ -18,9 +18,6 @@ head:
   - - meta
     - name: twitter:description
       content: Bulk compare API responses across environments, hide expected diffs, filter noise — free in VS Code.
-  - - link
-    - rel: canonical
-      href: https://www.postmateclient.com/testing/compare-api-response-bulk-data
 ---
 
 # Compare Bulk API Responses Using a Data Table

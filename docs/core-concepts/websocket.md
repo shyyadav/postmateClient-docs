@@ -20,9 +20,6 @@ head:
   - - meta
     - name: twitter:description
       content: Test WebSocket and WSS APIs directly inside VS Code. Free, local, no telemetry.
-  - - link
-    - rel: canonical
-      href: https://www.postmateclient.com/core-concepts/websocket
 ---
 
 # WebSocket Testing in VS Code

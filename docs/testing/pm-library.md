@@ -1,5 +1,5 @@
 ---
-title: "Postmate Client pm Library (Scripting API) — Postman pm Object Alternative"
+title: "Postmate Client pm Library — Scripting API Reference"
 description: "Complete reference for the Postmate Client pm object (Postman alternative). Learn how to write API tests, use pm.test and pm.expect, manage environment variables, validate JSON schemas, and debug API responses using the Postmate Client scripting API."
 keywords: ["postmate client pm object", "postmate Client pm object", "postman pm object alternative", "api testing scripting api", "pm.test examples", "pm.expect assertions", "api testing scripts", "environment variables api testing"]
 canonical: "https://postmateclient.com/docs/pm-library"

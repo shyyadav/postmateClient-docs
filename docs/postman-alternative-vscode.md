@@ -23,9 +23,6 @@ head:
   - - meta
     - name: twitter:description
       content: Free, privacy-first Postman alternative built natively into VS Code. No login, no cloud sync, no telemetry.
-  - - link
-    - rel: canonical
-      href: https://www.postmateclient.com/postman-alternative-vscode
   - - script
     - type: application/ld+json
     - |

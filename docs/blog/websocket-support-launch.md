@@ -1,5 +1,5 @@
 ---
-title: WebSocket Support is Live in Postmate Client — Free, Local, Native to VS Code
+title: Free WebSocket Testing in VS Code — Postmate Client
 description: Postmate Client now supports WebSocket and WSS testing directly inside VS Code. Connect, send messages, stream responses, and save to collections — free forever, no login, no telemetry.
 date: 2026-05-17
 author: Postmate Client
@@ -28,9 +28,6 @@ head:
   - - meta
     - name: twitter:description
       content: Test WebSocket and WSS APIs directly inside VS Code — free, local, no login.
-  - - link
-    - rel: canonical
-      href: https://www.postmateclient.com/blog/websocket-support-launch
 ---
 
 # WebSocket Support is Live in Postmate Client
