@@ -126,8 +126,8 @@ export default defineConfig({
             { text: 'WebSocket Support is Live in Postmate Client', link: '/blog/websocket-support-launch' },
             { text: 'How to test api with 50 different inputs', link: '/blog/how-to-test-api-with-50-different-inputs' },
             { text: 'Postmate Client: A Privacy-First Postman Alternative for VS Code', link: '/blog/Privacy-First-Postman-Alternative' },
-            { text: '7 Best Free Postman Alternatives for Developers in 2026', link: '/blog/Best-Free-PostmanAlternatives-2026' },
-            { text: 'How to Compare JSON Responses: 3 Practical Methods', link: '/blog/How-to-compare-json-response' },
+            { text: '7 Best Free Postman Alternatives for Developers in 2026', link: '/blog/best-free-postman-alternatives-2026' },
+            { text: 'How to Compare JSON Responses: 3 Practical Methods', link: '/blog/how-to-compare-json-response' },
             { text: 'Postmate Client vs Postman vs Thunder Client: Scripting Compared', link: '/blog/pre-post-request-scripts-vs-code' },
             {text: 'Postmate Client vs Bruno: An Honest Comparison', link:'/blog/Postmate-Client-vs-bruno'}
            
@@ -187,10 +187,10 @@ export default defineConfig({
         {
           text: 'Security',
           items: [
-            { text: 'Security Overview', link: '/Security/security-overview' },
-            { text: 'Secret Variables', link: '/Security/secret-variables' },
-            { text: 'Client Certificates', link: '/Security/client-certificates' },
-            { text: 'Proxy Setup', link: '/Security/corporate-proxy' },
+            { text: 'Security Overview', link: '/security/security-overview' },
+            { text: 'Secret Variables', link: '/security/secret-variables' },
+            { text: 'Client Certificates', link: '/security/client-certificates' },
+            { text: 'Proxy Setup', link: '/security/corporate-proxy' },
           ]
         },
         {
