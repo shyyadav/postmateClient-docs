@@ -18,11 +18,26 @@ head:
     - property: og:url
       content: https://www.postmateclient.com/postman-alternative-vscode
   - - meta
+    - property: og:image
+      content: https://www.postmateclient.com/og-postman-alternative.png
+  - - meta
+    - property: og:image:width
+      content: "1200"
+  - - meta
+    - property: og:image:height
+      content: "630"
+  - - meta
+    - name: twitter:card
+      content: summary_large_image
+  - - meta
     - name: twitter:title
       content: Postman Alternative for VS Code — Postmate Client
   - - meta
     - name: twitter:description
       content: Free, privacy-first Postman alternative built natively into VS Code. No login, no cloud sync, no telemetry.
+  - - meta
+    - name: twitter:image
+      content: https://www.postmateclient.com/og-postman-alternative.png
   - - script
     - type: application/ld+json
     - |
@@ -44,6 +59,14 @@ head:
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "No. Postmate Client has zero telemetry, no cloud sync, and no login. Every request, collection, environment, and token stays on your machine. Your API data never touches our servers because we don't have any."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Postmate Client work behind a corporate proxy?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Postmate Client has full corporate proxy support — HTTP/HTTPS tunneling, proxy authentication with proper 407 handling, and NO_PROXY rules. It also supports mTLS client certificates for enterprise environments, making it usable behind the network infrastructure that blocks or breaks many other API clients."
             }
           },
           {
@@ -158,7 +181,9 @@ If you're searching for a Postman alternative for VS Code, you've probably hit o
 - Your API tokens, request bodies, and response payloads contain sensitive data you'd rather not sync anywhere
 - Free Postman tiers keep shrinking, and team features are paywalled
 
-Postmate Client takes the opposite approach. It runs entirely inside VS Code, stores everything locally, and never phones home. You get a full visual request builder — tabs for params, headers, body, auth, tests, and pre/post-request scripts — without leaving your editor and without sending a single byte to anyone else's server.
+Postmate Client takes the opposite approach. It runs entirely inside VS Code, stores everything locally, and never phones home. You get a full visual request builder — tabs for params, headers, body, auth, tests, and pre/post-request scripts — without leaving your editor and without sending a single byte to anyone else's server. [See exactly how your data stays local →](/security/security-overview)
+
+Working inside an enterprise network? Postmate Client ships with [full corporate proxy support](/security/corporate-proxy) and [mTLS client certificates](/security/client-certificates) — built in, not bolted on.
 
 </div>
 
@@ -274,7 +299,9 @@ A side-by-side with the two API clients VS Code developers most often consider.
 | Works without login | ✅ Always | ❌ Required | ⚠️ For paid features |
 | Zero telemetry | ✅ None | ❌ Yes | ❌ Yes |
 | Git-friendly local storage | ✅ Local files | ⚠️ Cloud default | ⚠️ |
+| Corporate proxy & mTLS | ✅ [Built-in](/security/corporate-proxy) | ⚠️ Partial | ❌ |
 | WebSocket / WSS support | ✅ Free | ⚠️ Login required | 💰 Paid tier |
+| HTTP QUERY method | ✅ First-class | ⚠️ Custom method | ❌ |
 | Free CLI for CI/CD | ✅ Free | 💰 Paid (Newman) | 💰 Paid tier |
 | Parallel response diff | ✅ Built-in | ❌ Manual | ❌ |
 | Bulk CSV comparison | ✅ Built-in | ❌ Scripting required | ❌ |
@@ -323,6 +350,10 @@ No account creation. No onboarding flow. No email confirmation. You're testing A
     <div class="docs-card-title">Migrate from Postman</div>
     <div class="docs-card-desc">Bring your existing collections across</div>
   </a>
+  <a href="/security/security-overview" class="docs-card">
+    <div class="docs-card-title">Security & Enterprise</div>
+    <div class="docs-card-desc">mTLS, corporate proxy, and how your data stays local</div>
+  </a>
   <a href="/core-concepts/graphql" class="docs-card">
     <div class="docs-card-title">GraphQL</div>
     <div class="docs-card-desc">Queries, mutations, and variables in VS Code</div>
@@ -364,7 +395,11 @@ Yes. Postmate Client is 100% free, with no paid tier, no team-size limits, and n
 
 ### Does Postmate Client send my data anywhere?
 
-No. Postmate Client has zero telemetry, no cloud sync, and no login. Every request, collection, environment, and token stays on your machine. Your API data never touches our servers because we don't have any.
+No. Postmate Client has zero telemetry, no cloud sync, and no login. Every request, collection, environment, and token stays on your machine. Your API data never touches our servers because we don't have any. See the [security overview](/security/security-overview) for the full picture.
+
+### Does Postmate Client work behind a corporate proxy?
+
+Yes. Postmate Client has full corporate proxy support — HTTP/HTTPS tunneling, proxy authentication with proper 407 handling, and NO_PROXY rules. It also supports [mTLS client certificates](/security/client-certificates) for enterprise environments. See the [corporate proxy guide](/security/corporate-proxy).
 
 ### Can I import my Postman collections?
 
