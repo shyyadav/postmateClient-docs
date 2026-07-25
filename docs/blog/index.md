@@ -9,6 +9,11 @@ Tutorials, product updates, and deep dives on fast, local-first API testing.
 
 ## Latest Posts
 
+### [OAuth 2.0 Testing is Live in Postmate Client — Free, Local, Native to VS Code](/blog/oauth2-support-launch)
+*July 25, 2026 · 5 min read*
+
+Full OAuth 2.0 in VS Code — Client Credentials, Password, and Authorization Code with PKCE. Postmate fetches your token on send, refreshes it silently, and never writes it to disk.
+
 ### [HTTP QUERY Method (RFC 10008): What It Is and How to Send One from VS Code](/blog/http-query-method-support)
 *July 19, 2026 · 4 min read*
 
