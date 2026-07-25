@@ -1,0 +1,63 @@
+# Postmate Client
+
+> Postmate Client is a privacy-first, local API client built natively into VS Code. Test REST, GraphQL, and WebSocket APIs without login, cloud sync, or telemetry. It is a free alternative to Postman and Thunder Client, with collections, environments, data-driven testing, scripting, a CLI for CI/CD, and full authentication support (Basic, Bearer, API Key, AWS Signature, and OAuth 2.0).
+
+Postmate Client runs entirely on the developer's machine — requests, tokens, and payloads never leave it. Documentation is organized by task: getting started, building and authenticating requests, testing and assertions, data-driven testing, import/export, security, and CI/CD automation.
+
+## Getting Started
+
+- [Introduction](https://www.postmateclient.com/getting-started/introduction): What Postmate Client is and why it exists.
+- [Quick Start](https://www.postmateclient.com/getting-started/quick-start): Send your first API request in minutes.
+- [Installation](https://www.postmateclient.com/getting-started/installation): Install the extension from the VS Code Marketplace.
+- [The 3-Second Workflow](https://www.postmateclient.com/getting-started/three-second-workflow): The fastest path from URL to response.
+
+## Core Concepts
+
+- [Building Requests](https://www.postmateclient.com/core-concepts/building-requests): The request panel — URL, method, headers, body, and formats.
+- [Authentication](https://www.postmateclient.com/core-concepts/authentication): Basic, Bearer, API Key, AWS Signature, and OAuth 2.0 (Client Credentials, Password, and Authorization Code with PKCE), including automatic token fetching and refresh.
+- [GraphQL](https://www.postmateclient.com/core-concepts/graphql): Run GraphQL queries and mutations with a Variables editor.
+- [WebSocket Testing](https://www.postmateclient.com/core-concepts/websocket): Connect to ws:// and wss:// endpoints and stream messages.
+- [Environments & Variables](https://www.postmateclient.com/core-concepts/environments): Named environments and {{variable}} resolution.
+- [Collections & Folders](https://www.postmateclient.com/core-concepts/collections): Organize and reuse saved requests.
+- [Headers](https://www.postmateclient.com/core-concepts/headers): Manage request headers with autocomplete.
+
+## Testing
+
+- [Tests & Assertions](https://www.postmateclient.com/testing/tests-assertions): Plain-English assertions and the tabular test editor.
+- [pm Library Reference](https://www.postmateclient.com/testing/pm-library): The pm scripting API (pm.test, pm.expect, variables, and more).
+- [Reporting](https://www.postmateclient.com/testing/reporting): JSON and HTML run reports.
+- [Compare Response](https://www.postmateclient.com/testing/compare-api-response): Diff two responses side by side.
+- [Compare With Bulk Data](https://www.postmateclient.com/testing/compare-api-response-bulk-data): CSV-driven bulk response comparison.
+
+## Data-Driven Testing
+
+- [Data Tables](https://www.postmateclient.com/data-driven/data-tables): Attach CSV data tables to environments.
+- [Data Tagging](https://www.postmateclient.com/data-driven/data-tagging): Filter which data rows run per request.
+- [Collection Runner](https://www.postmateclient.com/data-driven/collection-runner): Run collections in sequence with drag-and-drop ordering.
+- [Request Chaining](https://www.postmateclient.com/data-driven/request-chaining): Pass tokens and values between requests.
+
+## Import & Export
+
+- [Import from Swagger](https://www.postmateclient.com/import-export/import-swagger): Import OpenAPI 3.0 and Swagger 2.0 specs.
+- [Import from cURL](https://www.postmateclient.com/import-export/Import-curl): Paste a cURL command to build a request.
+- [Migrate from Postman](https://www.postmateclient.com/import-export/migrate-from-postman): Import Postman v2.1 collections.
+- [Migrate from Bruno](https://www.postmateclient.com/import-export/migrate-from-bruno): Move Bruno collections into Postmate.
+
+## Security
+
+- [Security Overview](https://www.postmateclient.com/security/security-overview): How Postmate keeps API data private and local.
+- [Secret Variables](https://www.postmateclient.com/security/secret-variables): Store credentials in the OS keychain, never in files.
+- [Client Certificates](https://www.postmateclient.com/security/client-certificates): mTLS client certificate support.
+- [Proxy Setup](https://www.postmateclient.com/security/corporate-proxy): Route requests through corporate proxies.
+
+## CI/CD
+
+- [CLI Reference](https://www.postmateclient.com/ci-cd/cli-reference): Run collections from the terminal for automation.
+- [GitHub Actions](https://www.postmateclient.com/ci-cd/github-action): Run API tests in a GitHub Actions pipeline.
+
+## Optional
+
+- [Blog](https://www.postmateclient.com/blog/): Release notes, comparisons, and API testing guides.
+- [Variable Resolution](https://www.postmateclient.com/reference/variable-resolution): Precedence rules for variable resolution.
+- [Extension Settings](https://www.postmateclient.com/reference/settings): All configurable Postmate settings.
+- [Contact](https://www.postmateclient.com/contact): Support and feedback.
