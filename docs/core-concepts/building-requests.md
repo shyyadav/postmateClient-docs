@@ -88,7 +88,7 @@ Variable autocomplete (<span v-pre>`{{...}}`</span>) works inside both the Query
 
 ## Auth Tab
 
-Click the **Auth** tab to configure authentication for the request. Select your auth type and fill in the required fields — Postmate sets the correct headers automatically.
+Click the **Auth** tab to configure authentication for the request. Select your auth type — **Basic**, **Bearer**, **API Key**, **AWS Signature**, or **OAuth 2.0** — and fill in the required fields. Postmate sets the correct headers automatically.
 
 For token-based auth, reference a variable so it stays in sync across environments:
 
@@ -96,6 +96,10 @@ For token-based auth, reference a variable so it stays in sync across environmen
 Bearer {{accessToken}}
 
 ```
+
+OAuth 2.0 can fetch and refresh tokens for you — including the interactive Authorization Code (PKCE) browser flow.
+
+→ See [Authentication](/core-concepts/authentication) for every auth type in detail
 
 ## Pre-request Tab
 
