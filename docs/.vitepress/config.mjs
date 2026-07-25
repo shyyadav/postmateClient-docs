@@ -148,6 +148,7 @@ export default defineConfig({
           text: 'Core Concepts',
           items: [
             { text: 'Building Requests', link: '/core-concepts/building-requests' },
+            { text: 'Authentication', link: '/core-concepts/authentication' },
             { text: 'GraphQL', link: '/core-concepts/graphql' },
             { text: 'WebSocket Testing', link: '/core-concepts/websocket' },
             { text: 'Environments & Variables', link: '/core-concepts/environments' },
