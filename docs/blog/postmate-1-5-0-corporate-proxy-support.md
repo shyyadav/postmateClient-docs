@@ -44,21 +44,21 @@ Everything above sounds straightforward. It wasn't, and one discovery is worth s
 
 Node's standard `https-proxy-agent` takes TLS options in its constructor — so the obvious implementation passes your client certificates and custom CA there. It compiles, simple proxying works, and you ship. Except: **constructor options only configure the connection *to the proxy*. The TLS handshake with the destination — inside the CONNECT tunnel — never sees them.** Your mTLS certificate and custom CA are silently ignored, exactly and only when a proxy is active. The failure mode is a certificate error that looks like a server problem, on the one network setup where you can't easily debug it.
 
-The fix is a small agent subclass that merges TLS options at connect-time instead. We found it because our test matrix included "mTLS *through* a proxy" as its own scenario — validated against real Squid and mitmproxy instances, twelve scenarios in all, including three VS Code `http.proxySupport` modes. (Speaking of which: set `http.proxySupport` to `"on"` — the default `"override"` makes VS Code interfere with extensions that manage their own connections. [The docs explain why.](/Security/corporate-proxy))
+The fix is a small agent subclass that merges TLS options at connect-time instead. We found it because our test matrix included "mTLS *through* a proxy" as its own scenario — validated against real Squid and mitmproxy instances, twelve scenarios in all, including three VS Code `http.proxySupport` modes. (Speaking of which: set `http.proxySupport` to `"on"` — the default `"override"` makes VS Code interfere with extensions that manage their own connections. [The docs explain why.](/security/corporate-proxy))
 
 If your API client claims proxy support, it's worth asking whether anyone tested that combination.
 
 ## Why this matters for a privacy-first client
 
-There's a version of "enterprise-ready" that means SSO, admin dashboards, and a sales call. Postmate's version is different: **it means working inside your network without asking your data to leave it.** Proxy credentials stay in your local settings. CA certificates are read from your disk. Collections remain plain JSON files on your machine. There's still no telemetry, no cloud, no account — see the [security overview](/Security/secutity-overview) your infosec team will want.
+There's a version of "enterprise-ready" that means SSO, admin dashboards, and a sales call. Postmate's version is different: **it means working inside your network without asking your data to leave it.** Proxy credentials stay in your local settings. CA certificates are read from your disk. Collections remain plain JSON files on your machine. There's still no telemetry, no cloud, no account — see the [security overview](/security/secutity-overview) your infosec team will want.
 
 Corporate proxy support was the #1 blocker between Postmate and the developers who need a local-first client most — the ones behind exactly these firewalls.
 
 ## Get it
 
 - **Install / update:** [Postmate Client on the VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=PostMate-lab.postmate) — v1.5.0
-- **Full proxy guide:** [API testing behind a corporate proxy in VS Code](/Security/corporate-proxy)
+- **Full proxy guide:** [API testing behind a corporate proxy in VS Code](/security/corporate-proxy)
 - **CLI:** `npm i -g @postmate/cli` (v0.2.0)
-- Comparing options? [The best free Postman alternatives for VS Code](/blog/Best-Free-PostmanAlternatives-2026)
+- Comparing options? [The best free Postman alternatives for VS Code](/blog/best-free-postman-alternatives-2026)
 
 Hit an edge case our twelve scenarios missed? [Open an issue](https://github.com/shyyadav/postmateClient-docs/issues) — proxy environments are wonderfully weird, and we want to hear about yours. 
