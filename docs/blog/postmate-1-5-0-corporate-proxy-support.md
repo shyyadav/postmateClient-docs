@@ -50,7 +50,7 @@ If your API client claims proxy support, it's worth asking whether anyone tested
 
 ## Why this matters for a privacy-first client
 
-There's a version of "enterprise-ready" that means SSO, admin dashboards, and a sales call. Postmate's version is different: **it means working inside your network without asking your data to leave it.** Proxy credentials stay in your local settings. CA certificates are read from your disk. Collections remain plain JSON files on your machine. There's still no telemetry, no cloud, no account — see the [security overview](/security/secutity-overview) your infosec team will want.
+There's a version of "enterprise-ready" that means SSO, admin dashboards, and a sales call. Postmate's version is different: **it means working inside your network without asking your data to leave it.** Proxy credentials stay in your local settings. CA certificates are read from your disk. Collections remain plain JSON files on your machine. There's still no telemetry, no cloud, no account — see the [security overview](/security/security-overview) your infosec team will want.
 
 Corporate proxy support was the #1 blocker between Postmate and the developers who need a local-first client most — the ones behind exactly these firewalls.
 
