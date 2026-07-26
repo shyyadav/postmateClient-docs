@@ -114,7 +114,7 @@ The `pmc` CLI (v0.2.0+) respects `HTTP_PROXY`, `HTTPS_PROXY`, and `NO_PROXY` env
   run: pmc run --collection "Smoke Tests" --env staging
 ```
 
-Connections are reused across the run: an entire collection typically shares a single tunnel through the proxy. See the [CI/CD integration guide](/docs/ci-cd) for full pipeline examples.
+Connections are reused across the run: an entire collection typically shares a single tunnel through the proxy. See the [CI/CD integration guide](/ci-cd/cli-reference) for full pipeline examples.
 
 ## Settings reference
 
