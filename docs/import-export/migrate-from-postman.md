@@ -139,7 +139,7 @@ A file selector opens. Navigate to the `.json` file you exported from Postman an
 The imported environment is **immediately listed in the Env sidebar**, ready to be selected as the active environment from any request. All variable names, values, and types are preserved.
 
 ::: tip Postman secrets import as Postmate secrets
-Variables marked `secret` in Postman automatically become [secret variables](/Security/secret-variables): the value (if present in the export) moves into your OS keychain, and the environment file on disk keeps only a `{"$secret": true}` marker. Your credentials end up *better* protected than they were in Postman's export.
+Variables marked `secret` in Postman automatically become [secret variables](/security/secret-variables): the value (if present in the export) moves into your OS keychain, and the environment file on disk keeps only a `{"$secret": true}` marker. Your credentials end up *better* protected than they were in Postman's export.
 :::
 
 ## Part 3 — Import Postman test data (CSV)

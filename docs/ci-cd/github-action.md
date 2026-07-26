@@ -82,7 +82,7 @@ For any sensitive environment variables:
 2. Click **New repository secret**
 3. Add each sensitive value (e.g. `API_KEY`, `AUTH_TOKEN`)
 
-If your Postmate environment uses [secret variables](/Security/secret-variables) (values stored in the OS keychain, `{"$secret": true}` markers in the committed file), expose each one to `pmc` as a `POSTMATE_SECRET_<NAME>` environment variable in the workflow — name uppercased, non-alphanumerics as `_`:
+If your Postmate environment uses [secret variables](/security/secret-variables) (values stored in the OS keychain, `{"$secret": true}` markers in the committed file), expose each one to `pmc` as a `POSTMATE_SECRET_<NAME>` environment variable in the workflow — name uppercased, non-alphanumerics as `_`:
 
 ```yaml
       - name: Run collection

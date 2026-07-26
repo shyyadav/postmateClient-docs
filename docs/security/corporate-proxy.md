@@ -82,7 +82,7 @@ Requests now verify correctly against your company's certificate chain.
 
 ## Client certificates (mTLS) through proxies
 
-If you use Postmate's [client certificate support](/Security/client-certificates) for internal APIs that require mTLS, those certificates work through the proxy too. The certificate is presented to the destination server inside the proxy tunnel — the proxy itself never sees it. No extra configuration: your existing `certificates.json` entries apply whether a proxy is active or not.
+If you use Postmate's [client certificate support](/security/client-certificates) for internal APIs that require mTLS, those certificates work through the proxy too. The certificate is presented to the destination server inside the proxy tunnel — the proxy itself never sees it. No extra configuration: your existing `certificates.json` entries apply whether a proxy is active or not.
 
 ## WebSocket through proxies
 
@@ -152,7 +152,7 @@ Yes. These are TLS-intercepting proxies — set `postmate.proxy.caBundle` to you
 Put the credentials in the proxy URL: `"postmate.proxy.url": "http://username:password@proxy.corp.com:8080"`. Postmate handles the proxy authentication handshake; you'll get a clear 407 error with instructions if credentials are missing or wrong.
 
 **Do my proxy credentials or certificates get sent anywhere?**
-No. Postmate is fully local — no telemetry, no cloud sync, no account. Proxy credentials live in your VS Code settings on your machine; certificates are read from the file paths you configure and used only for the TLS handshake. See the [security overview](/Security/secutity-overview) for the full data-flow picture.
+No. Postmate is fully local — no telemetry, no cloud sync, no account. Proxy credentials live in your VS Code settings on your machine; certificates are read from the file paths you configure and used only for the TLS handshake. See the [security overview](/security/secutity-overview) for the full data-flow picture.
 
 **Does the proxy work for WebSocket and GraphQL requests too?**
 Yes — all request types route through the proxy: REST, GraphQL, and WebSocket (`wss://` tunnels through CONNECT like HTTPS).

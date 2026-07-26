@@ -112,7 +112,7 @@ The **Pre-request** tab lets you run logic **before** the request is sent. It ha
 **Scripting** — write full JavaScript to set variables, generate dynamic values, or run any pre-send logic.
 
 → See [Request Chaining](/data-driven/request-chaining) for the full chaining guide  
-→ See [Pre/Post Scripts](/testing/scripts) for the scripting reference
+→ See [Pre/Post Scripts](/testing/tests-assertions) for the scripting reference
 
 ---
 
@@ -156,7 +156,7 @@ pm.test('Verify schoolName is correct', () => {
 ```
 
 → See [Tests & Assertions](/testing/tests-assertions) for the full plain-English test guide  
-→ See [Pre/Post Scripts](/testing/scripts) for the full scripting reference  
+→ See [Pre/Post Scripts](/testing/tests-assertions) for the full scripting reference  
 → See [pm Library Reference](/testing/pm-library) for all available `pm.*` methods
 
 ---

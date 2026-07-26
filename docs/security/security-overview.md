@@ -50,7 +50,7 @@ If you use workspace mode in a Git repository, Postmate offers to add `.postmate
 
 - **Client certificates (mTLS):** Postmate's `certificates.json` stores only **file paths** to your certificate and key files — never the certificate contents. Keys are read from disk at request time and used solely for the TLS handshake. See [client certificates](/security/client-certificates).
 - **Proxy credentials:** live in your VS Code settings (`postmate.proxy.url`) on your machine, used only for the proxy authentication handshake. For CI, prefer environment variables (`HTTPS_PROXY`) so credentials never enter a settings file.
-- **Tokens and secrets in environments:** mark them as [secret variables](/Security/secret-variables) and the value is stored in your **OS keychain** (via VS Code's encrypted secret storage) — the environment file on disk keeps only a `{"$secret": true}` marker, making it safe to commit and share. Plain (non-secret) variables live in the local env file as before; for those, disk encryption and `.gitignore` remain your friends.
+- **Tokens and secrets in environments:** mark them as [secret variables](/security/secret-variables) and the value is stored in your **OS keychain** (via VS Code's encrypted secret storage) — the environment file on disk keeps only a `{"$secret": true}` marker, making it safe to commit and share. Plain (non-secret) variables live in the local env file as before; for those, disk encryption and `.gitignore` remain your friends.
 
 ## Installation without the marketplace (air-gapped environments)
 

@@ -136,19 +136,19 @@ pmc run test-var QA dataTable
 pmc run test-var --env QA --secret password=Test@123 --data dataTable
 ```
 
-| Option | Description |
-|--------|-------------|
-| `-c, --collection` | Name of the collection to run (or first positional argument) |
-| `-e, --env` | Target environment name (or second positional argument) |
-| `-d, --data` | Optional data table for iteration (or third positional argument) |
-| `-s, --secret` | Value for a [secret variable](/Security/secret-variables) as `name=value` (repeatable) |
-| `-r, --report` | Custom report file name |
+| Option | Description                                                                            |
+|--------|----------------------------------------------------------------------------------------|
+| `-c, --collection` | Name of the collection to run (or first positional argument)                           |
+| `-e, --env` | Target environment name (or second positional argument)                                |
+| `-d, --data` | Optional data table for iteration (or third positional argument)                       |
+| `-s, --secret` | Value for a [secret variable](/security/secret-variables) as `name=value` (repeatable) |
+| `-r, --report` | Custom report file name                                                                |
 
 Flags take precedence over positional arguments when both are given.
 
 ## Secret Variables in the CLI
 
-[Secret variables](/Security/secret-variables) store their values in the VS Code keychain — which the CLI can't (and shouldn't) read. In the terminal and CI, supply values via:
+[Secret variables](/security/secret-variables) store their values in the VS Code keychain — which the CLI can't (and shouldn't) read. In the terminal and CI, supply values via:
 
 ```bash
 # explicit flag, repeatable
