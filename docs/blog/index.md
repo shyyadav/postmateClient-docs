@@ -35,7 +35,7 @@ Still manually editing the same API request 50 times to test different inputs? T
 
 A fast, privacy-first Postman alternative that runs natively inside VS Code — no login, no cloud sync, no context switching.
 
-### [7 Best Free Postman Alternatives for Developers in 2026](/blog/Best-Free-PostmanAlternatives-2026)
+### [7 Best Free Postman Alternatives for Developers in 2026](/blog/best-free-postman-alternatives-2026)
 *April 26, 2026 · 5 min read*
 
 A 2026 guide to the 7 best free Postman alternatives for developers — featuring lightweight, local-first, and open-source API clients.
