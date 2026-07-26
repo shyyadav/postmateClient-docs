@@ -24,7 +24,7 @@ Postmate Client was built because of a security review: the original author's or
 
 There is only one flow: **your machine → the API endpoints you specify.**
 
-- When you press Send, Postmate makes that HTTP/WebSocket request from your machine directly to the target (or through the proxy *you* configured — see [corporate proxy support](/docs/corporate-proxy)).
+- When you press Send, Postmate makes that HTTP/WebSocket request from your machine directly to the target (or through the proxy *you* configured — see [corporate proxy support](/security/corporate-proxy)).
 - No request, response, header, token, or environment variable is ever transmitted anywhere else.
 - Postmate itself makes no background network calls. The only Postmate-adjacent network activity on your machine is VS Code's own extension-update mechanism, which is controlled by VS Code, not by Postmate.
 
@@ -43,12 +43,12 @@ Everything lives in a single `.postmate` folder — either in VS Code's global s
 Plain files mean you stay in control: audit them, encrypt the disk they sit on, `.gitignore` them, or commit them to your own repository and review changes in pull requests like any other code. Your data's residency is wherever *you* put it.
 
 ::: tip Version-control note
-If you use workspace mode in a Git repository, Postmate offers to add `.postmate/` to your `.gitignore`. Whether to commit collections (useful for team sharing) or ignore them is your call — Postmate never makes it for you. If you mark credentials as [secret variables](/Security/secret-variables), the committed files contain no secret values at all, which makes committing the safe default.
+If you use workspace mode in a Git repository, Postmate offers to add `.postmate/` to your `.gitignore`. Whether to commit collections (useful for team sharing) or ignore them is your call — Postmate never makes it for you. If you mark credentials as [secret variables](/security/secret-variables), the committed files contain no secret values at all, which makes committing the safe default.
 :::
 
 ## Certificates and credentials
 
-- **Client certificates (mTLS):** Postmate's `certificates.json` stores only **file paths** to your certificate and key files — never the certificate contents. Keys are read from disk at request time and used solely for the TLS handshake. See [client certificates](/docs/certificates).
+- **Client certificates (mTLS):** Postmate's `certificates.json` stores only **file paths** to your certificate and key files — never the certificate contents. Keys are read from disk at request time and used solely for the TLS handshake. See [client certificates](/security/client-certificates).
 - **Proxy credentials:** live in your VS Code settings (`postmate.proxy.url`) on your machine, used only for the proxy authentication handshake. For CI, prefer environment variables (`HTTPS_PROXY`) so credentials never enter a settings file.
 - **Tokens and secrets in environments:** mark them as [secret variables](/Security/secret-variables) and the value is stored in your **OS keychain** (via VS Code's encrypted secret storage) — the environment file on disk keeps only a `{"$secret": true}` marker, making it safe to commit and share. Plain (non-secret) variables live in the local env file as before; for those, disk encryption and `.gitignore` remain your friends.
 
