@@ -121,7 +121,7 @@ WebSocket testing in Postmate Client is useful for:
 
 ## Feedback and feature requests
 
-WebSocket support is a new feature and we want to hear how you're using it. Open an issue or feature request on [GitHub](https://github.com/shyyadav/postmate-docs/issues) or jump into the [discussion forum](https://github.com/shyyadav/postmateClient-docs/discussions).
+WebSocket support is a new feature and we want to hear how you're using it. Open an issue or feature request on [GitHub](https://github.com/shyyadav/postmateClient-docs/issues) or jump into the [discussion forum](https://github.com/shyyadav/postmateClient-docs/discussions).
 
 ## Next steps
 

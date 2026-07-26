@@ -454,7 +454,7 @@ The fastest way to see the response-aware IntelliSense in action is to install t
 
 If you're moving an existing test suite from Postman, the [Migrate from Postman guide](https://www.postmateclient.com/import-export/migrate-from-postman) walks through the full import flow.
 
-Questions, missing features, or feedback? [Open an issue on GitHub](https://github.com/shyyadav/postmate-docs/issues) or start a [discussion](https://github.com/shyyadav/postmateClient-docs/discussions). Every request comes from a real developer's workflow — the response-aware IntelliSense exists because someone said _"why can't the script editor see what the response panel sees?"_ and we built it.
+Questions, missing features, or feedback? [Open an issue on GitHub](https://github.com/shyyadav/postmateClient-docs/issues) or start a [discussion](https://github.com/shyyadav/postmateClient-docs/discussions). Every request comes from a real developer's workflow — the response-aware IntelliSense exists because someone said _"why can't the script editor see what the response panel sees?"_ and we built it.
 
 ---
 

@@ -190,4 +190,4 @@ Attach a Data Table to your environment once, and data-driven API testing become
 
 ---
 
-**Have questions or feedback?** Open a discussion on [GitHub](https://github.com/shyyadav/postmate-docs/discussions) or find us on [YouTube](https://www.youtube.com/channel/UCNDd2dOwC80m_2VdGPmwKDQ).
+**Have questions or feedback?** Open a discussion on [GitHub](https://github.com/shyyadav/postmateClient-docs/discussions) or find us on [YouTube](https://www.youtube.com/channel/UCNDd2dOwC80m_2VdGPmwKDQ).

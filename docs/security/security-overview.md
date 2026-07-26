@@ -70,7 +70,7 @@ Don't take our word for it:
 - **Read the files:** everything in `.postmate/` is human-readable JSON.
 - **Inspect requests:** `postmate.logAsCurl` prints every outgoing request in full.
 
-Found something that contradicts this page? That's a security issue and we want to know immediately: **help@postmateclient.com** or [open an issue](https://github.com/PostMate-lab/postmate/issues).
+Found something that contradicts this page? That's a security issue and we want to know immediately: **help@postmateclient.com** or [open an issue](https://github.com/shyyadav/postmateClient-docs/issues).
 
 ---
 
