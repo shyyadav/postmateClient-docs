@@ -11,7 +11,7 @@ image: /public/query-method-hero.png
 
 ![HTTP QUERY method in VS Code API client method dropdown — Postmate Client](/query-method-hero.png)
 
-In June 2026 the IETF published [RFC 10008](https://datatracker.ietf.org/doc/rfc10008/), giving HTTP its first new method since PATCH in 2010: **QUERY**. Postmate Client supports it today — pick it from the method dropdown like any other verb, and it just works: body editor, <span v-pre>`{{variable}}`</span> resolution, [secret variables](/Security/secret-variables), test scripts, collection runs, and the `pmc` CLI.
+In June 2026 the IETF published [RFC 10008](https://datatracker.ietf.org/doc/rfc10008/), giving HTTP its first new method since PATCH in 2010: **QUERY**. Postmate Client supports it today — pick it from the method dropdown like any other verb, and it just works: body editor, <span v-pre>`{{variable}}`</span> resolution, [secret variables](/security/secret-variables), test scripts, collection runs, and the `pmc` CLI.
 
 ## What is the HTTP QUERY method?
 

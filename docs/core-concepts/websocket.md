@@ -92,7 +92,7 @@ Saved WebSocket requests appear in your collection sidebar with a green **`ws`**
 This is intentional: WebSocket connections are long-lived and stateful, while collection runs are sequential and stateless. Forcing them into the same flow would either block the run on every WebSocket or produce misleading results.
 
 ::: info Coming soon
-WebSocket request execution from the **CLI** (`postmate run …`) is on the roadmap. There's no separate ETA yet — follow the [GitHub repo](https://github.com/shyyadav/postmate-docs) for release notes.
+WebSocket request execution from the **CLI** (`postmate run …`) is on the roadmap. There's no separate ETA yet — follow the [GitHub repo](https://github.com/shyyadav/postmateClient-docs) for release notes.
 :::
 
 ## Common use cases
