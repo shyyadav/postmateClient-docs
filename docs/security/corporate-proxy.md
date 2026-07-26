@@ -7,7 +7,7 @@ description: Configure Postmate Client, the VS Code API testing extension, to wo
 
 Postmate Client works inside enterprise networks out of the box — including authenticated proxies, TLS-intercepting proxies (Zscaler, Netskope, Palo Alto and similar), and everything in between. Requests of every type (REST, GraphQL, WebSocket) route through your proxy, and your local API testing on `localhost` keeps working without any configuration.
 
-Like everything in Postmate, proxy handling is fully local: your proxy credentials and CA certificates never leave your machine. If you're evaluating [Postman alternatives that work behind a corporate firewall](/blog/Best-Free-PostmanAlternatives-2026), this page covers exactly what your security team will ask about.
+Like everything in Postmate, proxy handling is fully local: your proxy credentials and CA certificates never leave your machine. If you're evaluating [Postman alternatives that work behind a corporate firewall](/blog/best-free-postman-alternatives-2026), this page covers exactly what your security team will ask about.
 
 ## Quick start
 
