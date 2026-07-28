@@ -161,7 +161,7 @@ Go to **Actions** tab → click the latest run → expand **Run collection** ste
 3. Scroll to bottom → **Artifacts** section
 4. Download `postmate-report` zip → extract → open the `.html` file in browser
 
-![Download report from GitHub Actions artifact](/public/actions-run.png)
+![Download report from GitHub Actions artifact](/actions-run.png)
 
 ### Manual Trigger
 No commit needed — trigger anytime from GitHub UI:
@@ -169,7 +169,7 @@ No commit needed — trigger anytime from GitHub UI:
 1. Actions tab → **Postmate API Tests**
 2. Click **Run workflow** → **Run workflow**
 
-![Trigger workflow manually from GitHub Actions](/public/actions-trigger.png)
+![Trigger workflow manually from GitHub Actions](/actions-trigger.png)
 
 ## Running Multiple Environments
 

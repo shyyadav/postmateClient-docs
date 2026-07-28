@@ -32,12 +32,12 @@ Bruno collections are stored in Bruno's own `.bru` format, but Bruno's **Share �
 1. Open your collection in **Bruno**.
 2. Click the collection **options (•••)** menu and select **Share**.
 
-   ![Bruno collection options menu with Share option highlighted](/public/bruno-collection-options-share.png)
+   ![Bruno collection options menu with Share option highlighted](/bruno-collection-options-share.png)
    *The collection's ••• menu — select "Share" to open the export panel.*
 
 3. In the Share Collection panel, select the **Export** tab → **Postman**.
 
-   ![Bruno Share Collection menu with Export tab open showing Postman export option](/public/bruno-share-export-postman.png)
+   ![Bruno Share Collection menu with Export tab open showing Postman export option](/bruno-share-export-postman.png)
    *The Bruno "Share Collection" panel — choose Export, then Postman.*
 
 4. Click **Proceed**.
@@ -49,13 +49,13 @@ Bruno collections are stored in Bruno's own `.bru` format, but Bruno's **Share �
 
 1. In the **Postmate Client sidebar**, click the **hamburger menu (☰)** next to the collection search bar.
 
-   ![Postmate Client collections panel hamburger menu showing Import Postman/Postmate option](/public//postman-import-menu.png)
+   ![Postmate Client collections panel hamburger menu showing Import Postman/Postmate option](/postman-import-menu.png)
    *Click the hamburger icon above your collections list to open the import menu.*
 
 2. Select **Import Postman/Postmate**.
 3. From the **"Select collection type"** dropdown, choose **Postman**.
 
-   ![Postmate Client collection type selector showing Postmate and Postman options](/public//postman-import-select-type.png)
+   ![Postmate Client collection type selector showing Postmate and Postman options](/postman-import-select-type.png)
    *Choose "Postman" since that's the format you exported from Bruno.*
 
 4. Browse to the exported `.json` file.

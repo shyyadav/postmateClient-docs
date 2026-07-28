@@ -45,7 +45,7 @@ In the **Postmate Client sidebar**, click the **dropdown arrow (▾)** on the ri
 
 Select **"From cURL..."** from the menu.
 
-![Postmate Client sidebar showing the New Request dropdown with From cURL option highlighted](/public/curl-import-menu.png)
+![Postmate Client sidebar showing the New Request dropdown with From cURL option highlighted](/curl-import-menu.png)
 *The New Request dropdown in Postmate Client — select "From cURL..." to begin.*
 
 > **All options in the split button:**
@@ -57,7 +57,7 @@ Select **"From cURL..."** from the menu.
 
 The **"Import from cURL"** dialog appears. Paste your cURL command into the text area.
 
-![Postmate Client Import from cURL dialog with a curl command pasted in and the Create button visible](/public/curl-on-fly.png)
+![Postmate Client Import from cURL dialog with a curl command pasted in and the Create button visible](/curl-on-fly.png)
 *Paste any cURL command — headers, auth tokens, body — PMC parses it all automatically.*
 
 PMC will automatically parse and extract:
@@ -98,7 +98,7 @@ When you already know where a request belongs, import it directly into the right
 
 In the **PMC sidebar**, find the collection or folder where you want the request to live. Click the **"..." (more options)** menu next to it.
 
-![PMC sidebar showing the context menu for a folder with Import cURL option highlighted](/public/curl-import-in-folder.png)
+![PMC sidebar showing the context menu for a folder with Import cURL option highlighted](/curl-import-in-folder.png)
 *Right-click or click "..." on any collection or folder to access the Import cURL option.*
 
 ### Step 2: Select "Import cURL..."
@@ -118,7 +118,7 @@ From the popup menu, click **"Import cURL..."**.
 
 The **"Import from cURL"** dialog appears with an extra **request name field** at the top.
 
-![PMC Import from cURL dialog opened from within a folder, showing the request name field and cURL input area](/public/curl-import-in-collection.png)
+![PMC Import from cURL dialog opened from within a folder, showing the request name field and cURL input area](/curl-import-in-collection.png)
 *Give your request a name, paste the cURL command, then click Create.*
 
 1. Enter a **request name** in the field at the top (e.g., `get-student`)

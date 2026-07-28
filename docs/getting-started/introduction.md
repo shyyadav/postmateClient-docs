@@ -11,7 +11,7 @@ Built as a native VS Code extension, Postmate Client enables **offline API testi
 
 Whether you're a developer or QA engineer, Postmate Client helps you create, organize, and automate API tests without leaving your coding environment.
 
-![Data Driven API Testing in Postmate Client](/public/threeSteps.gif)
+![Data Driven API Testing in Postmate Client](/threeSteps.gif)
 
 ## Why Postmate Client?
 
