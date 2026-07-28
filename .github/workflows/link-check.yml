@@ -21,7 +21,8 @@ jobs:
           # so a bad /docs/ prefix or wrong case fails the build.
           args: >-
             --offline
-            --include-fragments
+            --base docs
+            --fallback-extensions md
             --no-progress
             'docs/**/*.md'
           fail: true
