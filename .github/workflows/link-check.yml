@@ -25,3 +25,4 @@ jobs:
             --no-progress
             'docs/**/*.md'
           fail: true
+          
