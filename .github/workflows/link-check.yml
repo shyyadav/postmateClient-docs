@@ -1,0 +1,27 @@
+name: Link check
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '0 6 * * 1'   # Mondays, catches external rot
+
+jobs:
+  lychee:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: lycheeverse/lychee-action@v2
+        with:
+          # --offline resolves internal links against files on disk,
+          # so a bad /docs/ prefix or wrong case fails the build.
+          args: >-
+            --offline
+            --include-fragments
+            --no-progress
+            'docs/**/*.md'
+          fail: true
