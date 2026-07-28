@@ -99,7 +99,7 @@ const compareMode = ref('single')
  <a href="/security/security-overview" class="feature-card">
     <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div>
     <div class="feature-title">Local-First. VS Code Native. Free Forever.</div>
-    <div class="feature-details">Runs entirely inside VS Code with zero external runtime. Every feature, every collection, No cloud sync, no login, no telemetry, no paid tiers. Secrets stay in local files and requests never leave your machine unless you send them.</div>
+    <div class="feature-details">Runs entirely inside VS Code with zero external runtime. No cloud sync, no login, no telemetry, no paid tiers. Secrets stay in local files and requests never leave your machine unless you send them.</div>
     <div class="feature-link">How your data is stored →</div>
   </a>
 
@@ -181,7 +181,7 @@ const compareMode = ref('single')
 ## Why developers are switching to Postmate Client
 
 Most API clients were built for the cloud era — sync everything, log in everywhere, ship your tokens to someone else's servers. **Postmate Client takes the opposite approach.** It runs entirely inside VS Code, stores everything locally, and never phones home.
-Requests leave your machine only when you send them — secrets live in local files, client certificates are used solely for the TLS handshake, and corporate proxies are fully supported. The security overview explains exactly what is stored and where.
+Requests leave your machine only when you send them — secrets live in local files, client certificates [client certificates](/security/client-certificates) are used solely for the TLS handshake, and corporate proxies are fully supported. The security overview explains exactly what is stored and where.
 
 ### A real request builder, not a text file
 
