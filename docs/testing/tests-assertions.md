@@ -56,7 +56,7 @@ Quickly validate API responses without writing code.
 | **Expected Value / Variable** | Expected result or variable name |
 | **Description** | Label shown in test results |
 
-![Tabular Test Interface](/public/tabular-test-interface.png)
+![Tabular Test Interface](/tabular-test-interface.png)
 
 ### Supported Test Types
 #### Validate JSON Response Body
@@ -71,7 +71,7 @@ Use `In The Response Body` to validate any JSON field.
 Run your request once → Postmate Client indexes the response →  
 Start typing `$.` and get instant suggestions for all fields.
 
-![Automatic JSON path suggestions](/public/jsonPath-index-test.png)
+![Automatic JSON path suggestions](/jsonPath-index-test.png)
 
 #### Validate HTTP Status Code
 
@@ -116,7 +116,7 @@ For complex testing scenarios, use **JavaScript assertions** with a Postman-comp
 2. Go to **Post-request → Script**
 3. Start typing — get **instant IntelliSense**
 
-![IntelliSense suggestions in Postmate Client](/public/post-script-suggestion.png)
+![IntelliSense suggestions in Postmate Client](/post-script-suggestion.png)
 
 ### RESPONSE Object (Built-in API)
 
@@ -191,7 +191,7 @@ Unlike Postman, you don’t need external tools.
 * Click **Generate Schema**
 * Paste into script
 
-![IntelliSense suggestions in Postmate Client](/public/schema-generator.png)
+![IntelliSense suggestions in Postmate Client](/schema-generator.png)
 
 ---
 

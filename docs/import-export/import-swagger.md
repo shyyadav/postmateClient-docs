@@ -60,7 +60,7 @@ In the **Postmate Client sidebar**, locate the **New Request** button at the top
 
 Select **"From Swagger..."** from the list.
 
-![Import Swagger OpenAPI into Postmate Client VS Code extension](/public/swagger-import-menu.png)
+![Import Swagger OpenAPI into Postmate Client VS Code extension](/swagger-import-menu.png)
 *The New Request dropdown in Postmate Client's sidebar — select "From Swagger..." to begin.*
 
 > **Other options in this menu:**
@@ -78,7 +78,7 @@ Watch how to import a Swagger / OpenAPI spec into Postmate Client.
 
 The **Import From Swagger** panel opens. Fill in these four fields:
 
-![Postmate Client Import From Swagger form with Swagger Source URL, Collection Name, Base URL, and Parameterize Requests fields](/public/swagger-import-select.png)
+![Postmate Client Import From Swagger form with Swagger Source URL, Collection Name, Base URL, and Parameterize Requests fields](/swagger-import-select.png)
 *The Import From Swagger form in Postmate Client.*
 
 ### Swagger Source URL
@@ -127,7 +127,7 @@ Click the **Fetch** button.
 
 Postmate Client will parse your Swagger/OpenAPI spec and display a **"Select Requests to Import"** panel on the right, listing every discovered API endpoint.
 
-![Postmate Client showing fetched requests from the Petstore OpenAPI spec with Method, Path, and Summary columns](/public/swagger-import-fetched.png)
+![Postmate Client showing fetched requests from the Petstore OpenAPI spec with Method, Path, and Summary columns](/swagger-import-fetched.png)
 *PMC automatically fetches and lists all endpoints from the spec — ready to select.*
 
 Each row in the list shows:
@@ -154,7 +154,7 @@ Click **Generate Collection**.
 
 Postmate Client will create a **fully structured, parameterized API collection** in your sidebar — organized into folders that mirror the tag groups in your spec.
 
-![Postmate Client showing the generated My Pet Store collection with pet, store, and user folders and all requests](/public/swagger-import-generated.png)
+![Postmate Client showing the generated My Pet Store collection with pet, store, and user folders and all requests](/swagger-import-generated.png)
 *The generated collection — organized, parameterized, and ready to use.*
 
 ## The Result: A Fully Parameterized API Collection

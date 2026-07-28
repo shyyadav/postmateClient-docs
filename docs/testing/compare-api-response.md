@@ -28,7 +28,7 @@ Postmate Client eliminates all of that with a dedicated **Compare Responses pane
 Choose any request from your collection tree and click the **`...`** menu and select **Compare Responses**.
 
 The Compare Responses panel opens as a native VS Code tab. This feature is currently in BETA and actively improving based on developer feedback.
-![Compare API responses in Postmate Client](/public/comparePanelMenu.png)
+![Compare API responses in Postmate Client](/comparePanelMenu.png)
 
 ### Step 2 — Select Your Two Requests
 
@@ -52,7 +52,7 @@ Both requests will use the same data row, so **your comparison is consistent acr
 
 Hit the **Compare** button. **Both requests fire simultaneously in parallel** — no waiting for request one to finish before request two starts.
 
-![Compare API responses in Postmate Client](/public/comparePanel.png)
+![Compare API responses in Postmate Client](/comparePanel.png)
 
 ### Step 5 — See the Results Side by Side
 

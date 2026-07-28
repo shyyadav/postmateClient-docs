@@ -2,12 +2,12 @@
 title: "Postmate 1.5.0: Your VS Code API Client Now Works Behind Corporate Proxies"
 description: Postmate Client v1.5.0 adds full corporate proxy support to VS Code API testing — authenticated proxies, Zscaler-style TLS interception, mTLS through proxies, WebSocket tunneling, and zero-config CI proxy support in the pmc CLI.
 date: 2026-07-15
-image: /public/postmate-1-5-0-hero.png
+image: /postmate-1-5-0-hero.png
 ---
 
 # Postmate 1.5.0: Your API Client Now Works Behind Corporate Proxies
 
-![Postmate Client v1.5.0 — API testing that works behind corporate proxies and firewalls in VS Code](/public/postmate-1-5-0-hero.png)
+![Postmate Client v1.5.0 — API testing that works behind corporate proxies and firewalls in VS Code](/postmate-1-5-0-hero.png)
 
 Postmate exists because of a firewall. My organization blocked Postman over cloud-sync and privacy concerns, so I built an API client that lives entirely inside VS Code and never phones home. v1.5.0 closes the loop: **Postmate now works *inside* the kind of corporate network that created it.**
 
@@ -17,7 +17,7 @@ If you've ever installed an API client at work, sent your first request, and wat
 
 **Proxy support that works the way your network already works.** Postmate resolves the proxy from three sources, in order: its own `postmate.proxy.url` setting, VS Code's `http.proxy` (if your editor is already configured for your network, Postmate just follows), and the standard `HTTP_PROXY`/`HTTPS_PROXY` environment variables. Authenticated proxies work with credentials in the URL.
 
-![How Postmate resolves the proxy in VS Code: postmate.proxy.url setting first, then VS Code http.proxy, then the HTTPS_PROXY environment variable, otherwise a direct connection](/public/proxy-precedence.svg)
+![How Postmate resolves the proxy in VS Code: postmate.proxy.url setting first, then VS Code http.proxy, then the HTTPS_PROXY environment variable, otherwise a direct connection](/proxy-precedence.svg)
 
 **TLS-intercepting proxies, handled properly.** If your company runs Zscaler, Netskope, or a similar HTTPS-inspecting proxy, every request normally dies with `UNABLE_TO_VERIFY_LEAF_SIGNATURE`. Point `postmate.proxy.caBundle` at your organization's root CA and everything verifies correctly — no disabling certificate checks.
 
@@ -26,7 +26,7 @@ If you've ever installed an API client at work, sent your first request, and wat
 **localhost just works.** Requests to `localhost`, `127.0.0.1`, and `::1` always bypass the proxy — zero configuration. If you've ever gotten a 502 from your *own machine* because your API client proxied a localhost request, you know why this matters.
 
 **Errors that tell you what to do.** A proxy demanding authentication no longer looks like a random `ECONNRESET`. You get a structured 407 with a JSON body: what happened, the fact that your request never reached the target, and the exact fix. Every synthesized response carries `"source": "postmate-proxy-handler"` so you can tell it apart from real API responses — and assert on it in test scripts.
-![Postmate showing a structured 407 proxy authentication error — status code, JSON body with the fix, and source field](/public/proxy-407-error.png)
+![Postmate showing a structured 407 proxy authentication error — status code, JSON body with the fix, and source field](/proxy-407-error.png)
 
 **CI for free.** The `pmc` CLI (v0.2.0) respects `HTTP_PROXY`/`HTTPS_PROXY`/`NO_PROXY` with zero configuration. If your corporate runner sets them — most do — your collection runs route through the proxy automatically, and an entire run shares a single keep-alive tunnel.
 

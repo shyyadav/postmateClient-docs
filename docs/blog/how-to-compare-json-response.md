@@ -10,7 +10,7 @@ Comparing two JSON responses (or running a JSON diff on API responses) sounds tr
 
 This guide walks through three ways to compare JSON responses — **online diff tools, custom scripts, and Postmate Client** — with step-by-step setup for each, and honest tradeoffs so you can pick the right tool for the job.
 
-![Compare JSON responses and API responses using Postmate Client](/public/json-compare-hero.svg)
+![Compare JSON responses and API responses using Postmate Client](/json-compare-hero.svg)
 
 ## What is JSON Comparison?
 
@@ -128,7 +128,7 @@ For developers comfortable in Python or JavaScript, rolling your own comparison 
 4. Click **Compare**.
 5. Postmate sends both requests in parallel and shows a clean diff — only the JSONPath fields that differ, with values on each side. Identical fields are hidden.
 
-![Compare API responses with Postmate Client](/public/compare1.png)
+![Compare API responses with Postmate Client](/compare1.png)
 
 [Full Data Row guide →](https://www.postmateclient.com/testing/compare-api-response)
 
@@ -140,7 +140,7 @@ For developers comfortable in Python or JavaScript, rolling your own comparison 
 4. Click **Compare**. Postmate iterates every row, sends both requests in parallel, and produces one diff card per row.
 5. Review: each card shows the input row, response times for both sides, and the JSONPath differences. Identical rows collapse out of the way; failing rows surface immediately.
 
-![Compare API responses with Postmate Client](/public/compare-api-response-bulk.png)
+![Compare API responses with Postmate Client](/compare-api-response-bulk.png)
 
 [Full Data Table guide →](https://www.postmateclient.com/testing/compare-api-response-bulk-data)
 

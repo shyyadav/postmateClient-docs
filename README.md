@@ -1,177 +1,60 @@
 # Postmate Client — Documentation Site
 
-Built with [VitePress](https://vitepress.dev). Dark-themed, Markdown-based, static output.
+Source for **https://www.postmateclient.com**, the docs for
+[Postmate Client](https://marketplace.visualstudio.com/items?itemName=PostMate-lab.postmate) —
+a privacy-first REST / GraphQL / WebSocket API client for VS Code.
 
----
-
-## Setup
+Built with [VitePress](https://vitepress.dev). Deployed on Vercel from `main`.
 
 ```bash
 npm install
-```
-
-## Local Development
-
-```bash
-npm run dev
-```
-
-Opens at `http://localhost:5173` with hot reload — edit any `.md` file and the browser updates instantly.
-
-## Build for Production
-
-```bash
-npm run build
-```
-
-Output goes to `docs/.vitepress/dist/`. This folder is your deployable static site.
-
-## Preview the Build
-
-```bash
+npm run dev       # localhost:5173, hot reload
+npm run build     # → docs/.vitepress/dist
 npm run preview
 ```
 
----
-
-## Adding New Content
-
-### Add a new page
-
-1. Create a `.md` file in the appropriate folder under `docs/`:
-
-   ```
-   docs/testing/my-new-page.md
-   ```
-
-2. Add it to the sidebar in `.vitepress/config.mjs`:
-
-   ```js
-   {
-     text: 'Testing',
-     items: [
-       { text: 'My New Page', link: '/testing/my-new-page' },
-       // ...existing items
-     ]
-   }
-   ```
-
-That's it. The page is live on next `npm run dev`.
-
-### Add a new section
-
-1. Create a new folder under `docs/`:
-
-   ```
-   docs/my-new-section/
-   ```
-
-2. Add `.md` files inside it.
-
-3. Add a new sidebar group in `.vitepress/config.mjs`:
-
-   ```js
-   {
-     text: 'My New Section',
-     items: [
-       { text: 'Overview', link: '/my-new-section/overview' },
-     ]
-   }
-   ```
+Pages are Markdown files under `docs/`. Nav, sidebar, and SEO config live in
+`docs/.vitepress/config.mjs` — a new page needs both a file and a sidebar entry.
+Static assets go in `docs/public/` and are served from the root
+(`docs/public/foo.png` → `/foo.png`).
 
 ---
 
-## Project Structure
+## Internal links
+
+Case-sensitive, no `docs/` prefix, no `.md` extension, and always point at a
+real page rather than a folder:
 
 ```
-postmate-docs/
-├── docs/
-│   ├── index.md                        ← Home page
-│   ├── getting-started/
-│   │   ├── introduction.md
-│   │   ├── quick-start.md
-│   │   └── installation.md
-│   ├── core-concepts/
-│   │   ├── building-requests.md
-│   │   ├── environments.md
-│   │   ├── collections.md
-│   │   └── headers.md
-│   ├── testing/
-│   │   ├── tests-assertions.md
-│   │   ├── pm-library.md
-│   │   ├── scripts.md
-│   │   └── test-snippets.md
-│   ├── data-driven/
-│   │   ├── data-tables.md
-│   │   ├── collection-runner.md
-│   │   └── request-chaining.md
-│   ├── import-export/
-│   │   ├── import-curl-swagger.md
-│   │   └── migrate-from-postman.md
-│   ├── ci-cd/
-│   │   ├── cli-reference.md
-│   │   └── reporting.md
-│   └── reference/
-│       ├── variable-resolution.md
-│       ├── autocomplete.md
-│       └── troubleshooting.md
-└── .vitepress/
-    ├── config.mjs                      ← Nav, sidebar, theme settings
-    └── theme/
-        ├── index.js                    ← Extend default theme
-        └── custom.css                  ← All brand/color overrides
+/security/corporate-proxy      ✅
+/docs/corporate-proxy          ❌  docs/ is the srcDir, not part of the URL
+/Security/corporate-proxy      ❌  case-sensitive on Vercel
+/ci-cd                         ❌  folder, not a page
 ```
+
+Enforced in CI — see `.github/workflows/link-check.yml`.
 
 ---
 
-## Customising the Theme
+## `vercel.json` — read before editing
 
-All visual overrides are in `.vitepress/theme/custom.css`. The key CSS variables:
+Small file, but every line is load-bearing:
 
-```css
---vp-c-brand-1: #6d8aff;   /* accent color */
---vp-c-bg:      #0d0f14;   /* dark background */
+- **`cleanUrls`** — URLs without `.html`
+- **`trailingSlash: false`** — one canonical form per URL
+- **`redirects`** — 301s from legacy URLs Google still has indexed. Deleting
+  these drops roughly 1,100 monthly impressions.
+
+**Never add a catch-all `rewrites` rule.** This file once contained
+`{ "source": "/:path*", "destination": "/index" }` — an SPA fallback that
+doesn't apply to a static site generator. Every VitePress route already has its
+own HTML file, so the rule only fired on URLs that *didn't* exist, returning
+**200 with the homepage body** instead of a 404. Google indexed those broken
+URLs and left the real pages unindexed. VitePress ships its own `404.html`,
+which Vercel serves correctly once nothing is rewriting ahead of it.
+
+After deploying, an unknown path should 404:
+
+```bash
+curl -o /dev/null -s -w "%{http_code}\n" https://www.postmateclient.com/docs/corporate-proxy
 ```
-
-Fonts are loaded via Google Fonts in `.vitepress/config.mjs` (`head` array).
-
----
-
-## Deployment
-
-### GitHub Pages
-
-Add this workflow at `.github/workflows/deploy.yml`:
-
-```yaml
-name: Deploy Docs
-
-on:
-  push:
-    branches: [main]
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-      - run: npm ci
-      - run: npm run build
-      - uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs/.vitepress/dist
-```
-
-### Netlify / Vercel
-
-| Setting | Value |
-|---|---|
-| Build command | `npm run build` |
-| Output directory | `docs/.vitepress/dist` |
-| Node version | 20 |
-
-Both platforms auto-detect VitePress with zero extra config.

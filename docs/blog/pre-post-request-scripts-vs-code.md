@@ -115,7 +115,7 @@ Let's write a real test. We'll hit a `GET /student` endpoint that returns a scho
 
 **Step 2.** Start typing. As soon as you type `pm.`, Postmate Client's IntelliSense shows you every method on the `pm` object with inline documentation.
 
-![SCREENSHOT: IntelliSense dropdown showing pm.test, pm.expect, pm.setVariable, etc. as you type "pm."](/public/IntelliSense.png)
+![SCREENSHOT: IntelliSense dropdown showing pm.test, pm.expect, pm.setVariable, etc. as you type "pm."](/IntelliSense.png)
 
 **Step 3.** Write four tests:
 
@@ -181,7 +181,7 @@ In Postman, Thunder Client, Bruno, Insomnia, and every other API client I've use
 
 Run your request once. As soon as the response comes back, type `RESPONSE.body.` in your script. Every top-level field in the actual response shows up as an autocomplete suggestion. Pick one. Type the next dot. Get nested fields. Pick one. Keep going.
 
-![SCREENSHOT: Script editor showing RESPONSE.body.schoolInof. with autocomplete dropdown listing grades, invoiceDate, isAutoInvoice, schoolName — all from the live response](/public/autocomplete1.png)
+![SCREENSHOT: Script editor showing RESPONSE.body.schoolInof. with autocomplete dropdown listing grades, invoiceDate, isAutoInvoice, schoolName — all from the live response](/autocomplete1.png)
 
 I've never seen this in another tool. Postman's scripts are isolated from the response panel. Thunder Client's scripts are isolated from the response panel. Bruno's scripts are isolated from the response panel. In Postmate Client, the script editor and the response panel are connected — your data shapes your tooling.
 
@@ -198,7 +198,7 @@ This single feature is why I'd argue Postmate Client has the best scripting expe
 
 Even with IntelliSense and response-aware autocomplete, sometimes you want to start from a known-good template. Click the **`</> Snippets`** button in the script editor and pick from a library of common tests.
 
-![SCREENSHOT: Snippet picker dropdown with the list of 12+ snippets: Validate Status Code, Validate Response Time, JSON Schema Test, Assert Field Exists, Validate Value Equal To, etc.](/public/snippets.png)
+![SCREENSHOT: Snippet picker dropdown with the list of 12+ snippets: Validate Status Code, Validate Response Time, JSON Schema Test, Assert Field Exists, Validate Value Equal To, etc.](/snippets.png)
 
 The snippets cover the patterns you'll write 80% of the time:
 
@@ -272,7 +272,7 @@ If any field is missing, has the wrong type, or doesn't match the enum, the test
 
 **Don't want to write the schema by hand?** Postmate Client has a one-click **Generate Schema** button. Run your request, click the button, paste the generated schema into your script, and tweak as needed. No external JSON-to-schema tools, no browser tabs.
 
-![SCREENSHOT: Generate Schema button in the response panel with the generated JSON Schema output](/public/Schema.png)
+![SCREENSHOT: Generate Schema button in the response panel with the generated JSON Schema output](/Schema.png)
 
 ### 3. Conditional Tests Based on Environment
 

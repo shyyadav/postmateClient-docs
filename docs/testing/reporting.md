@@ -79,7 +79,7 @@ Perfect for:
 * Stakeholder reporting
 * Debugging failed API tests
 
-![API test HTML report dashboard showing pass fail results](/public/report1.png)
+![API test HTML report dashboard showing pass fail results](/report1.png)
 
 ## JSON Report (Machine-Readable Output)
 

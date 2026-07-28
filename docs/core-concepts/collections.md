@@ -95,7 +95,7 @@ Export a collection via `...`→ **Export** to:
 
 - Commit to Git for version control
 - Share with teammates for easy collaboration
-- Use with the [**Postmate CLI**]() in automated CI/CD pipelines
+- Use with the [**Postmate CLI**](/ci-cd/cli-reference) in automated CI/CD pipelines
 
 To export all collections plus environments, use the hamburger menu → **Export Project**.
 

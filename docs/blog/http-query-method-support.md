@@ -2,7 +2,7 @@
 title: "HTTP QUERY Method (RFC 10008): What It Is and How to Send One from VS Code"
 description: The HTTP QUERY method (RFC 10008) is a safe, idempotent request with a body — the official replacement for POST /search. What it is, how it compares to GET and POST, and how to send a QUERY request today from VS Code with Postmate Client or curl.
 date: 2026-07-19
-image: /public/query-method-hero.png
+image: /query-method-hero.png
 ---
 
 # HTTP QUERY Method (RFC 10008): What It Is and How to Send One from VS Code

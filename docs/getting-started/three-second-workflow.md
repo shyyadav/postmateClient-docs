@@ -43,7 +43,7 @@ Execute your fully parameterized API request in one click — no manual edits, n
 Hit **Send**. That's it.
 Postmate Client fires the request with the correct base URL from your environment and the exact credentials and parameters from your selected data row — s**imultaneously, in one click**.
 
-![Postmate Client 3-second workflow showing environment and data table selection in VS Code](/public/three-second-workflow.png)
+![Postmate Client 3-second workflow showing environment and data table selection in VS Code](/three-second-workflow.png)
 
 ---
 

@@ -24,7 +24,7 @@ This makes Postmate Client one of the easiest **local API clients for developers
 3. Search for Postmate Client.
 4. Click Install.
 
-![Postmate Client Extension in VS Code Marketplace](/public/extensions.png)
+![Postmate Client Extension in VS Code Marketplace](/extensions.png)
 
 **2. Open Postmate Client in VS Code**
 
@@ -52,7 +52,7 @@ You’ll instantly see:
 
 This is everything you need for **API testing and debugging** in one place.
 
-![Postmate Client API Response in VS Code](/public/requestPanel.png)
+![Postmate Client API Response in VS Code](/requestPanel.png)
 
 **5. Save Request to a Collection**
 

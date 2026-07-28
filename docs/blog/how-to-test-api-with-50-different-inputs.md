@@ -28,7 +28,7 @@ And suddenly you're staring at your API client wondering if you're really about 
 
 There's a better way. And no, **it doesn't involve writing a JavaScript loop or learning a new CLI**.
 
-![Postmate Client data-driven API testing — one GET request running against a 50-row data table with 48 passed and 2 failed results](/public/data-driven-testing-workflow.svg)
+![Postmate Client data-driven API testing — one GET request running against a 50-row data table with 48 passed and 2 failed results](/data-driven-testing-workflow.svg)
 
 ## The Problem Nobody Talks About
 
@@ -49,7 +49,7 @@ Postman and Thunder Client can do a version of this through their collection run
 
 > **In [Postmate Client](https://marketplace.visualstudio.com/items?itemName=PostMate-lab.postmate), you just pick the 11th row from a dropdown inside the request and hit Send. No re-upload, no log parsing, no extra steps.**
 
-![Send request with different rows of data](/public/threeSteps.gif)
+![Send request with different rows of data](/threeSteps.gif)
 
 
 ## The Real Shift: Data Belongs to the Environment, Not the Request

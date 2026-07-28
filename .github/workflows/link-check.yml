@@ -1,0 +1,45 @@
+name: Link check
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '0 6 * * 1'   # Mondays, catches external rot
+
+jobs:
+  lychee:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      # Pages: /security/foo -> docs/security/foo.md
+      # Assets are excluded here because VitePress serves docs/public/* from the
+      # site root, so they resolve against a different directory (see next step).
+      - name: Check page links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --offline
+            --root-dir "${{ github.workspace }}/docs"
+            --fallback-extensions md
+            --exclude '\.(png|jpe?g|gif|svg|webp|ico|pdf)$'
+            --no-progress
+            'docs/**/*.md'
+          fail: true
+          output: pages.md
+
+      # Assets: /hero.png -> docs/public/hero.png
+      - name: Check image links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --offline
+            --root-dir "${{ github.workspace }}/docs/public"
+            --include '\.(png|jpe?g|gif|svg|webp|ico|pdf)$'
+            --no-progress
+            'docs/**/*.md'
+          fail: true
+          output: assets.md
