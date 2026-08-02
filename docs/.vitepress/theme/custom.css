@@ -40,14 +40,6 @@
 
 /* ─── Dark mode surface colors ────────────────────────────────────────────── */
 .dark {
-  /*--vp-c-bg: #0d100d;*/
-  /*--vp-c-bg-soft: #131814;*/
-  /*--vp-c-bg-mute: #1a1f1b;*/
-  /*--vp-c-bg-elv: #1f2620;*/
-  /*--vp-c-divider: rgba(255, 255, 255, 0.07);*/
-  /*--vp-c-text-1: #e8ebe5;*/
-  /*--vp-c-text-2: #9ca39a;*/
-  /*--vp-c-text-3: #6b716c;*/
   --vp-c-bg: #101410;
   --vp-c-bg-soft: #161c17;
   --vp-c-bg-mute: #1d241e;
@@ -60,12 +52,24 @@
 
 /* ─── Nav bar ────────────────────────────────────────────────────────────── */
 .dark .VPNav {
-  background: rgba(13, 16, 13, 0.88);
+  background: transparent;
+  overflow: visible;
+}
+
+.dark .VPNavBar {
+  background: transparent;
   backdrop-filter: blur(12px);
+  border-bottom-color: transparent;
+}
+
+.dark .VPNavBar.has-sidebar,
+.dark .VPNavBar:not(.home) {
+  background: rgba(16, 20, 16, 0.85);
   border-bottom-color: rgba(255, 255, 255, 0.07);
-  overflow: visible !important;
-  z-index: 100 !important;
-  position: relative !important;
+}
+
+.dark .VPNavScreen {
+  background: #0d100d;
 }
 
 .dark .VPNavScreen {
