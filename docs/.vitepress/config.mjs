@@ -190,6 +190,7 @@ export default defineConfig({
           text: 'Security',
           items: [
             { text: 'Security Overview', link: '/security/security-overview' },
+            { text: 'Data Ownership', link: '/data-ownership' },
             { text: 'Secret Variables', link: '/security/secret-variables' },
             { text: 'Client Certificates', link: '/security/client-certificates' },
             { text: 'Proxy Setup', link: '/security/corporate-proxy' },
