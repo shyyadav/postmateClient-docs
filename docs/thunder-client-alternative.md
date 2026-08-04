@@ -217,7 +217,7 @@ const compareMode = ref('single')
         the environment lives, not in a file path you have to remember at run time.
       </p>
       <p class="tca-feature-aside">Unlimited rows.</p>
-      <a class="tca-link" href="/features/data-driven-testing">Read the docs →</a>
+      <a class="tca-link" href="/data-driven/data-tables">Read the docs →</a>
     </div>
     <div class="tca-feature-media"><img src="/data-table-create-and-list.png" alt="Selecting a CSV data table from the request panel" loading="lazy"></div>
   </article>
@@ -271,7 +271,7 @@ const compareMode = ref('single')
     Your Thunder Client collections sit on your machine, so nothing is locked away.
     Postmate Client imports Postman collections and OpenAPI/Swagger specs directly.
   </p>
-  <a class="tca-link" href="/import-export/">Import and export guide →</a>
+  <a class="tca-link" href="/import-export/import-swagger/">Import and export guide →</a>
 </section>
 
 <!-- ───────────────────────── FAQ ───────────────────────── -->
