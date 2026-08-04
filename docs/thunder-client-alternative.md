@@ -171,7 +171,7 @@ const compareMode = ref('single')
         you actually care about.
       </p>
       <p class="tca-feature-aside">This is the feature people usually build a throwaway script for.</p>
-      <a class="tca-link" href="/features/response-comparison">Read the docs →</a>
+      <a class="tca-link" href="/testing/compare-api-response#common-use-cases">Read the docs →</a>
     </div>
     <div class="tca-feature-media">
       <div class="compare-toggle">
