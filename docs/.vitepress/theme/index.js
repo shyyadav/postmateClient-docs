@@ -15,10 +15,22 @@ export default {
   setup() {
     const route = useRoute()
 
+    let zoom = null
+
     // Initialise medium-zoom on docs content images.
     // Re-runs after client-side navigation so newly rendered pages get it too.
     const initZoom = () => {
-      mediumZoom(
+      // Tear the previous instance down first. Each mediumZoom() call creates a
+      // separate instance, so without this every client-side navigation leaves
+      // another one attached. Those stale instances keep their opened state and
+      // strand their cloned <img> nodes in <body>, where the z-index: 9999 rule
+      // parks them above the page and they swallow later clicks.
+      if (zoom) {
+        zoom.close()
+        zoom.detach()
+      }
+
+      zoom = mediumZoom(
           '.main img:not(.no-zoom), .VPHome img:not(.no-zoom), .VPPage img:not(.no-zoom)',
           {
             background: 'rgba(0, 0, 0, 0.85)',

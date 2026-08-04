@@ -507,6 +507,9 @@ const compareMode = ref('single')
   outline: 2px solid var(--tca-green); outline-offset: 3px; border-radius: 3px;
 }
 @media (prefers-reduced-motion: reduce) {
-  .tca * { transition: none !important; }
+  /* Zoomable images are exempt: medium-zoom drives open/close off transitionend,
+     so stripping their transition means the event never fires and the zoom
+     silently stalls. Scoping makes this rule outrank medium-zoom's own. */
+  .tca *:not(.medium-zoom-image) { transition: none !important; }
 }
 </style>
