@@ -510,7 +510,8 @@
 }
 
 /* ─── Medium zoom ────────────────────────────────────────────────────────── */
-.main img {
+.main img,
+.VPPage img:not(.no-zoom) {
   cursor: zoom-in;
 }
 .medium-zoom-image {

@@ -4,11 +4,13 @@ import { useRoute } from 'vitepress'
 import { onMounted, watch, nextTick } from 'vue'
 import mediumZoom from 'medium-zoom'
 import YouTubeEmbed from './YouTubeEmbed.vue'
+import ZoomVideo from './ZoomVideo.vue'
 
 export default {
   extends: DefaultTheme,
   enhanceApp({ app }) {
     app.component('YouTubeEmbed', YouTubeEmbed)
+    app.component('ZoomVideo', ZoomVideo)
   },
   setup() {
     const route = useRoute()
@@ -17,7 +19,7 @@ export default {
     // Re-runs after client-side navigation so newly rendered pages get it too.
     const initZoom = () => {
       mediumZoom(
-          '.main img:not(.no-zoom), .VPHome img:not(.no-zoom)',
+          '.main img:not(.no-zoom), .VPHome img:not(.no-zoom), .VPPage img:not(.no-zoom)',
           {
             background: 'rgba(0, 0, 0, 0.85)',
             margin: 24

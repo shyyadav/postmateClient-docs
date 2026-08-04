@@ -90,7 +90,7 @@ head:
             "name": "How does Postmate Client compare to Thunder Client?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Both are VS Code-native API clients, but Postmate Client offers free WebSocket support, free CLI for CI/CD pipelines, parallel response comparison across environments, and data-driven testing from CSV files — capabilities that Thunder Client either restricts to paid tiers or doesn't offer."
+              "text": "Both are VS Code-native API clients that store data locally. The difference is the licence: Thunder Client is a commercial product whose free version is restricted to non-commercial use at companies under ten employees, and whose environments, CLI and WebSocket support sit on paid plans. Postmate Client is free for everyone, including commercial use."
             }
           },
           {
@@ -184,6 +184,8 @@ If you're searching for a Postman alternative for VS Code, you've probably hit o
 Postmate Client takes the opposite approach. It runs entirely inside VS Code, stores everything locally, and never phones home. You get a full visual request builder — tabs for params, headers, body, auth, tests, and pre/post-request scripts — without leaving your editor and without sending a single byte to anyone else's server. [See exactly how your data stays local →](/security/security-overview)
 
 Working inside an enterprise network? Postmate Client ships with [full corporate proxy support](/security/corporate-proxy) and [mTLS client certificates](/security/client-certificates) — built in, not bolted on.
+
+Already using a VS Code client and running into its paywall? We've written a separate page on [Postmate Client as a Thunder Client alternative](/thunder-client-alternative).
 
 </div>
 
@@ -295,19 +297,30 @@ A side-by-side with the two API clients VS Code developers most often consider.
 |  | Postmate Client | Postman | Thunder Client |
 | --- | --- | --- | --- |
 | Runs inside VS Code | ✅ Native | ❌ Separate app | ✅ Native |
-| Works offline | ✅ Always | ⚠️ Limited | ⚠️ Limited |
-| Works without login | ✅ Always | ❌ Required | ⚠️ For paid features |
-| Zero telemetry | ✅ None | ❌ Yes | ❌ Yes |
-| Git-friendly local storage | ✅ Local files | ⚠️ Cloud default | ⚠️ |
-| Corporate proxy & mTLS | ✅ [Built-in](/security/corporate-proxy) | ⚠️ Partial | ❌ |
+| Works offline | ✅ Always | ⚠️ Limited | ✅ Local storage |
+| Works without login | ✅ Always | ❌ Required | ⚠️ Login being introduced |
+| Zero telemetry | ✅ None | ❌ Yes | ⚠️ Anonymised, can be disabled |
+| Git-friendly local storage | ✅ Local files | ⚠️ Cloud default | ✅ Local files |
+| Corporate proxy & mTLS | ✅ [Built-in](/security/corporate-proxy) | ✅ | ✅ |
+| Free for commercial use | ✅ Always | ✅ | ❌ Under 10 employees only |
+| Collections on the free tier | ✅ Unlimited | ✅ | ❌ None |
+| Environments on the free tier | ✅ Unlimited | ✅ | 💰 Paid tier |
 | WebSocket / WSS support | ✅ Free | ⚠️ Login required | 💰 Paid tier |
-| HTTP QUERY method | ✅ First-class | ⚠️ Custom method | ❌ |
-| Free CLI for CI/CD | ✅ Free | 💰 Paid (Newman) | 💰 Paid tier |
-| Parallel response diff | ✅ Built-in | ❌ Manual | ❌ |
-| Bulk CSV comparison | ✅ Built-in | ❌ Scripting required | ❌ |
-| Postman v2.1 / OpenAPI / Swagger import | ✅ One click | — | ⚠️ Partial |
-| Team-size limits | None | Free tier limits | Free tier limits |
-| Price | ✅ Free forever | 💰 Freemium | 💰 Freemium |
+| Free CLI for CI/CD | ✅ Free | ✅ Newman, free | 💰 Paid tier |
+| Parallel response diff | ✅ Built-in | — | — |
+| Bulk CSV comparison | ✅ Built-in | — | — |
+| HTTP QUERY method | ✅ First-class | — | — |
+| Postman v2.1 / OpenAPI / Swagger import | ✅ One click | — | ✅ |
+| JetBrains IDEs | ❌ VS Code only | ✅ Separate app | 💰 Paid tier |
+| Price | ✅ Free forever | 💰 Freemium | 💰 $36–$192 per user/year |
+
+<p class="table-legend">
+✅ available · 💰 paid plans only · ⚠️ partial or conditional · ❌ not available · — we couldn't find it documented.
+Checked 3 August 2026 against each vendor's published pricing and terms.
+Tools change — <a href="/contact">tell us</a> if something here is out of date.
+</p>
+
+For the full Thunder Client breakdown — free-tier limits, licence terms, and where Thunder Client is still the better pick — see the [Thunder Client alternative page](/thunder-client-alternative).
 
 </div>
 
@@ -320,7 +333,7 @@ A side-by-side with the two API clients VS Code developers most often consider.
 
 Postmate Client started because our team needed something nobody was shipping: a fast, local API client that could fire parallel calls at Prod and Staging from a CSV before every deployment, without sending our request bodies to someone else's cloud.
 
-We tried Postman. The login wall, the cloud sync, the paywalled features — none of it fit how we actually worked. We tried Thunder Client. Closer, but the paid tiers kept gating the features we needed most. So we built our own, kept it inside VS Code where we already lived, and made every feature free because the whole point was to remove gates, not add new ones.
+We tried Postman. The login wall, the cloud sync, the paywalled features — none of it fit how we actually worked. We tried [Thunder Client](/thunder-client-alternative). Closer, and genuinely well built — but it's a commercial product, and the features we needed most sat on the paid plans. So we built our own, kept it inside VS Code where we already lived, and made every feature free because the whole point was to remove gates, not add new ones.
 
 That's still the philosophy. No telemetry, no login, no premium tier. If you find Postmate Client useful, the best thing you can do is tell another developer about it.
 
@@ -350,8 +363,12 @@ No account creation. No onboarding flow. No email confirmation. You're testing A
     <div class="docs-card-title">Migrate from Postman</div>
     <div class="docs-card-desc">Bring your existing collections across</div>
   </a>
+  <a href="/thunder-client-alternative" class="docs-card">
+    <div class="docs-card-title">Thunder Client Alternative</div>
+    <div class="docs-card-desc">Free-tier limits compared, side by side</div>
+  </a>
   <a href="/security/security-overview" class="docs-card">
-    <div class="docs-card-title">Security & Enterprise</div>
+    <div class="docs-card-title">Security &amp; Enterprise</div>
     <div class="docs-card-desc">mTLS, corporate proxy, and how your data stays local</div>
   </a>
   <a href="/core-concepts/graphql" class="docs-card">
@@ -375,7 +392,7 @@ No account creation. No onboarding flow. No email confirmation. You're testing A
     <div class="docs-card-desc">Automate API tests in CI/CD</div>
   </a>
   <a href="/testing/tests-assertions" class="docs-card">
-    <div class="docs-card-title">Tests & Assertions</div>
+    <div class="docs-card-title">Tests &amp; Assertions</div>
     <div class="docs-card-desc">Plain-English tests and full pm scripting</div>
   </a>
 </div>
@@ -411,7 +428,7 @@ Yes. Postmate Client runs entirely inside VS Code with no external runtime depen
 
 ### How does Postmate Client compare to Thunder Client?
 
-Both are VS Code-native API clients, but Postmate Client offers free WebSocket support, free CLI for CI/CD pipelines, parallel response comparison across environments, and data-driven testing from CSV files — capabilities that Thunder Client either restricts to paid tiers or doesn't offer.
+Both are VS Code-native API clients that store data locally. The difference is the licence: Thunder Client is a commercial product whose free version is restricted to non-commercial use at companies under ten employees, and whose environments, CLI and WebSocket support sit on paid plans. Postmate Client is free for everyone, including commercial use. [Full side-by-side comparison →](/thunder-client-alternative)
 
 ### Can my team share collections?
 
@@ -446,3 +463,23 @@ Install the extension and send your first request in under a minute.
 </div>
 
 </div>
+
+<style scoped>
+.table-legend {
+  font-size: .82rem;
+  line-height: 1.6;
+  color: var(--vp-c-text-2);
+  margin-top: 1rem;
+}
+.prose-section :deep(a),
+.table-legend a {
+  color: var(--vp-c-brand-1);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+.prose-section :deep(a:hover),
+.table-legend a:hover {
+  text-decoration-thickness: 2px;
+}
+</style>
