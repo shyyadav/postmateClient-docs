@@ -92,7 +92,7 @@ As you type a header name:
 - Auto-fill both key + value
 - Avoid typos and formatting errors
 
-<img src="/autocompelete-headers.png" alt="Headers tab in raw mode for bulk text editing" width="100%" style="border-radius:8px;border:1px solid rgba(255,255,255,0.08);margin:1rem 0" />
+<img src="/postmateClientHeaders.png" alt="Headers tab in raw mode for bulk text editing" width="100%" style="border-radius:8px;border:1px solid rgba(255,255,255,0.08);margin:1rem 0" />
 
 ## Setup Header Autocomplete (One-Time Setup)
 
