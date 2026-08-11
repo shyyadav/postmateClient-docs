@@ -9,6 +9,9 @@ Tutorials, product updates, and deep dives on fast, local-first API testing.
 
 ## Latest Posts
 
+### [API Migration Testing: How to Prove the New Stack Returns the Same Thing](/blog/api-migration-testing-response-comparison)
+*August 11, 2026 · 9 min read*
+
 ### [OAuth 2.0 Testing is Live in Postmate Client — Free, Local, Native to VS Code](/blog/oauth2-support-launch)
 *July 25, 2026 · 5 min read*
 
