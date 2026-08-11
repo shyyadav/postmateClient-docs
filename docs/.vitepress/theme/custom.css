@@ -961,3 +961,19 @@
     max-width: 1600px;
   }
 }
+
+/*-----------------------------task list-------------------------------------*/
+.vp-doc .contains-task-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.vp-doc .task-list-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5em;
+}
+
+.vp-doc .task-list-item-checkbox {
+  flex-shrink: 0;
+}
