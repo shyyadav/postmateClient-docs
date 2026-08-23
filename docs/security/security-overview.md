@@ -19,6 +19,7 @@ Postmate Client was built because of a security review: the original author's or
 | Where do my collections and environments live? | **On your disk**, as plain files you can read, diff, and audit. |
 | Can it work fully offline / air-gapped? | **Yes.** After installation, no external connectivity is required except the requests you send. |
 | Is traffic inspectable? | **Yes.** Enable `postmate.logAsCurl` and every outgoing request is logged as a curl command you can review. |
+| Does it send data to an AI service? | **Postmate doesn't.** It exposes a local MCP server on `127.0.0.1` that AI agents in your editor can read from. Anything they read goes to *their* provider, not ours. [Details](/ai/mcp) · disable with `postmate.mcp.enabled: false` |
 
 ## Data flow
 
@@ -27,6 +28,21 @@ There is only one flow: **your machine → the API endpoints you specify.**
 - When you press Send, Postmate makes that HTTP/WebSocket request from your machine directly to the target (or through the proxy *you* configured — see [corporate proxy support](/security/corporate-proxy)).
 - No request, response, header, token, or environment variable is ever transmitted anywhere else.
 - Postmate itself makes no background network calls. The only Postmate-adjacent network activity on your machine is VS Code's own extension-update mechanism, which is controlled by VS Code, not by Postmate.
+
+### The one inbound path: AI agents
+
+Since v2.0.0, Postmate also **listens** on `127.0.0.1` so AI agents in your editor can
+read your active request panel. This is inbound only — Postmate still initiates nothing.
+There is no Postmate AI vendor, no API key, and no model endpoint.
+
+The important consequence: when you ask your agent a question that reads Postmate data,
+**that agent** sends what it read to its own model provider, under their data policy.
+Postmate redacts credentials first; response bodies are not otherwise filtered.
+
+This is on by default and disabled with `postmate.mcp.enabled: false`, which can be
+committed to a workspace `.vscode/settings.json`.
+
+[Exactly what is captured and redacted →](/ai/mcp)
 
 ## Where your data is stored
 
@@ -66,7 +82,10 @@ After installation, Postmate is fully functional offline. The `pmc` CLI installs
 
 Don't take our word for it:
 
-- **Watch the wire:** run Postmate with a local intercepting proxy (mitmproxy, Fiddler) or `netstat` and observe that the only connections are the requests you send.
+- **Watch the wire:** run Postmate with a local intercepting proxy (mitmproxy, Fiddler)
+  or `netstat` and observe that the only *outbound* connections are the requests you send.
+  You will also see one **listening** socket on `127.0.0.1` — that is the [local MCP server](/ai/mcp) for AI agents, which accepts connections but never makes them.
+  It is gone entirely when `postmate.mcp.enabled` is `false`.
 - **Read the files:** everything in `.postmate/` is human-readable JSON.
 - **Inspect requests:** `postmate.logAsCurl` prints every outgoing request in full.
 
@@ -74,4 +93,4 @@ Found something that contradicts this page? That's a security issue and we want 
 
 ---
 
-*This page describes Postmate Client and the `pmc` CLI as of v1.5.0 / core 0.3.x. It exists so you can forward one link to your security team instead of writing the justification yourself.*
+*This page describes Postmate Client and the `pmc` CLI as of v2.0.0 / core 0.6.x.*

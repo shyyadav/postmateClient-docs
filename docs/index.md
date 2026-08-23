@@ -40,6 +40,12 @@ const compareMode = ref('single')
 <!-- ============================================ -->
 <div class="features-grid">
 
+  <a href="/ai/mcp" class="feature-card">
+      <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></div>
+      <div class="feature-title">AI That Reads Your Live Response</div>
+      <div class="feature-details">Postmate does not call an AI. An AI calls Postmate. Ask GitHub Copilot to write tests for the response you just received — it reads your actual request panel through a local MCP server. Secrets redacted, nothing sent by us.</div>
+      <div class="feature-link">AI test generation →</div>
+  </a>
   <a href="/import-export/migrate-from-postman" class="feature-card">
     <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
     <div class="feature-title">Import from Postman, OpenAPI & Swagger</div>
@@ -47,18 +53,11 @@ const compareMode = ref('single')
     <div class="feature-link">Migrate from Postman →</div>
   </a>
 
-  <a href="/core-concepts/graphql" class="feature-card">
-    <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m21 16-9 5-9-5V8l9-5 9 5z"/><path d="m12 3 9 5-9 5-9-5 9-5z"/><circle cx="12" cy="13" r="1.5"/></svg></div>
-    <div class="feature-title">GraphQL, Built-In</div>
-    <div class="feature-details">Send GraphQL queries and mutations with a dedicated Query and Variables editor. Same builder as your REST calls. Variable autocomplete works inside both editors.</div>
-    <div class="feature-link">GraphQL guide →</div>
-  </a>
-
   <a href="/core-concepts/websocket" class="feature-card">
-    <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/><path d="M19 12h-4"/><path d="M5 5v14"/></svg></div>
-    <div class="feature-title">WebSocket & WSS Testing</div>
-    <div class="feature-details">Connect to any ws:// or wss:// endpoint, send messages, and watch responses stream in real time. Pick TEXT, JSON, XML, or HTML mode with inline validation. Save WebSocket requests to collections — free, no paid tier.</div>
-    <div class="feature-link">WebSocket guide →</div>
+    <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="2.5"/><path d="m10.2 6.3-3.9 3.9"/><circle cx="4.5" cy="12" r="2.5"/><path d="M7 12h10"/><circle cx="19.5" cy="12" r="2.5"/><path d="m13.8 17.7 3.9-3.9"/><circle cx="12" cy="19.5" r="2.5"/></svg></div>
+    <div class="feature-title">GraphQL & WebSocket, Built-In</div>
+    <div class="feature-details">Send GraphQL queries and mutations with a dedicated Query and Variables editor. Connect to any ws:// or wss:// endpoint and watch responses stream in real time. Same builder as your REST calls — free, no paid tier.</div>
+    <div class="feature-link">Explore protocol support →</div>
   </a>
 
   <a href="/testing/compare-api-response" class="feature-card">
@@ -216,6 +215,7 @@ Combine with environments to switch between dev, staging, and prod without touch
 | Per-request data tag filtering        | ✅ Built-in       | ❌ Not available          | ❌ Not available           |
 | CLI for CI/CD                         | ✅ Free, built-in | ⚠️ Separate tool (Newman) | 💰 Paid tier               |
 | Free features                         | ✅ Everything     | ⚠️ Core features free     | 💰 Most features paid      |
+| AI reads your live response panel     | ✅ Built-in       | ⚠️ Cloud resources only   | ⚠️ Copy-paste prompt |
 
 </div>
 
