@@ -1,7 +1,7 @@
 ---
 title: "Extension Settings Reference — Postmate Client"
 description: "Complete reference for Postmate Client VS Code extension settings — clear output before request, log as cURL, save on send, sort requests alphabetically, and workspace project directory."
-keywords: ["postmate client settings", "postmate vs code settings", "clear output before request", "log as curl", "api client vs code configuration"]
+keywords: ["postmate client settings", "postmate vs code settings", "clear output before request", "log as curl", "postmate mcp enabled", "api client vs code configuration"]
 ---
 
 # Extension Settings
@@ -59,6 +59,29 @@ Stores Postmate data (collections, environments, data tables) in the current wor
 Changing this setting switches where Postmate reads and writes its data. Existing collections in the other location are not moved automatically.
 :::
 
+### MCP: Enabled
+
+Runs a local MCP server on `127.0.0.1` so AI agents in your editor (GitHub Copilot and
+others) can read your active request panel and generate tests against the real response.
+
+- **Setting ID:** `postmate.mcp.enabled`
+- **Default:** `true` (on)
+- **Status:** Beta
+
+Postmate itself sends nothing anywhere — the server only listens. Anything the agent
+reads is handled by **your agent's own model provider**, under their data policy.
+Credentials are redacted before they leave Postmate.
+
+Disabling takes effect immediately. Enabling requires a window reload before the agent
+reconnects.
+
+::: tip Team-wide control
+This setting can be committed to a workspace `.vscode/settings.json`, so a team can
+disable AI agent access for a specific repository.
+:::
+
+[Full details on what is captured and redacted →](/ai/mcp)
+
 ## Quick Reference
 
 | Setting | Default | What it does |
@@ -68,9 +91,12 @@ Changing this setting switches where Postmate reads and writes its data. Existin
 | Save On Send | `true` | Save the request when Send is clicked |
 | Sort Request Alphabetically | `false` | Alphabetical ordering inside collections/folders |
 | Use Workspace As Project Dir | `false` | Store data in the workspace folder instead of globalStorage |
+| MCP: Enabled | `true` | Let AI agents read your active request panel via a local MCP server |
 
 ## Related
 
 - [Building Requests](/core-concepts/building-requests)
 - [Collection Runner](/data-driven/collection-runner)
 - [pm Library Reference](/testing/pm-library)
+- [AI Test Generation](/ai/mcp)
+- [Security & Privacy](/security/security-overview)

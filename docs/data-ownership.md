@@ -56,11 +56,21 @@ The extension collects no telemetry. Not usage analytics, not activation pings, 
 
 Your requests go from your machine to your API. Response bodies, headers, tokens, and environment variables never pass through a Postmate server, because there is no Postmate server. This is what makes the extension usable behind corporate firewalls and on restricted networks, and it is the reason the project exists at all.
 
+Since v2.0.0 the extension also runs a local MCP server on `127.0.0.1` so AI agents in
+your editor can read your active request panel. It listens; it never initiates an
+outbound connection, and there is no Postmate AI vendor behind it. Anything the agent
+reads is then handled by that agent's own model provider. Credentials are redacted
+first, and the whole thing is disabled with `postmate.mcp.enabled: false`.
+
+[What is captured and redacted →](/ai/mcp)
+
 ## On pricing
 
 Being direct about this, because vague answers are how trust gets lost.
 
 **The core API testing experience will remain free.** Sending requests, collections, environments, the collection runner, scripting and assertions, data-driven testing, and the CLI — these are the product, and they stay free.
+
+**The AI agent integration is not a future paywall.** There is nothing to meter: no Postmate API key, no Postmate model, no usage that costs anything to run. The agent is yours, the model is yours, and the server runs on your machine. There is no version of this feature that could be moved behind a subscription, because there is no service behind it.
 
 **If paid functionality is ever introduced,** it would be for team and organization capabilities that do not exist today. It would be additive, not a fence around what already works.
 
@@ -89,6 +99,10 @@ The extension sends nothing. The documentation website uses standard web analyti
 
 **Where do secrets live?**
 See [Secret Variables](/security/secret-variables) for how these are handled and what to keep out of version control.
+
+**Will the AI features cost money later?**
+There is nothing to charge for. Postmate has no AI vendor and no model endpoint — your
+own agent does the work. See [AI test generation](/ai/mcp).
 
 ---
 

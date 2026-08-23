@@ -178,6 +178,12 @@ export default defineConfig({
           ]
         },
         {
+          text: 'AI Agents',
+          items:[
+            {text: 'AI Agent Access (MCP)', link: '/ai/mcp'}
+          ]
+        },
+        {
           text: 'Data-Driven Testing',
           items: [
             { text: 'Data Tables', link: '/data-driven/data-tables' },
