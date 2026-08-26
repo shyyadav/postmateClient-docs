@@ -1,18 +1,18 @@
 ---
 #canonical: https://www.postmateclient.com/import-export/migrate-from-bruno
-#meta-description: Bruno exports collections directly in Postman format. Step-by-step guide to exporting from Bruno and importing into Postman or Postmate Client.
-#meta-og:description: Bruno exports collections directly in Postman format. Step-by-step guide to exporting from Bruno and importing into Postman or Postmate Client.
-meta-og:title: How to Export a Bruno Collection (to Postman or Postmate Client)
+#meta-description: Export a Bruno collection in three clicks, then import it into Postman or Postmate Client — plus the scripts and assertions that don't survive the trip.
+#meta-og:description: Export a Bruno collection in three clicks, then import it into Postman or Postmate Client — plus the scripts and assertions that don't survive the trip.
+meta-og:title: How to Export a Bruno Collection to Postman
 meta-og:type: website
 meta-og:url: https://www.postmateclient.com/import-export/migrate-from-bruno
 meta-twitter:card: summary_large_image
-meta-twitter:description: Bruno exports collections directly in Postman format. Export from Bruno, then import into Postman or Postmate Client.
-meta-twitter:title: How to Export a Bruno Collection (to Postman or Postmate Client)
-title: How to Export a Bruno Collection (to Postman or Postmate Client)
-description: Bruno exports collections directly in Postman format — no separate converter needed. Step-by-step guide to exporting from Bruno and importing into Postman or Postmate Client.
+meta-twitter:description: Export a Bruno collection in three clicks, then import it into Postman or Postmate Client — plus what doesn't survive the trip.
+meta-twitter:title: How to Export a Bruno Collection to Postman
+title: How to Export a Bruno Collection to Postman
+description: Export a Bruno collection in three clicks, then import it into Postman or Postmate Client — plus the scripts and assertions that don't survive the trip.
 ---
 
-# How to Export a Bruno Collection (to Postman or Postmate Client)
+# How to Export a Bruno Collection to Postman
 
 Bruno stores collections in its own `.bru` format, but it ships with a built-in **Export to Postman** option. That single feature is all you need — there's no separate Bruno-to-Postman converter, and no third-party tool involved.
 
