@@ -40,7 +40,7 @@ const compareMode = ref('single')
   <h1>You didn't outgrow&nbsp;Thunder&nbsp;Client.<br><span class="tca-hl">You hit its limits.</span></h1>
 
   <p class="tca-lede">
-    First they capped requests. Then collections. Now the free tier can't create one at all. Postmate Client is a free API client for VS Code with no tier above it — and a CLI that runs in CI/CD without a subscription.
+    First they capped requests. Then collections. Now the free tier can't create a collection or an environment at all. Postmate Client is a free API client for VS Code with no tier above it — and a CLI that runs in CI/CD without a subscription.
   </p>
 
   <div class="tca-cta-row">
@@ -75,8 +75,9 @@ const compareMode = ref('single')
   </div>
 
   <p class="tca-limit-note">
-    Collections: what we saw in Thunder Client v2.x on 3 August 2026 — a free install
-    refused to create one, logged out and logged in both. The rest is from their
+    Collections and environments: what we saw in Thunder Client v2.x on 29 August 2026 —
+    a free install refused to create either one, logged out and logged in both. The rest
+    is from their
     <a href="https://www.thunderclient.com/terms" target="_blank" rel="noopener">terms</a>
     and <a href="https://www.thunderclient.com/pricing" target="_blank" rel="noopener">pricing</a>.
     Their limits have changed repeatedly and may have changed again —
@@ -99,8 +100,8 @@ const compareMode = ref('single')
       <p>The free version is restricted to non-commercial use. Companies under ten employees are permitted, as are schools and universities — but if your organisation is larger than that, the free tier isn't available to you at any level of use. That threshold was five employees in 2024.</p>
     </article>
     <article class="tca-reason">
-      <h3>Zero environments</h3>
-      <p>No dev, staging or prod switching on the free version at all. This is the limit that catches people first, and there is no way to work around it.</p>
+      <h3>No collections, no environments</h3>
+      <p>The free version won't save either one. No grouping requests, no dev/staging/prod switching — the extension refuses both outright, and there is no way to work around it. This is the limit that catches people first.</p>
     </article>
     <article class="tca-reason">
       <h3>The CLI is paid, everywhere</h3>
@@ -129,10 +130,14 @@ const compareMode = ref('single')
 |---|---|---|
 | Runs inside VS Code | Yes | Yes |
 | Local-first storage | Yes | Yes |
+| Cursor, Windsurf, VSCodium | Yes | Paid plans only |
 | Free for commercial use | Yes | No — non-commercial only, under 10 employees |
 | Collections | Unlimited | None on the free version |
-| Environments | Unlimited | Paid plans only |
+| Environments | Unlimited | None on the free version |
 | Collection run limits | None | 250–500 local runs/user/month, unlimited on Enterprise |
+| Plain-English assertions, no code | Yes | Yes |
+| Scripting | `pm` object with chai `expect` | Own `tc` syntax, paid plans only |
+| Postman script import | Converted automatically | Manual conversion required |
 | CLI, locally and in CI/CD | Free | Paid plans only |
 | Sharing across devices or teammates | Yes | Paid plans only |
 | GraphQL | Yes | Yes |
@@ -146,7 +151,7 @@ const compareMode = ref('single')
   </div>
 
   <p class="tca-asof">
-    Compared 3 August 2026 against Thunder Client's
+    Compared 29 August 2026 against Thunder Client's
     <a href="https://www.thunderclient.com/pricing" target="_blank" rel="noopener">published pricing</a>
     and <a href="https://www.thunderclient.com/terms" target="_blank" rel="noopener">terms</a>. Tools
     change — if something here is out of date, <a href="/contact">tell us</a> and we'll correct it.
@@ -224,6 +229,26 @@ const compareMode = ref('single')
 
   <article class="tca-feature">
     <div class="tca-feature-text">
+      <h3>Tests with or without JavaScript</h3>
+      <p>
+        Build assertions in plain English from the tabular editor — pick a field, pick a
+        condition, done. Or drop into the full <code>pm</code> scripting library with
+        chai <code>expect</code>, the same shape you already write in Postman. Both work
+        on the same request.
+      </p>
+      <p>
+        Thunder Client renamed everything to its own <code>tc</code> namespace, so
+        Postman scripts have to be rewritten by hand — their docs carry a 40-row
+        conversion table and a separate page on converting with AI. Postmate Client
+        converts your scripts during import instead.
+      </p>
+      <a class="tca-link" href="/testing/tests-assertions">Read the docs →</a>
+    </div>
+    <div class="tca-feature-media"></div>
+  </article>
+
+  <article class="tca-feature tca-feature--flip">
+    <div class="tca-feature-text">
       <h3>A response panel built for payloads you can't scroll</h3>
       <p>
         One click to copy, save, collapse, expand, or open a response in a new tab. One
@@ -245,9 +270,8 @@ const compareMode = ref('single')
     </div>
   </article>
   <p class="tca-rest">
-    Plus everything you'd expect: collection runner, request chaining, pm scripting
-    library, HTML and JSON reports, Postman and OpenAPI/Swagger import, environments and
-    variables.
+    Plus everything you'd expect: collection runner, request chaining, HTML and JSON
+    reports, Postman and OpenAPI/Swagger import, environments and variables.
   </p>
 </section>
 
@@ -264,12 +288,11 @@ const compareMode = ref('single')
 <!-- ───────────────────────── SWITCHING ───────────────────────── -->
 <section class="tca-section">
   <h2>Switching over</h2>
-       Does Thunder Client export to Postman collection format, or only its own JSON?
-       If Postman format works, write this as a two-step import.
-       If not, document the manual path honestly or ship a Thunder Client importer first. -->
+  
   <p>
     Your Thunder Client collections sit on your machine, so nothing is locked away.
-    Postmate Client imports Postman collections and OpenAPI/Swagger specs directly.
+    Postmate Client imports Postman collections and OpenAPI/Swagger specs directly, and
+    converts any Postman scripts as it goes.
   </p>
   <a class="tca-link" href="/import-export/import-swagger/">Import and export guide →</a>
 </section>
@@ -283,6 +306,8 @@ const compareMode = ref('single')
       <p>Yes. No paid tier, no seat licence, no separate plan for teams or companies.</p></details>
     <details><summary>Do I need an account?</summary>
       <p>No. Postmate Client is local-first — your collections, environments and data files stay on your machine and never leave it.</p></details>
+    <details><summary>Do I have to write JavaScript to test my APIs?</summary>
+      <p>No. Build assertions in plain English from the tabular editor — pick a field, pick a condition, done. If you do want scripting, the full <code>pm</code> library with chai <code>expect</code> is there too, and Postman scripts are converted for you on import. Use either, or both on the same request.</p></details>
     <details><summary>Does the CLI cost anything in CI/CD?</summary>
       <p>No. The <code>pmc</code> CLI runs in GitHub Actions, GitLab CI, Jenkins or any other pipeline at no cost.</p></details>
     <details><summary>Is there a limit on collection runs?</summary>
