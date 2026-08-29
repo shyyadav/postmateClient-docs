@@ -296,27 +296,30 @@ A side-by-side with the two API clients VS Code developers most often consider.
 
 |  | Postmate Client | Postman | Thunder Client |
 | --- | --- | --- | --- |
-| Runs inside VS Code | ✅ Native | ❌ Separate app | ✅ Native |
+| Runs inside VS Code | ✅ Native | ⚠️ Extension, sign-in required | ✅ Native |
 | Works offline | ✅ Always | ⚠️ Limited | ✅ Local storage |
-| Works without login | ✅ Always | ❌ Required | ⚠️ Login being introduced |
+| Works without login | ✅ Always | ❌ Required | ⚠️ Paid licence needed for most features |
 | Zero telemetry | ✅ None | ❌ Yes | ⚠️ Anonymised, can be disabled |
-| Git-friendly local storage | ✅ Local files | ⚠️ Cloud default | ✅ Local files |
+| Cursor, Windsurf, VSCodium | ✅ Free | ⚠️ Sign-in required | 💰 Paid tier |
+| Git-friendly local storage | ✅ Local files | ⚠️ Cloud default | 💰 Git-Sync is paid |
 | Corporate proxy & mTLS | ✅ [Built-in](/security/corporate-proxy) | ✅ | ✅ |
+| Plain-English assertions (no code) | ✅ [Built-in](/testing/tests-assertions) | ❌ Script only | ✅ Built-in |
+| Scripting API | ✅ [`pm` object, chai `expect`](/testing/pm-library) | ✅ Native `pm` | ❌ Own `tc` syntax, paid only |
+| Postman collection import | ✅ One click, scripts auto-converted | ✅ Native | ⚠️ Manual script conversion |
+| OpenAPI / Swagger import | ✅ One click | ✅ | ✅ |
+| Data-driven testing from CSV | ✅ Built-in | ✅ Runner data files | 💰 Paid tier |
 | Free for commercial use | ✅ Always | ✅ | ❌ Under 10 employees only |
-| Collections on the free tier | ✅ Unlimited | ✅ | ❌ None |
+| Collections on the free tier | ✅ Unlimited | ✅ | ❌ Paid version only |
 | Environments on the free tier | ✅ Unlimited | ✅ | 💰 Paid tier |
 | WebSocket / WSS support | ✅ Free | ⚠️ Login required | 💰 Paid tier |
 | Free CLI for CI/CD | ✅ Free | ✅ Newman, free | 💰 Paid tier |
 | Parallel response diff | ✅ Built-in | — | — |
 | Bulk CSV comparison | ✅ Built-in | — | — |
-| HTTP QUERY method | ✅ First-class | — | — |
-| Postman v2.1 / OpenAPI / Swagger import | ✅ One click | — | ✅ |
 | JetBrains IDEs | ❌ VS Code only | ✅ Separate app | 💰 Paid tier |
-| Price | ✅ Free forever | 💰 Freemium | 💰 $36–$192 per user/year |
 
 <p class="table-legend">
 ✅ available · 💰 paid plans only · ⚠️ partial or conditional · ❌ not available · — we couldn't find it documented.
-Checked 3 August 2026 against each vendor's published pricing and terms.
+Checked 29 August 2026 against each vendor's published pricing and terms.
 Tools change — <a href="/contact">tell us</a> if something here is out of date.
 </p>
 
