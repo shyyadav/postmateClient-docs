@@ -261,7 +261,7 @@ Combine with environments to switch between dev, staging, and prod without touch
 | Per-request data tag filtering        | ✅ Built-in       | ❌ Not available          | ❌ Not available           |
 | CLI for CI/CD                         | ✅ Free, built-in | ⚠️ Separate tool (Newman) | 💰 Paid tier               |
 | Free features                         | ✅ Everything     | ⚠️ Core features free     | 💰 Most features paid      |
-| AI test generation | ✅ Free, reads your live response | ⚠️ Postbot, 50 credits/month free | 💰 MCP server, Business tier and up |
+| AI test generation | ✅ Free, unmetered | 💰 Limited AI credits, then paid | 💰 MCP server, Business tier and up |
 
 </div>
 
