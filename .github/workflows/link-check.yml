@@ -25,7 +25,7 @@ jobs:
             --offline
             --root-dir "${{ github.workspace }}/docs"
             --fallback-extensions md
-            --exclude '\.(png|jpe?g|gif|svg|webp|ico|pdf)$'
+            --exclude '\.(png|jpe?g|gif|svg|webp|ico|pdf|mp4|webm)$'
             --no-progress
             'docs/**/*.md'
           fail: true
@@ -38,7 +38,7 @@ jobs:
           args: >-
             --offline
             --root-dir "${{ github.workspace }}/docs/public"
-            --include '\.(png|jpe?g|gif|svg|webp|ico|pdf)$'
+            --include '\.(png|jpe?g|gif|svg|webp|ico|pdf|mp4|webm)$'
             --no-progress
             'docs/**/*.md'
           fail: true
