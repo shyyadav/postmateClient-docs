@@ -5,12 +5,14 @@ import { onMounted, watch, nextTick } from 'vue'
 import mediumZoom from 'medium-zoom'
 import YouTubeEmbed from './YouTubeEmbed.vue'
 import ZoomVideo from './ZoomVideo.vue'
+import DemoRequestForm from './components/DemoRequestForm.vue'
 
 export default {
   extends: DefaultTheme,
   enhanceApp({ app }) {
     app.component('YouTubeEmbed', YouTubeEmbed)
     app.component('ZoomVideo', ZoomVideo)
+    app.component('DemoRequestForm', DemoRequestForm)
   },
   setup() {
     const route = useRoute()

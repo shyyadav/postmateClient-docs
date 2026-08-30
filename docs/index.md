@@ -40,7 +40,7 @@ const compareMode = ref('single')
 <!-- ============================================ -->
 <div class="features-grid">
 
-  <a href="/ai/mcp" class="feature-card">
+  <a href="/ai/generate-api-tests" class="feature-card">
       <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></div>
       <div class="feature-title">AI That Reads Your Live Response</div>
       <div class="feature-details">Postmate does not call an AI. An AI calls Postmate. Ask GitHub Copilot to write tests for the response you just received — it reads your actual request panel through a local MCP server. Secrets redacted, nothing sent by us.</div>
@@ -121,6 +121,52 @@ const compareMode = ref('single')
   <div class="trust-switcher">
     Switching from Postman?
     <a href="/import-export/migrate-from-postman">Import your collections in one click →</a>
+  </div>
+</div>
+<!-- ============================================ -->
+<!-- FLAGSHIP FEATURE: AI test generation          -->
+<!-- ============================================ -->
+<div class="flagship-section">
+  <div class="flagship-inner">
+    <div class="flagship-eyebrow">SEE IT IN ACTION</div>
+    <h2 class="flagship-title">Let an AI write the test — from your actual response</h2>
+    <p class="flagship-subtitle">
+      Ask GitHub Copilot for a test and it reads the response sitting in your Postmate panel. Not your OpenAPI spec's idea of your API — the payload your server just sent, nulls and all. No AI credits, no cloud, no account: Postmate doesn't call a model, your editor's assistant does.
+    </p>
+    <div class="flagship-image-wrap">
+      <img
+        src="/generate-api-test-with-ai-vscode.png"
+        alt="GitHub Copilot generating a Postmate Client API test in VS Code — the schema allows null for fields that are null in the actual response"
+      />
+    </div>
+    <p class="flagship-caption">
+      The response has <code>"grades": null</code>. The generated schema says <code>type: ["array", "null"]</code> — because the agent saw the null. A test generated from the spec would have asserted an array and failed on the first real run.
+    </p>
+    <div class="flagship-cta">
+      <a href="/ai/generate-api-tests">How AI test generation works →</a>
+      <span class="flagship-cta-divider">·</span>
+      <a href="/ai/mcp">MCP tool reference →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- ENTERPRISE: talk to the maintainer            -->
+<!-- ============================================ -->
+<div class="teams-section">
+  <div class="teams-inner">
+    <div class="teams-copy">
+      <h2 class="teams-title">Evaluating Postmate for your team?</h2>
+      <p class="teams-lede">
+        Bring your security questionnaire, your proxy setup, your CI pipeline — whatever your team needs answered before it can adopt a new tool.
+      </p>
+      <p class="teams-lede">
+        Most messages are answered within a day, with a real answer rather than a callback request.
+      </p>
+    </div>
+    <div class="teams-form">
+      <DemoRequestForm />
+    </div>
   </div>
 </div>
 
@@ -215,7 +261,7 @@ Combine with environments to switch between dev, staging, and prod without touch
 | Per-request data tag filtering        | ✅ Built-in       | ❌ Not available          | ❌ Not available           |
 | CLI for CI/CD                         | ✅ Free, built-in | ⚠️ Separate tool (Newman) | 💰 Paid tier               |
 | Free features                         | ✅ Everything     | ⚠️ Core features free     | 💰 Most features paid      |
-| AI reads your live response panel     | ✅ Built-in       | ⚠️ Cloud resources only   | ⚠️ Copy-paste prompt |
+| AI test generation | ✅ Free, reads your live response | ⚠️ Postbot, 50 credits/month free | 💰 MCP server, Business tier and up |
 
 </div>
 

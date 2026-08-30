@@ -180,7 +180,8 @@ export default defineConfig({
         {
           text: 'AI Agents',
           items:[
-            {text: 'AI Agent Access (MCP)', link: '/ai/mcp'}
+            {text: 'AI Agent Access (MCP)', link: '/ai/mcp'},
+            {text: 'Generate API Tests with AI', link: '/ai/generate-api-tests'},
           ]
         },
         {
