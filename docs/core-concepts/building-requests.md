@@ -122,7 +122,7 @@ The **Post-request** tab runs after the response is received. It has two sub-tab
 
 ### Test — Plain English Assertions
 
-<img src="/request-post-request-script.png" alt="Postmate Client Post-request Script tab with JavaScript editor" width="100%" style="border-radius:8px;border:1px solid rgba(255,255,255,0.08);margin:1rem 0" />
+<img src="/plain-english-assertions-vscode.png" alt="Postmate Client Post-request Script tab with JavaScript editor" width="100%" style="border-radius:8px;border:1px solid rgba(255,255,255,0.08);margin:1rem 0" />
 
 Write assertions as table rows — no code required. Each row is one test with four fields:
 

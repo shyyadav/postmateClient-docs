@@ -977,3 +977,37 @@
 .vp-doc .task-list-item-checkbox {
   flex-shrink: 0;
 }
+
+/*---------------------------demo form-------------------------------------*/
+.teams-section {
+  padding: 4rem 1.5rem;
+}
+.teams-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+  max-width: 62rem;
+  margin: 0 auto;
+}
+.teams-copy .teams-title {
+  font-family: "DM Serif Display", Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  line-height: 1.15;
+  margin: 0 0 1rem;
+  border-top: 0;
+  padding-top: 0;
+}
+.teams-lede {
+  color: var(--vp-c-text-2);
+  line-height: 1.7;
+  margin: 0 0 1rem;
+}
+.teams-form :deep(.demo-form) {
+  margin-top: 0;
+  max-width: none;
+}
+@media (max-width: 820px) {
+  .teams-inner { grid-template-columns: 1fr; gap: 2rem; }
+}
