@@ -264,7 +264,7 @@ const compareMode = ref('single')
     </div>
     <div class="tca-feature-media">
       <ZoomVideo
-        src="/public/postmate-client-resposne.mp4"
+        src="/postmate-client-resposne.mp4"
         label="Searching deep JSON in the Postmate Client response panel, with collapsed parents highlighted"
       />
     </div>
