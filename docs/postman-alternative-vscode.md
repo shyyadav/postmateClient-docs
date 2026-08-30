@@ -304,13 +304,14 @@ A side-by-side with the two API clients VS Code developers most often consider.
 | Git-friendly local storage | ✅ Local files | ⚠️ Cloud default | 💰 Git-Sync is paid |
 | Corporate proxy & mTLS | ✅ [Built-in](/security/corporate-proxy) | ✅ | ✅ |
 | Plain-English assertions (no code) | ✅ [Built-in](/testing/tests-assertions) | ❌ Script only | ✅ Built-in |
-| Scripting API | ✅ [`pm` object, chai `expect`](/testing/pm-library) | ✅ Native `pm` | ❌ Own `tc` syntax, paid only |
+| Scripting API | ✅ [`pm` assertions, chai `expect`](/testing/pm-library) | ✅ Native `pm` | ❌ Own `tc` syntax, paid only |
+| AI test generation | ✅ [Free, reads your live response](/ai/generate-api-tests) | 💰 Metered AI credits | 💰 Business tier and up |
 | Postman collection import | ✅ One click, scripts auto-converted | ✅ Native | ⚠️ Manual script conversion |
 | OpenAPI / Swagger import | ✅ One click | ✅ | ✅ |
 | Data-driven testing from CSV | ✅ Built-in | ✅ Runner data files | 💰 Paid tier |
 | Free for commercial use | ✅ Always | ✅ | ❌ Under 10 employees only |
 | Collections on the free tier | ✅ Unlimited | ✅ | ❌ Paid version only |
-| Environments on the free tier | ✅ Unlimited | ✅ | 💰 Paid tier |
+| Environments on the free tier | ✅ Unlimited | ✅ | ❌ Paid version only |
 | WebSocket / WSS support | ✅ Free | ⚠️ Login required | 💰 Paid tier |
 | Free CLI for CI/CD | ✅ Free | ✅ Newman, free | 💰 Paid tier |
 | Parallel response diff | ✅ Built-in | — | — |
