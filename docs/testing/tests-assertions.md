@@ -181,6 +181,8 @@ pm.schemaTest('Schema is valid', schema, RESPONSE.body);
 
 → Learn more about **[Postmate Client pm Library](/testing/pm-library)** for full scripting capabilities.
 
+→ Or let an AI write them: [AI Test Generation](/ai/generate-api-tests)
+
 ## One-Click Schema Generator (No Online Tools Needed)
 
 Unlike Postman, you don’t need external tools.
