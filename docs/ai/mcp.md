@@ -1,22 +1,16 @@
 ---
-title: AI Test Generation in VS Code — Postmate Client
-description: Let GitHub Copilot read your live API response and write tests. A local MCP server, no AI vendor, no API key, secrets redacted before anything leaves your machine.
+title: MCP Server Reference — Postmate Client
+description: Technical reference for Postmate Client's local MCP server — tools, parameters, redaction rules, and how to turn it off.
 head:
   - - meta
     - name: keywords
-      content: copilot api testing, mcp server vscode, ai api test generation, vscode api client mcp, generate api tests from response, ai api client vscode, postman alternative ai, local mcp server api testing
+      content: mcp server vscode, local mcp server api testing, vscode api client mcp, postmate mcp tools
 ---
-# AI Test Generation in VS Code
+# MCP Server Reference
 
-Postmate Client runs a local [MCP](https://modelcontextprotocol.io) server so AI agents in your editor can read the request panel you are actually looking at.
+This page is the technical reference: tools, parameters, redaction rules, and configuration. For what the feature does and how to use it day to day, see [AI Test Generation](/ai/generate-api-tests).
 
-Ask GitHub Copilot:
-
-> *Write a test to validate the response in the active Postmate panel*
-
-and it reads the live status, headers, body, and test results, then writes Postmate `pm` assertions against the real data — not a guess about what the response might look like.
-
-![AI test generation in Postmate Client — GitHub Copilot reads the live response panel and writes passing pm tests](https://raw.githubusercontent.com/shyyadav/postmateClient-docs/main/docs/public/Postmate-AI-generating-test.gif)
+Postmate Client runs a local [MCP](https://modelcontextprotocol.io) server on `127.0.0.1` so AI agents in your editor can read your live request panels. It exposes two tools, redacts credentials before returning anything, and can be disabled with a single setting.
 
 ::: tip Beta
 This feature is new in v2.0.0 and marked beta. Behaviour and tool names may change. [Feedback welcome](https://github.com/shyyadav/postmateClient-docs/discussions).
@@ -93,6 +87,8 @@ Prompts that work well:
 Mention "Postmate" or "the active panel" in your prompt. Without it the agent may not realise it should look at your request panel at all.
 :::
 
+→ See [AI Test Generation](/ai/generate-api-tests) for a walkthrough of a real generated test
+
 ## Generated tests use Postmate's API
 
 Postmate's scripting differs from Postman's in one place: there is no `pm.response` object. The response is exposed through a `RESPONSE` global.
@@ -107,7 +103,7 @@ Everything else — `pm.test`, `pm.expect`, Chai matchers — works as you would
 
 The agent is told about this difference automatically, so generated tests use `RESPONSE.body` and run as-is. It also knows about [`pm.schemaTest`](/testing/pm-library), which Postman does not have, and will generate a JSON Schema from the actual response shape rather than writing out a long list of individual property assertions.
 
-See the [scripting reference](/testing/pm-library) for the full `pm` API.
+See the [scripting reference](/testing/pm-library) for the full `pm` API, and [AI Test Generation](/ai/generate-api-tests) for worked examples of what the agent produces.
 
 ## Large responses
 
