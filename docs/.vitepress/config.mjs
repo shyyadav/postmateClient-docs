@@ -240,7 +240,7 @@ export default defineConfig({
     },
 
     footer: {
-      message: 'Questions? <a href="/contact">Contact</a> · <a href="mailto:help@postmateclient.com">help@postmateclient.com</a> · <a href="https://github.com/shyyadav/postmateClient-docs/issues">GitHub Issues</a>',
+      message: '<a href="/security">Security &amp; Privacy</a> · Questions? <a href="/contact">Contact</a> · <a href="mailto:help@postmateclient.com">help@postmateclient.com</a> · <a href="https://github.com/shyyadav/postmateClient-docs/issues">GitHub Issues</a>',
       // message: 'Released under the Postmate Client Proprietary License.',
       copyright: 'Copyright © 2026 Postmate Client'
     },

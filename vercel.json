@@ -2,6 +2,7 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
+    { "source": "/Security", "destination": "/security", "permanent": true },
     { "source": "/Security/secutity-overview", "destination": "/security/security-overview", "permanent": true },
     { "source": "/Security/:path*", "destination": "/security/:path*", "permanent": true },
     { "source": "/blog/Best-Free-PostmanAlternatives-2026", "destination": "/blog/best-free-postman-alternatives-2026", "permanent": true },
