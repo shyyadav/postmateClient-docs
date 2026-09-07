@@ -86,6 +86,27 @@ Postmate Client supports both its own native format and Postman's v2.1 format. W
 
 A file selector opens. Navigate to the `.json` file you exported from Postman and click **Import Postman Collection**.
 
+### Step 5: Add variables to an environment
+
+If the collection uses <span v-pre>`{{variables}}`</span>, Postmate Client lists them after import
+and asks where to put them.
+
+![Postmate Client prompt listing collection variables found during import, each with a checkbox](/postman-import-variables-prompt.png)
+
+1. Leave everything checked (or uncheck what you don't need) and press **OK**.
+2. Pick an environment, or choose **Create new environment**.
+
+![Postmate Client environment picker with "Create new environment" at the top and existing environments listed below](/postman-import-variables-env.png)
+
+Press **Esc** to skip — the collection still imports, and you can add variables
+from the **Env** tab later.
+
+::: warning Values may arrive empty
+Postman exports only a variable's **Initial value**. If you keep your tokens and
+passwords in the **Current value** column, the names import but the values don't
+— fill them in from the Env tab.
+:::
+
 Postmate Client parses the file immediately and imports everything:
 
 - All **requests** (method, URL, query params, headers, body)
@@ -212,9 +233,7 @@ Run a global **find-and-replace** on your exported `.json` file *before* importi
 
 ## What needs manual review
 
-- ⚠️ `pm.environment.*` calls — update to `pm.setVariable` / `pm.getVariable` / `pm.clearVariable`
-- ⚠️ `pm.response.*` calls — update to `RESPONSE.*`
-- ⚠️ `console.log()` — update to `pm.log()`
+- ⚠️ Variable *values* — Postman exports only initial values, so most imported variables arrive empty and need filling in
 - ⚠️ Postman-specific monitors, mocks, and cloud features — Postmate Client is local-only and doesn't run cloud services
 
 ## Quick reference
@@ -245,6 +264,24 @@ Export as **Collection v2.1** from Postman. This is the most widely-supported Po
 ### Can I import Postman environments into Postmate Client?
 
 Yes. Export your Postman environment as `.json`, then in Postmate Client open the **Env** tab → hamburger menu → **Import Env**. All variables, values, and types are preserved. See **Part 2** above for the full walkthrough.
+
+### What happens to my Postman collection variables?
+
+When you import a collection that defines variables, Postmate Client lists them
+and asks which environment to add them to — either an existing one or a new
+environment named after the collection. Variables referenced in requests but not
+declared in the collection (typically Postman globals) are offered too.
+
+Note that Postman exports only a variable's **initial** value, so if you stored
+your values in the Current value column, the names will import but the values
+will be empty.
+
+### Why is my request sending `{{variableName}}` instead of the value?
+
+The variable isn't defined in your active environment or data table. This
+usually happens when the value only existed in Postman's Current value column,
+or as a Postman global that wasn't exported. Open the **Env** tab and fill in
+the value.
 
 ### Can I import my Postman CSV test data?
 
