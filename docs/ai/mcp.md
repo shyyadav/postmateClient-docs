@@ -9,9 +9,9 @@ head:
 
 # MCP Server Reference
 
-This page is the technical reference: tools, parameters, redaction rules, and configuration. For what the feature does and how to use it day to day, see [AI Test Generation](/ai/generate-api-tests).
-
 Postmate Client runs a local [MCP](https://modelcontextprotocol.io) server on `127.0.0.1` so AI agents in your editor can read the request panel you are actually looking at — and, once you turn it on, run requests you have already saved. It exposes three tools, redacts credentials before returning anything, and can be disabled with a single setting.
+
+This page is the complete reference: every tool, every parameter, what gets redacted, and how to configure it.
 
 ::: tip Beta
 The MCP server arrived in v2.0.0 and `send_request` in v2.1.0. Both are marked beta — behaviour and tool names may change. [Feedback welcome](https://github.com/shyyadav/postmateClient-docs/discussions).
