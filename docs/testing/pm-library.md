@@ -9,7 +9,7 @@ canonical: "https://postmateclient.com/docs/pm-library"
 
 The `pm` object is Postmate Client's built-in scripting API, available globally in all pre-request and post-request scripts. Use it to write assertions, manage environment variables, validate response schemas, and log debug output — without any imports or setup.
 
-Postmate Cleint's `pm` object is similar to the Postman pm API, allowing you to write tests, assertions, and scripts for API testing directly inside your requests.
+Postmate Client's `pm` object is similar to the Postman pm API, allowing you to write tests, assertions, and scripts for API testing directly inside your requests.
 
 Developers familiar with Postman can use the Postmate Client `pm` object as a drop-in alternative for writing API tests and scripts.
 
@@ -135,14 +135,28 @@ pm.log('Variables: ' + keys.join(', '));
 
 ---
 
-### `pm.getRequest()`
+### `pm.getRequest(path)` — Send Another Saved Request
 
-Returns the current request object, including the URL, HTTP method, headers, and body. Available in both pre-request and post-request scripts.
+Returns a handle to a saved request. Call `.send()` on it to execute that request from within a script — useful for fetching an auth token or setting up test data before the main request runs.
+
+`path` is the request's location in the form `"CollectionName.RequestName"`. The `.send()` call is asynchronous, so always `await` it.
 
 ```js
-const req = pm.getRequest();
-pm.log('Sending ' + req.method + ' to ' + req.url);
+const res = await pm.getRequest("School API.getToken").send();
+pm.setVariable('token', res.body.token);
 ```
+
+**Parameters:**
+
+| Parameter | Type     | Description                                        |
+| --------- | -------- | -------------------------------------------------- |
+| `path`    | `string` | Saved request as `"CollectionName.RequestName"`     |
+
+Available in both pre-request and post-request scripts.
+
+> **Tip:** For a request that should *always* run first, use the Pre-request tab's chaining list instead — no script needed. Reach for `pm.getRequest().send()` when you need conditional logic, such as refreshing a token only when it has expired.
+
+> See [Request Chaining](/data-driven/request-chaining) for the visual chaining guide.
 
 ---
 
@@ -184,6 +198,25 @@ Decodes a Base64-encoded string and returns the decoded value. Commonly used to 
 const payload = pm.base64Decode(accessToken.split('.')[1]);
 pm.log(payload);
 ```
+
+### `pm.validateSchema(schema, data)` — Validate Against JSON Schema
+
+Validates `data` against a [JSON Schema](https://json-schema.org/) object. Returns `true` when valid, and throws with the validation errors when not. Use this inside your own `pm.test` when you want to combine schema checking with other assertions; use [`pm.schemaTest`](#pm-schematest-name-schema-data-—-validate-json-schema) when you just want a standalone named test.
+
+```js
+pm.test('User payload is valid', () => {
+  pm.validateSchema(schema, RESPONSE.body);
+  pm.expect(RESPONSE.body.id).to.be.above(0);
+});
+```
+
+**Parameters:**
+
+| Parameter | Type     | Description                          |
+| --------- | -------- | ------------------------------------ |
+| `schema`  | `object` | JSON Schema to validate against      |
+| `data`    | `any`    | Value to validate                    |
+
 ## Quick Reference
 
 | Method | Purpose |
@@ -199,6 +232,7 @@ pm.log(payload);
 | `pm.log(msg)` | Print to the output console |
 | `pm.schemaTest(n, s, d)` | Validate data against a JSON Schema |
 | `pm.base64Decode(str)` | Decode a Base64 string |
+| `pm.validateSchema(s, d)` | Validate data against a JSON Schema (throws) |
 
 ## Related Docs
 
