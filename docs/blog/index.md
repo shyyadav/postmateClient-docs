@@ -9,6 +9,9 @@ Tutorials, product updates, and deep dives on fast, local-first API testing.
 
 ## Latest Posts
 
+### [How I Built an AI QA Agent for API Regression and Other QA Tasks](/blog/ai-qa-agent-api-regression)
+*September 27, 2026 · 11 min read*
+
 ### [API Migration Testing: How to Prove the New Stack Returns the Same Thing](/blog/api-migration-testing-response-comparison)
 *August 11, 2026 · 9 min read*
 
