@@ -9,10 +9,10 @@ head:
       content: ai qa agent, api regression testing, natural language test cases, ai agent api testing, postmate mcp, copilot custom agent, api testing without scripts, mcp server api testing
   - - meta
     - property: og:image
-      content: https://www.postmateclient.com/qa-agent-architecture.png
+      content: https://www.postmateclient.com/qa-agent-og.png
   - - meta
     - name: twitter:image
-      content: https://www.postmateclient.com/qa-agent-architecture.png
+      content: https://www.postmateclient.com/qa-agent-og.png
 ---
 
 # How I Built an AI QA Agent for API Regression and Other Testing Tasks
