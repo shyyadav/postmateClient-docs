@@ -20,6 +20,7 @@ head:
 *Write API test scenarios in natural language and let an AI agent run them with Postmate MCP. No scripts to maintain.*
 
 ---
+**In short:** to build a QA agent for API testing, you need four things: a skill file with business rules and test scenarios in plain English, a data table with test values, saved API requests, and an AI agent (like GitHub Copilot) that sends those requests through an MCP server such as Postmate's and judges the responses.
 
 For years, API regression testing meant the same routine for me: write a request, write a script to assert on the response, repeat a few hundred times. Then, every time the API changed, spend days fixing the scripts instead of testing.
 
