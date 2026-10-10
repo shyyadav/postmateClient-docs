@@ -9,6 +9,9 @@ Tutorials, product updates, and deep dives on fast, local-first API testing.
 
 ## Latest Posts
 
+### [My AI QA Agent Now Runs in CI: Headless, Guarded, No Test Scripts](/blog/ai-qa-agent-ci-github-actions)
+*October 09, 2026 · 8 min read*
+
 ### [How I Built an AI QA Agent for API Regression and Other QA Tasks](/blog/ai-qa-agent-api-regression)
 *September 27, 2026 · 11 min read*
 
