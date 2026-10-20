@@ -412,7 +412,7 @@ No account creation. No onboarding flow. No email confirmation. You're testing A
 
 ### Is Postmate Client really free?
 
-Yes. Postmate Client is 100% free, with no paid tier, no team-size limits, and no premium features locked behind a subscription. Every capability — REST, GraphQL, WebSocket, collection runner, CLI, response comparison — is available to every user.
+Yes. Postmate Client is 100% free, with no paid tier, no team-size limits, and no premium features locked behind a subscription. Every capability — REST, GraphQL, WebSocket, gRPC, collection runner, CLI, response comparison — is available to every user.
 
 ### Does Postmate Client send my data anywhere?
 
@@ -424,7 +424,7 @@ Yes. Postmate Client has full corporate proxy support — HTTP/HTTPS tunneling, 
 
 ### Can I import my Postman collections?
 
-Yes. Postmate Client imports Postman v2.1 collections, OpenAPI 3.0, Swagger 2.0, and cURL commands in one click. Bring your existing work with you — no rebuilding required.
+Yes. Postmate Client imports Postman v2.1 collections, OpenAPI 3.0, Swagger 2.0, cURL commands, and raw requests copied from Fiddler in one click. Bring your existing work with you — no rebuilding required.
 
 ### Does Postmate Client work offline?
 
@@ -440,7 +440,7 @@ Yes — through Git. Postmate Client stores collections as local files in your r
 
 ### Does it support GraphQL and WebSockets?
 
-Yes. Postmate Client includes a dedicated GraphQL editor with Query and Variables panes, plus full WebSocket support for `ws://` and `wss://` endpoints with TEXT, JSON, XML, and HTML message modes — all free, no paid tier.
+es. Postmate Client includes a dedicated GraphQL editor with Query and Variables panes, plus full WebSocket support for `ws://` and `wss://` endpoints with TEXT, JSON, XML, and HTML message modes, and [gRPC](/core-concepts/grpc) calls loaded by server reflection or from `.proto` files, including server streaming — all free, no paid tier.
 
 ### What's the catch?
 

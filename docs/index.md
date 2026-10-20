@@ -1,11 +1,11 @@
 ---
 layout: home
 title: Postmate Client — Privacy-First Postman Alternative for VS Code
-description: Privacy-first REST, GraphQL & WebSocket API client for VS Code. Import Postman collections, run data-driven tests, compare responses. No cloud, no login — free.
+description: Privacy-first REST, GraphQL, WebSocket & gRPC client for VS Code. Import from Postman, run data-driven tests, compare responses. No cloud, no login — free.
 hero:
   name: Postmate Client
   text: Your APIs. Your Machine. Your Data.
-  tagline: A privacy-first REST, GraphQL, and WebSocket API client built natively into VS Code. No cloud sync, no login, no telemetry — just fast, local API testing that respects your data.
+  tagline: A privacy-first REST, GraphQL, WebSocket, and gRPC API client built natively into VS Code. No cloud sync, no login, no telemetry — just fast, local API testing that respects your data.
   actions:
     - theme: brand
       text: Install Free →
@@ -49,14 +49,14 @@ const compareMode = ref('single')
   <a href="/import-export/migrate-from-postman" class="feature-card">
     <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
     <div class="feature-title">Import from Postman, OpenAPI & Swagger</div>
-    <div class="feature-details">Bring your work with you. Import Postman v2.1 collections, OpenAPI 3.0, Swagger 2.0, and cURL commands in one click. Stay productive from minute one — no rebuilding.</div>
+    <div class="feature-details">Bring your work with you. Import Postman v2.1 collections, OpenAPI 3.0, Swagger 2.0, cURL commands, and raw requests from Fiddler in one click. Stay productive from minute one — no rebuilding.</div>
     <div class="feature-link">Migrate from Postman →</div>
   </a>
 
   <a href="/core-concepts/websocket" class="feature-card">
     <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="2.5"/><path d="m10.2 6.3-3.9 3.9"/><circle cx="4.5" cy="12" r="2.5"/><path d="M7 12h10"/><circle cx="19.5" cy="12" r="2.5"/><path d="m13.8 17.7 3.9-3.9"/><circle cx="12" cy="19.5" r="2.5"/></svg></div>
-    <div class="feature-title">GraphQL & WebSocket, Built-In</div>
-    <div class="feature-details">Send GraphQL queries and mutations with a dedicated Query and Variables editor. Connect to any ws:// or wss:// endpoint and watch responses stream in real time. Same builder as your REST calls — free, no paid tier.</div>
+    <div class="feature-title">GraphQL, WebSocket & gRPC, Built-In</div>
+    <div class="feature-details">Send GraphQL queries and mutations with a dedicated Query and Variables editor. Stream ws:// and wss:// messages in real time. Call gRPC services by server reflection or from your .proto files. Same builder as your REST calls — free, no paid tier.</div>
     <div class="feature-link">Explore protocol support →</div>
   </a>
 
@@ -230,7 +230,7 @@ Requests leave your machine only when you send them — secrets live in local fi
 
 ### A real request builder, not a text file
 
-Postmate Client gives you a full visual request builder inside VS Code — tabs for params, headers, body, auth, tests, and pre/post-request scripts. Build REST, GraphQL, and WebSocket calls without writing any boilerplate.
+Postmate Client gives you a full visual request builder inside VS Code — tabs for params, headers, body, auth, tests, and pre/post-request scripts. Build REST, GraphQL, WebSocket, and gRPC calls without writing any boilerplate.
 
 Every input field supports **dynamic variables** out of the box, so you can keep tests realistic without hardcoding data:
 
@@ -253,6 +253,7 @@ Combine with environments to switch between dev, staging, and prod without touch
 | No cloud sync                         | ✅ Local-only     | ❌ Cloud default          | ✅ Local                   |
 | Zero telemetry & tracking             | ✅ None           | ❌ Cloud account required | ⚠️ Opt-out (On by default) |
 | WebSocket / WSS support               | ✅ Free           | ⚠️ Yes (login required)   | 💰 Paid tier only          |
+| gRPC support                          | ✅ Free           | ⚠️ Yes (login required)   | 💰 Paid tier only          |
 | Pre/post-request scripts              | ✅ Built-in       | ✅ Yes                    | 💰 Paid tier only          |
 | `pm` library                          | ✅ Built-in       | ✅ Native                 | ❌ Not supported           |
 | Side-by-side response compare         | ✅ Built-in       | ❌ Manual                 | ❌ Not available           |
@@ -293,9 +294,17 @@ Combine with environments to switch between dev, staging, and prod without touch
     <div class="docs-card-title">WebSocket Testing</div>
     <div class="docs-card-desc">Connect, stream, and save ws:// and wss:// requests</div>
   </a>
+  <a href="/core-concepts/grpc" class="docs-card">
+    <div class="docs-card-title">gRPC Testing</div>
+    <div class="docs-card-desc">Reflection or .proto files, unary and server streaming</div>
+  </a>
   <a href="/import-export/migrate-from-postman" class="docs-card">
     <div class="docs-card-title">Migrate from Postman</div>
     <div class="docs-card-desc">Bring your existing collections across</div>
+  </a>
+  <a href="/import-export/import-from-fiddler" class="docs-card">
+    <div class="docs-card-title">Import from Fiddler</div>
+    <div class="docs-card-desc">Paste a raw request and send it from VS Code</div>
   </a>
   <a href="/testing/compare-api-response" class="docs-card">
     <div class="docs-card-title">Compare API Responses</div>
