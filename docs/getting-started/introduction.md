@@ -29,19 +29,24 @@ It is a **fully local, VS Code-native API client** that:
 
 ## Key Features
 
+* **AI test generation** — GitHub Copilot reads your live response through a local MCP server and writes `pm` tests against it
 * **Built-in pm scripting library** — a familiar API similar to Postman, exposed via the global pm object
 * **Plain-English tabular tests** — write assertions without writing code
 * **Pre/post-request scripts** — run JavaScript before or after every request
 * **Environments & Variables** — manage dev, staging, and production in one click
 * **Collections & Folders** — organize and version-control API requests
 * **GraphQL support** — send queries and mutations with a dedicated GraphQL request mode
+* **WebSocket support** — connect to `ws://` and `wss://` endpoints and stream messages in real time
+* **gRPC support** — call gRPC services by server reflection or from `.proto` files, with unary and server-streaming calls, metadata, and trailers
 * **Cookie management** — capture, inspect, and reuse cookies across requests
 * **API response comparison** — diff responses against an expected baseline, either for a single request or in bulk across a collection
 * **Data Tables** — enable data-driven API testing using CSV-style inputs. Create as many data tables as you need
+* **Typed variables in JSON bodies** — write <span v-pre>`{{qty}}`</span> without quotes to send a number or boolean, or <span v-pre>`"{{symbol}}"`</span> to send a string
 * **Collection Runner** — execute full API test suites in sequence
 * **Request Chaining** — pass response data between requests automatically
 * **cURL / Swagger / OpenAPI import** — quickly generate requests from existing specs
 * **Postman collection import** — migrate from Postman in seconds
+* **cURL / Fiddler / Swagger / OpenAPI import** — quickly generate requests from existing specs or captured traffic
 * **CI/CD CLI** — run API tests in pipelines and generate HTML reports
 
 ## How It Works

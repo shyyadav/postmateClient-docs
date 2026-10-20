@@ -4,7 +4,7 @@ import taskLists from 'markdown-it-task-lists'
 
 export default defineConfig({
   title: 'Postmate Client',
-  description: 'Documentation for Postmate Client — the lightweight REST, GraphQL, and WebSocket API testing extension for VS Code.',
+  description: 'Documentation for Postmate Client — the lightweight REST, GraphQL, WebSocket, and gRPC API testing extension for VS Code.',
   lang: 'en-US',
   titleTemplate: ':title',
   ignoreDeadLinks: true,
@@ -162,6 +162,7 @@ export default defineConfig({
             { text: 'Authentication', link: '/core-concepts/authentication' },
             { text: 'GraphQL', link: '/core-concepts/graphql' },
             { text: 'WebSocket Testing', link: '/core-concepts/websocket' },
+            { text: 'gRPC Testing', link: '/core-concepts/grpc' },
             { text: 'Environments & Variables', link: '/core-concepts/environments' },
             { text: 'Collections & Folders', link: '/core-concepts/collections' },
             { text: 'Headers', link: '/core-concepts/headers' },
@@ -200,6 +201,7 @@ export default defineConfig({
           items: [
             { text: 'Import from Swagger', link: '/import-export/import-swagger' },
             { text: 'Import from Curl', link: '/import-export/Import-curl' },
+            { text: 'Import from Fiddler', link: '/import-export/import-from-fiddler' },
             { text: 'Migrate from Postman', link: '/import-export/migrate-from-postman' },
             { text: 'Migrate from Bruno', link: '/import-export/migrate-from-bruno' },
           ]
