@@ -11,11 +11,11 @@ hero:
       text: Install Free →
       link: https://marketplace.visualstudio.com/items?itemName=PostMate-lab.postmate
     - theme: alt
+      text: Free CLI for CI/CD
+      link: /ci-cd/cli-reference
+    - theme: alt
       text: Docs
       link: /getting-started/introduction
-    - theme: alt
-      text: Community ↗
-      link: https://github.com/shyyadav/postmateClient-docs/discussions
 ---
 
 <script setup>

@@ -984,6 +984,21 @@
   flex-shrink: 0;
 }
 
+.install-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem 2rem;
+  margin: 1.5rem auto 0;
+  font-size: 0.95rem;
+  color: var(--vp-c-text-2);
+}
+.install-strip code {
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-1);
+}
 /*---------------------------demo form-------------------------------------*/
 .teams-section {
   padding: 4rem 1.5rem;
