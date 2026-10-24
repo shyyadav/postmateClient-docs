@@ -11,7 +11,12 @@ Unlike Postman, there's no account or cloud sync involved — certificate config
 
 Available since **v1.4.9**.
 
-## How do I call an mTLS-protected API from VS Code?
+::: tip Do I need to change a VS Code setting?
+- **REST and GraphQL requests on v2.5.0 or later:** no — client certificates work with VS Code's default settings.
+- **WebSocket (`wss://`) connections, or Postmate before v2.5.0:** add `"http.proxySupport": "on"` to your VS Code settings.
+:::
+
+## How to send a client certificate (mTLS) with your requests
 
 Three steps: create a `certificates.json` file, add an entry for your host, and send your request — the certificate is attached automatically whenever the hostname matches.
 
@@ -57,9 +62,9 @@ Each entry in the `certificates` array supports:
 | `host` | ✅ | Hostname to match. Supports exact hosts (`api.company.com`), wildcards (`*.internal.company.com`), and optional port (`legacy.local:8443`). Most specific match wins. |
 | `certPath` | For PEM | Path to your PEM certificate file (`.crt`, `.pem`) |
 | `keyPath` | For PEM | Path to your PEM private key file (`.key`, `.pem`) |
-| `pfxPath` | For PFX | Path to a PFX/PKCS#12 bundle (`.p12`, `.pfx`) — alternative to `certPath` + `keyPath` |
+| `pfxPath` | For PFX | Path to a PFX/PKCS#12 bundle (`.p12`, `.pfx`) — alternative to `certPath` + `keyPath`. If an entry has both, `pfxPath` is used. |
 | `passphrase` | Optional | Passphrase for an encrypted key or PFX bundle |
-| `caPath` | Optional | Path to a custom CA bundle — needed when the server uses a private/internal CA |
+| `caPath` | Optional | Path to a custom CA bundle — needed when the server uses a private/internal CA that isn't installed on your computer. Added to the CAs Postmate already trusts. |
 | `rejectUnauthorized` | Optional | Set `false` to skip server certificate verification for this host (not recommended outside local development) |
 | `enabled` | Optional | Set `false` to disable an entry without deleting it. Defaults to `true`. |
 
@@ -125,7 +130,7 @@ For a local mTLS server on a custom port — for example during development — 
 
 ### WebSocket (wss://)
 
-Nothing extra to configure — `wss://` connections use the same certificate entries as HTTPS requests. See [WebSocket support](/blog/websocket-support-launch) for the basics.
+`wss://` connections use the same certificate entries as HTTPS requests. With VS Code's default settings, set `"http.proxySupport": "on"` for WebSocket connections — unlike REST and GraphQL requests, they don't bypass VS Code's network handling yet. See [WebSocket support](/blog/websocket-support-launch) for the basics.
 
 ## Converting PFX to PEM
 
@@ -143,12 +148,13 @@ openssl pkcs12 -in bundle.p12 -out client.key -nocerts -nodes
 
 | Error | Cause | Fix |
 |-------|-------|-----|
-| `Server <host> requires a valid client certificate` | The server requested a client cert but none matched, or the entry is disabled | Add an entry for that host in `certificates.json`, or check `host` matches the request's hostname (including port, if specified) |
+| `Server <host> requires a valid client certificate` or `Server <host> closed the connection before responding` | The server requested a client cert but none matched, the entry is disabled, or the server rejected the certificate | Add an entry for that host in `certificates.json`, check `host` matches the request's hostname (including port, if specified), and check the certificate is the one the server expects |
 | `Could not load certificate file for "<host>": <path> (file not found)` | A configured path doesn't exist | Fix the path — the full resolved path is shown in the error |
 | `Client certificate for "<host>" needs BOTH cert and key paths` | Only one of `certPath`/`keyPath` is set | PEM requires both; or use `pfxPath` instead |
-| `Wrong passphrase for client certificate` | Incorrect `passphrase` for the key or PFX | Verify the passphrase |
+| `Wrong or missing passphrase for the client certificate` | `passphrase` is wrong or missing for an encrypted key or PFX — including an entry with both `pfxPath` and `certPath`/`keyPath`, where the PFX is used | Add or correct `passphrase`, or remove `pfxPath` to use the PEM files |
 | `Invalid PEM file for <host>` | A `certPath`/`keyPath` points to a non-PEM file (often a PFX by mistake) | Use `pfxPath` for `.p12`/`.pfx` files, or convert to PEM (see above) |
-| `unable to verify the first certificate` | Server uses a private CA that isn't trusted | Add the CA bundle via `caPath` |
+| `Could not verify the certificate of <host>: its issuing CA isn't trusted` | Server uses a private CA that isn't installed on your computer | Add the CA bundle via `caPath` |
+| `<host> uses a self-signed certificate` | The server's certificate is self-signed | Add it via `caPath` if you trust it, or set `rejectUnauthorized: false` for that host in local development |
 
 ## Privacy
 
