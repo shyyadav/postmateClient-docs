@@ -5,7 +5,7 @@ description: Privacy-first REST, GraphQL, WebSocket & gRPC client for VS Code. I
 hero:
   name: Postmate Client
   text: Your APIs. Your Machine. Your Data.
-  tagline: A privacy-first REST, GraphQL, WebSocket, and gRPC API client built natively into VS Code. No cloud sync, no login, no telemetry — just fast, local API testing that respects your data.
+  tagline: A REST, GraphQL, WebSocket, and gRPC client built into VS Code. Compare responses across environments, run CSV-driven tests, and let Copilot write tests from your real responses.
   actions:
     - theme: brand
       text: Install Free →
@@ -41,11 +41,11 @@ const compareMode = ref('single')
 <div class="features-grid">
 
   <a href="/ai/generate-api-tests" class="feature-card">
-      <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></div>
-      <div class="feature-title">AI That Reads Your Live Response</div>
-      <div class="feature-details">Postmate does not call an AI. An AI calls Postmate. Ask GitHub Copilot to write tests for the response you just received — it reads your actual request panel through a local MCP server. Secrets redacted, nothing sent by us.</div>
-      <div class="feature-link">AI test generation →</div>
-  </a>
+    <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></div>
+    <div class="feature-title">AI That Reads Your Live Response</div>
+    <div class="feature-details">Postmate does not call an AI. An AI calls Postmate. Ask GitHub Copilot to write tests for the response you just received — it reads your actual request and response through a local MCP server. Secrets redacted, nothing sent by us.</div>
+    <div class="feature-link">AI test generation →</div>
+ </a>
   <a href="/import-export/migrate-from-postman" class="feature-card">
     <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
     <div class="feature-title">Import from Postman, OpenAPI & Swagger</div>
@@ -56,7 +56,7 @@ const compareMode = ref('single')
   <a href="/core-concepts/websocket" class="feature-card">
     <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="2.5"/><path d="m10.2 6.3-3.9 3.9"/><circle cx="4.5" cy="12" r="2.5"/><path d="M7 12h10"/><circle cx="19.5" cy="12" r="2.5"/><path d="m13.8 17.7 3.9-3.9"/><circle cx="12" cy="19.5" r="2.5"/></svg></div>
     <div class="feature-title">GraphQL, WebSocket & gRPC, Built-In</div>
-    <div class="feature-details">Send GraphQL queries and mutations with a dedicated Query and Variables editor. Stream ws:// and wss:// messages in real time. Call gRPC services by server reflection or from your .proto files. Same builder as your REST calls — free, no paid tier.</div>
+    <div class="feature-details">Send GraphQL queries and mutations with a dedicated Query and Variables editor. Stream ws:// and wss:// messages in real time. Call gRPC services by server reflection or from your .proto files. Same builder as your REST calls.</div>
     <div class="feature-link">Explore protocol support →</div>
   </a>
 
@@ -95,12 +95,12 @@ const compareMode = ref('single')
     <div class="feature-link">CLI reference →</div>
   </a>
 
- <a href="/security/security-overview" class="feature-card">
-    <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div>
-    <div class="feature-title">Local-First. VS Code Native. Free Forever.</div>
-    <div class="feature-details">Runs entirely inside VS Code with zero external runtime. No cloud sync, no login, no telemetry, no paid tiers. Secrets stay in local files and requests never leave your machine unless you send them.</div>
-    <div class="feature-link">How your data is stored →</div>
-  </a>
+<a href="/security" class="feature-card">
+  <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div>
+  <div class="feature-title">Local-First. Verify It Yourself.</div>
+  <div class="feature-details">Put mitmproxy between VS Code and the internet and watch the traffic: your requests go to your API, and nothing goes to us. No Postmate server exists to receive it.</div>
+  <div class="feature-link">See how to check →</div>
+</a>
 
 </div>
 
@@ -223,16 +223,17 @@ const compareMode = ref('single')
 <!-- ============================================ -->
 <div class="prose-section">
 
-## Why developers are switching to Postmate Client
+## Built for teams that can't send API data to the cloud
 
-Most API clients were built for the cloud era — sync everything, log in everywhere, ship your tokens to someone else's servers. **Postmate Client takes the opposite approach.** It runs entirely inside VS Code, stores everything locally, and never phones home.
-Requests leave your machine only when you send them — secrets live in local files, client certificates [client certificates](/security/client-certificates) are used solely for the TLS handshake, and corporate proxies are fully supported. The security overview explains exactly what is stored and where.
+If your APIs carry customer data, financial records, or production credentials, a cloud-synced API client is a compliance question you'd rather not have to answer. Postmate Client runs inside VS Code with zero external runtime and keeps collections as plain files in your repo, so they version and review like code.
+
+It fits the environments where that matters: [client certificates](/security/client-certificates) for mTLS, [corporate proxy](/security/corporate-proxy) support, and secrets kept in VS Code's local storage. The [security overview](/security/security-overview) explains exactly what is stored and where.
 
 ### A real request builder, not a text file
 
 Postmate Client gives you a full visual request builder inside VS Code — tabs for params, headers, body, auth, tests, and pre/post-request scripts. Build REST, GraphQL, WebSocket, and gRPC calls without writing any boilerplate.
 
-Every input field supports **dynamic variables** out of the box, so you can keep tests realistic without hardcoding data:
+Every input field supports **dynamic variables** out of the box, so you can keep tests realistic without hardcoding data. [See request syntax →](/core-concepts/building-requests)
 
 ![Postmate Client UI — privacy-first Postman alternative running inside VS Code with request builder, response panel, and data tables](/postmateClientUI.png)
 
@@ -251,7 +252,7 @@ Combine with environments to switch between dev, staging, and prod without touch
 | Works offline                         | ✅ Always         | ⚠️ Limited                | ⚠️ Limited                 |
 | Works without login                   | ✅ Always         | ❌ Required to use        | ⚠️ For paid features       |
 | No cloud sync                         | ✅ Local-only     | ❌ Cloud default          | ✅ Local                   |
-| Zero telemetry & tracking             | ✅ None           | ❌ Cloud account required | ⚠️ Opt-out (On by default) |
+| Zero telemetry & tracking             | ✅ None           | ❌ Usage data collected | ⚠️ Opt-out (On by default) |
 | WebSocket / WSS support               | ✅ Free           | ⚠️ Yes (login required)   | 💰 Paid tier only          |
 | gRPC support                          | ✅ Free           | ⚠️ Yes (login required)   | 💰 Paid tier only          |
 | Pre/post-request scripts              | ✅ Built-in       | ✅ Yes                    | 💰 Paid tier only          |
