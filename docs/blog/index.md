@@ -9,6 +9,9 @@ Tutorials, product updates, and deep dives on fast, local-first API testing.
 
 ## Latest Posts
 
+### [Thunder Client Requests Gone After the Update? How to Get Them Back Without Logging In](/blog/thunder-client-recover-requests)
+*November 01, 2026 · 5 min read*
+
 ### [My AI QA Agent Now Runs in CI: Headless, Guarded, No Test Scripts](/blog/ai-qa-agent-ci-github-actions)
 *October 09, 2026 · 8 min read*
 
