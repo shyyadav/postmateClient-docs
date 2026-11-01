@@ -6,7 +6,7 @@ author: Shyam
 head:
   - - link
     - rel: canonical
-      href: https://postmateclient.com/blog/thunder-client-recover-requests
+      href: https://www.postmateclient.com/blog/thunder-client-recover-requests
   - - meta
     - name: keywords
       content: thunder client requests gone, thunder client login required, thunder client data location, recover thunder client collections, import thunder client collections, thunder client alternative
@@ -21,10 +21,10 @@ head:
       content: "Your Thunder Client requests are still on disk as plain JSON. Here is where they are and how to get them back, no account needed."
   - - meta
     - property: og:url
-      content: https://postmateclient.com/blog/thunder-client-recover-requests
+      content: https://www.postmateclient.com/blog/thunder-client-recover-requests
   - - meta
     - property: og:image
-      content: https://postmateclient.com/thunderCollectionList.png
+      content: https://www.postmateclient.com/thunderCollectionList.png
   - - meta
     - property: article:published_time
       content: 2026-11-01
@@ -39,7 +39,7 @@ head:
       content: "Your Thunder Client requests are still on disk as plain JSON. Here is where they are and how to get them back, no account needed."
   - - meta
     - name: twitter:image
-      content: https://postmateclient.com/thunderCollectionList.png
+      content: https://www.postmateclient.com/thunderCollectionList.png
   - - script
     - type: application/ld+json
     - |
@@ -53,9 +53,9 @@ head:
             "datePublished": "2026-11-01",
             "dateModified": "2026-11-01",
             "author": { "@type": "Person", "name": "Shyam" },
-            "publisher": { "@type": "Organization", "name": "Postmate Client", "url": "https://postmateclient.com" },
-            "mainEntityOfPage": "https://postmateclient.com/blog/thunder-client-recover-requests",
-            "image": "https://postmateclient.com/thunderCollectionList.png"
+            "publisher": { "@type": "Organization", "name": "Postmate Client", "url": "https://www.postmateclient.com" },
+            "mainEntityOfPage": "https://www.postmateclient.com/blog/thunder-client-recover-requests",
+            "image": "https://www.postmateclient.com/thunderCollectionList.png"
           },
           {
             "@type": "FAQPage",
@@ -119,7 +119,7 @@ This gets your data back in readable form. It does not give you a working API cl
 
 ## Option 2: Import Thunder Client collections into Postmate in one click
 
-[Postmate Client](https://postmateclient.com) is a free, local-first API client for VS Code. It needs no account, sends nothing to the cloud and stores your requests as plain JSON in your project. Since version 2.5.5 it reads Thunder Client's folder directly, so you don't need to export anything or log in to Thunder first.
+[Postmate Client](https://www.postmateclient.com) is a free, local-first API client for VS Code. It needs no account, sends nothing to the cloud and stores your requests as plain JSON in your project. Since version 2.5.5 it reads Thunder Client's folder directly, so you don't need to export anything or log in to Thunder first.
 
 1. Install Postmate Client from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=PostMate-lab.postmate).
 2. If you have no Postmate collections yet, Postmate offers the import as soon as it starts: click **Import**. You can also open the Postmate sidebar and choose **Import Collection → Thunder Client**.

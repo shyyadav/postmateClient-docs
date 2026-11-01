@@ -3,8 +3,8 @@ layout: page
 sidebar: false
 aside: false
 outline: false
-title: Thunder Client Alternative for VS Code — Free for Commercial Use
-description: Postmate Client is a free Thunder Client alternative for VS Code — unlimited collections, environments and runs, with a free CLI for CI/CD.
+title: Thunder Client Alternative for VS Code — Free, No Login Required
+description: Looking for a Thunder Client alternative? Postmate is a free VS Code API client with no account or login. Import your Thunder collections in one click.
 head:
   - - script
     - type: application/ld+json
@@ -16,7 +16,7 @@ head:
         "applicationCategory": "DeveloperApplication",
         "applicationSubCategory": "API Client",
         "operatingSystem": "Windows, macOS, Linux",
-        "url": "https://postmateclient.com/",
+        "url": "https://www.postmateclient.com/",
         "downloadUrl": "https://marketplace.visualstudio.com/items?itemName=PostMate-lab.postmate",
         "offers": {
           "@type": "Offer",
@@ -40,7 +40,7 @@ const compareMode = ref('single')
   <h1>You didn't outgrow&nbsp;Thunder&nbsp;Client.<br><span class="tca-hl">You hit its limits.</span></h1>
 
   <p class="tca-lede">
-    First they capped requests. Then collections. Now the free tier can't create a collection or an environment at all. Postmate Client is a free API client for VS Code with no tier above it — and a CLI that runs in CI/CD without a subscription.
+    First they capped requests. Then collections. Since 3.0 you need an account just to see the requests you already saved. Postmate Client is a free API client for VS Code with no tier above it, no account — and a CLI that runs in CI/CD without a subscription.
   </p>
 
   <div class="tca-cta-row">
@@ -49,6 +49,12 @@ const compareMode = ref('single')
   </div>
 
   <p class="tca-microcopy">Free for commercial use · No account · Works offline</p>
+
+  <p class="tca-import-callout">
+    <strong>Coming from Thunder Client?</strong> Postmate finds your Thunder collections and
+    environments on your machine and imports them in one click — no export, no login.
+    <a href="/blog/thunder-client-recover-requests">Requests gone after the update? Get them back →</a>
+  </p>
 </section>
 
 <!-- ──────────────── SIGNATURE: THE LIMIT STRIP ──────────────── -->
@@ -96,6 +102,10 @@ const compareMode = ref('single')
 
   <div class="tca-reasons">
     <article class="tca-reason">
+      <h3>An account just to see your own requests</h3>
+      <p>Since version 3.0, the free plan needs a login. Until you sign in, the extension stops showing collections you saved before the update. The files are still on your disk — <a href="/blog/thunder-client-recover-requests">here's how to get them back</a>.</p>
+    </article>
+    <article class="tca-reason">
       <h3>Non-commercial only, above ten people</h3>
       <p>The free version is restricted to non-commercial use. Companies under ten employees are permitted, as are schools and universities — but if your organisation is larger than that, the free tier isn't available to you at any level of use. That threshold was five employees in 2024.</p>
     </article>
@@ -131,6 +141,7 @@ const compareMode = ref('single')
 | Runs inside VS Code | Yes | Yes |
 | Local-first storage | Yes | Yes |
 | Cursor, Windsurf, VSCodium | Yes | Paid plans only |
+| Account or login required | No | Yes, since 3.0 — including the free plan |
 | Free for commercial use | Yes | No — non-commercial only, under 10 employees |
 | Collections | Unlimited | None on the free version |
 | Environments | Unlimited | None on the free version |
@@ -138,6 +149,7 @@ const compareMode = ref('single')
 | Plain-English assertions, no code | Yes | Yes |
 | Scripting | `pm` object with chai `expect` | Own `tc` syntax, paid plans only |
 | Postman script import | Converted automatically | Manual conversion required |
+| Import from Thunder Client | One click, reads Thunder's local folder | — |
 | CLI, locally and in CI/CD | Free | Paid plans only |
 | Sharing across devices or teammates | Yes | Paid plans only |
 | GraphQL | Yes | Yes |
@@ -287,13 +299,21 @@ const compareMode = ref('single')
 
 <!-- ───────────────────────── SWITCHING ───────────────────────── -->
 <section class="tca-section">
-  <h2>Switching over</h2>
-  
+  <h2>Switching over takes about a minute</h2>
+
   <p>
-    Your Thunder Client collections sit on your machine, so nothing is locked away.
-    Postmate Client imports Postman collections and OpenAPI/Swagger specs directly, and
-    converts any Postman scripts as it goes.
+    Your Thunder Client collections sit on your machine, so nothing is locked away. Postmate
+    Client reads Thunder's local folder directly: pick the collections and environments you
+    want and click OK. No export, and no Thunder login first. Folders, request order,
+    bodies, auth and <code>{{variables}}</code> come across; same-named environments only
+    gain the variables they're missing, so nothing you already have is overwritten.
   </p>
+  <p>
+    It also imports exported Thunder Client files, Postman collections and OpenAPI/Swagger
+    specs, and converts Postman scripts as it goes.
+  </p>
+  <a class="tca-link" href="/blog/thunder-client-recover-requests">Step-by-step: recover and import your Thunder Client requests →</a>
+  <br>
   <a class="tca-link" href="/import-export/import-swagger/">Import and export guide →</a>
 </section>
 
@@ -302,6 +322,12 @@ const compareMode = ref('single')
   <h2>Questions</h2>
 
   <div class="tca-faq">
+    <details><summary>Did the Thunder Client update delete my requests?</summary>
+      <p>No. Thunder Client keeps them as JSON files on your disk; since 3.0 it just won't show them until you sign in. <a href="/blog/thunder-client-recover-requests">See where they are and how to get them back</a>.</p></details>
+    <details><summary>Can I import my Thunder Client collections and environments?</summary>
+      <p>Yes, in one click. Postmate reads Thunder's local folder directly, so you don't need to export anything or log in to Thunder first. Exported Thunder files work too.</p></details>
+    <details><summary>Is Postmate a good ThunderClient alternative for VSCode?</summary>
+      <p>If you liked Thunder Client because it lives inside VS Code and keeps your requests local, Postmate works the same way — without an account, a paid tier or limits on collections, environments and runs. It also runs in Cursor, Windsurf and VSCodium.</p></details>
     <details><summary>Is Postmate Client really free for commercial use?</summary>
       <p>Yes. No paid tier, no seat licence, no separate plan for teams or companies.</p></details>
     <details><summary>Do I need an account?</summary>
@@ -389,6 +415,17 @@ const compareMode = ref('single')
 .tca-btn-ghost { border: 1px solid var(--tca-line); color: var(--tca-ink); }
 .tca-btn-ghost:hover { border-color: var(--tca-green); color: var(--tca-green); }
 .tca-microcopy { font-size: .85rem; color: var(--tca-muted); margin-top: 1.1rem; }
+
+.tca-import-callout {
+  margin: 1.75rem 0 0; padding: .9rem 1.1rem; max-width: 40rem;
+  border-left: 3px solid var(--tca-green); background: var(--tca-mint);
+  border-radius: 0 6px 6px 0; font-size: .95rem; line-height: 1.6; color: var(--tca-ink);
+}
+.tca-import-callout a {
+  display: inline-block; margin-top: .3rem; color: var(--tca-green);
+  font-weight: 600; text-decoration: none;
+}
+.tca-import-callout a:hover { text-decoration: underline; }
 
 /* ── signature: limit strip ── */
 .tca-limits {
