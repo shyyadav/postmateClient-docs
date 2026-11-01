@@ -129,6 +129,7 @@ export default defineConfig({
           text: 'Blog',
           items: [
             { text: 'All Posts', link: '/blog/' },
+            { text: 'Recover Thunder Client Requests Without Logging In', link: '/blog/thunder-client-recover-requests' },
             {text: 'My AI QA Agent Now Runs in CI: Headless, Guarded, No Test Scripts', link:'/blog/ai-qa-agent-ci-github-actions'},
             {text: 'How I Built an AI QA Agent for API Regression and Other Testing Tasks', link:'/blog/ai-qa-agent-api-regression'},
             { text: 'OAuth 2.0 Testing is Live in Postmate Client', link: '/blog/oauth2-support-launch' },
