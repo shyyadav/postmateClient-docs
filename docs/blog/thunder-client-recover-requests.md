@@ -140,6 +140,8 @@ A few details that matter if you already use Postmate:
 
 Thunder's files are only read, never changed or deleted. If you ever want to go back, everything is still where it was.
 
+For every option, including importing an exported Thunder Client file, see the full [Migrate from Thunder Client guide](/import-export/migrate-from-thunder-client).
+
 ## What carries over, and what doesn't
 
 Most requests come across complete. A few Thunder-specific features don't, and Postmate lists each one in a summary after the import.
@@ -149,7 +151,7 @@ Most requests come across complete. A few Thunder-specific features don't, and P
 | Collections, nested folders and request order | Thunder tests (re-add them in the Tests tab) |
 | URL, method, enabled headers and query params | Pre-request and post-request scripts |
 | JSON, form, multipart text fields, XML, text and GraphQL bodies | File fields in multipart bodies (re-attach the files) |
-| `{{variables}}`, including unquoted ones in JSON | Auth types other than Bearer and Basic |
+| <span v-pre>`{{variables}}`</span>, including unquoted ones in JSON | Auth types other than Bearer and Basic |
 | Bearer and Basic auth | Disabled headers and query params (skipped) |
 | Environments and their variables |  |
 

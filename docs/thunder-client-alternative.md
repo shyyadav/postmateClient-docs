@@ -305,16 +305,16 @@ const compareMode = ref('single')
     Your Thunder Client collections sit on your machine, so nothing is locked away. Postmate
     Client reads Thunder's local folder directly: pick the collections and environments you
     want and click OK. No export, and no Thunder login first. Folders, request order,
-    bodies, auth and <code>{{variables}}</code> come across; same-named environments only
+    bodies, auth and <code v-pre>{{variables}}</code> come across; same-named environments only
     gain the variables they're missing, so nothing you already have is overwritten.
   </p>
   <p>
     It also imports exported Thunder Client files, Postman collections and OpenAPI/Swagger
     specs, and converts Postman scripts as it goes.
   </p>
-  <a class="tca-link" href="/blog/thunder-client-recover-requests">Step-by-step: recover and import your Thunder Client requests →</a>
+  <a class="tca-link" href="/import-export/migrate-from-thunder-client">Migrate from Thunder Client: full guide →</a>
   <br>
-  <a class="tca-link" href="/import-export/import-swagger/">Import and export guide →</a>
+  <a class="tca-link" href="/blog/thunder-client-recover-requests">Requests gone after the update? Recover them →</a>
 </section>
 
 <!-- ───────────────────────── FAQ ───────────────────────── -->

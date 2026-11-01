@@ -205,6 +205,7 @@ export default defineConfig({
             { text: 'Import from Fiddler', link: '/import-export/import-from-fiddler' },
             { text: 'Migrate from Postman', link: '/import-export/migrate-from-postman' },
             { text: 'Migrate from Bruno', link: '/import-export/migrate-from-bruno' },
+            { text: 'Migrate from Thunder Client', link: '/import-export/migrate-from-thunder-client' },
           ]
         },
         {
