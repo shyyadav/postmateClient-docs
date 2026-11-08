@@ -130,6 +130,19 @@
   background: var(--vp-c-brand-1);
 }
 
+.vp-doc blockquote {
+  border-left-color: #22a55b;
+}
+/* Small icon before "Prompt:" in blockquotes that start with a bold label */
+.vp-doc blockquote:has(> p:first-child > strong:first-child) > p:first-child::before {
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-right: 0.4em;
+  vertical-align: -0.15em;
+  background: url('/icons/prompt.svg') no-repeat center / contain;
+}
 /* ─── Headings ───────────────────────────────────────────────────────────── */
 .vp-doc h1,
 .vp-doc h2,

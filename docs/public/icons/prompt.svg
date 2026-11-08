@@ -1,0 +1,6 @@
+<!-- docs/public/icons/prompt.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none"
+     stroke="#22a55b" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M2.5 3.5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H7l-3 2.5v-2.5h-.5a1 1 0 0 1-1-1z"/>
+    <path d="M6 6.5h4M6 8.5h2.5"/>
+</svg>
