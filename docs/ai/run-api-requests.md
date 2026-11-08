@@ -13,7 +13,7 @@ An assistant that can read your last API response is useful. An assistant that c
 
 Turn on one setting and GitHub Copilot can run any request you have already saved in Postmate Client, read what comes back, and keep going.
 
-> *Send the getClient request against QA and tell me why it's returning 401*
+> **Prompt:** Send the getClient request against QA and tell me why it's returning 401
 
 It cannot invent a URL. It can only run requests you have already built. That constraint is the whole design, and the rest of this page is about why.
 
@@ -57,7 +57,9 @@ Like any VS Code setting, this can live in a workspace `.vscode/settings.json`, 
 | Choose which environment it runs against | ✅ |
 | Fill in variables your environment doesn't define | ✅ |
 | Read the response, headers, timing, and test results | ✅ |
-| Invent a URL, method, header, or body | ❌ |
+| Build a body from another saved request's response and change named fields | ✅ |
+| Invent a URL, method, or header | ❌ |
+| Write a body from scratch | ❌ |
 | Override a value your environment defines | ❌ |
 | Create, edit, or delete a saved request | ❌ |
 | Send a multipart request | ❌ |
@@ -70,17 +72,23 @@ This is deliberate. The attack surface of "an AI can make HTTP requests from you
 
 ### Your environment wins
 
-The agent can supply values for `{{variables}}` — an ID to look up, a search term, a row of test input:
+The agent can supply values for <span v-pre>`{{variables}}`</span> — an ID to look up, a search term, a row of test input:
 
-> *Send getStudent with student_id 1001 and show me the payment status*
+> **Prompt:** Send getStudent with student_id 1001 and show me the payment status
 
-But values defined in your environment always take precedence. If `{{baseUrl}}` or `{{token}}` lives there, the agent cannot override it no matter what it passes. Keep credentials and base URLs in an environment and they stay outside the agent's reach while it still gets to fill in the harmless parts.
+But values defined in your environment always take precedence. If <span v-pre>`{{baseUrl}}`</span> or <span v-pre>`{{token}}`</span> lives there, the agent cannot override it no matter what it passes. Keep credentials and base URLs in an environment and they stay outside the agent's reach while it still gets to fill in the harmless parts.
 
 This is the same [variable resolution order](/reference/variable-resolution) the request panel uses — nothing special happens for AI.
 
+### Changing part of a resource
+
+Some updates need the whole resource sent back: GET settings, change one field, PUT them. The agent can ask Postmate to build that body from another request's response and apply only the changes it names — Postmate works on the full response, so even very large bodies work, and a mistyped field is refused instead of added.
+
+→ See [Update Part of a Resource with Your AI Agent](/ai/partial-updates)
+
 ### Anything that isn't a read asks first
 
-Any send that isn't `GET`, `HEAD`, or `OPTIONS` shows a dialog with the method, the resolved URL, and the environment before a single byte leaves your machine.
+Any send that isn't `GET`, `HEAD`, or `OPTIONS` shows a dialog with the method, the resolved URL, and the environment before a single byte leaves your machine. When the body was built from another response, it also lists each change.
 
 ![GitHub Copilot asking for confirmation before sending a POST request from Postmate Client](/mcp-send-confirm.png)
 
@@ -162,6 +170,10 @@ Not directly. The agent runs one saved request at a time. For running a whole co
 ### What happens with OAuth requests?
 
 Token fetching works the same as it does from the panel — client credentials and password grants are fetched automatically. The authorization code grant needs an interactive browser login, so the agent gets an error asking you to click **Get New Access Token** in the request panel first.
+
+### Can the agent find the right request on its own?
+
+Yes. With collection access (on by default) it can list your collections and read a map of their requests and docs, then pick the request by name. See [Let Your AI Agent Read Your Docs and Run a Full Regression](/ai/read-collections).
 
 ### Can the agent write a test against what it just sent?
 

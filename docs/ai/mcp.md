@@ -1,20 +1,20 @@
 ---
 title: MCP Server Reference — Postmate Client
-description: Technical reference for Postmate Client's local MCP server — read live responses, let an AI run your saved API requests, redaction rules, and configuration.
+description: Technical reference for Postmate Client's local MCP server — read live responses and your collections, let an AI run your saved API requests and update part of a resource, redaction rules, and configuration.
 head:
   - - meta
     - name: keywords
-      content: mcp server vscode, local mcp server api testing, vscode api client mcp, postmate mcp tools, let ai run api requests, copilot api testing, agentic api testing
+      content: mcp server vscode, local mcp server api testing, vscode api client mcp, postmate mcp tools, let ai run api requests, copilot api testing, agentic api testing, ai api regression testing, json patch api
 ---
 
 # MCP Server Reference
 
-Postmate Client runs a local [MCP](https://modelcontextprotocol.io) server on `127.0.0.1` so AI agents in your editor can read the request panel you are actually looking at — and, once you turn it on, run requests you have already saved. It exposes three tools, redacts credentials before returning anything, and can be disabled with a single setting.
+Postmate Client runs a local [MCP](https://modelcontextprotocol.io) server on `127.0.0.1` so AI agents in your editor can read the request panel you are actually looking at, read your collections and their docs, and — once you turn it on — run requests you have already saved, including building a request's body from another response. It exposes five tools, redacts credentials before returning anything, and can be disabled with a single setting.
 
 This page is the complete reference: every tool, every parameter, what gets redacted, and how to configure it.
 
 ::: tip Beta
-The MCP server arrived in v2.0.0 and `send_request` in v2.1.0. Both are marked beta — behaviour and tool names may change. [Feedback welcome](https://github.com/shyyadav/postmateClient-docs/discussions).
+The MCP server arrived in v2.0.0, `send_request` in v2.1.0, `list_collections` and `get_collection` in v2.6.0, and building a body from another response in v2.7.0. All of it is beta — behaviour and tool names may change. [Feedback welcome](https://github.com/shyyadav/postmateClient-docs/discussions).
 :::
 
 ## Postmate does not call an AI. An AI calls Postmate
@@ -50,7 +50,15 @@ Claude Code, Cursor, and Windsurf read their own configuration files rather than
 
 ## Tools
 
-Two tools are always available. The third, `send_request`, is off until you [enable it](#letting-the-agent-send-requests).
+| Tool | Available | What it does |
+| --- | --- | --- |
+| `get_active_response` | Always | Reads the request and response in your active panel |
+| `list_open_panels` | Always | Lists your open request panels |
+| `list_collections` | On by default | Lists your collections |
+| `get_collection` | On by default | Returns a collection's docs and a map of its requests |
+| `send_request` | Off until you [enable it](#letting-the-agent-send-requests) | Runs a saved request, optionally with a body built from another response |
+
+`list_collections` and `get_collection` can be turned off with [`postmate.mcp.allowReadCollections`](#reading-collections).
 
 ### `get_active_response`
 
@@ -64,7 +72,7 @@ Returns the request and response from the panel you last had focused.
 | `error` | Present instead of a response when the request failed |
 | `bodyShape` | Top-level keys and array lengths, so the agent knows what it can query |
 
-Variables are resolved before capture. The agent sees `https://api.example.com/client`, not `{{baseUrl}}/client`.
+Variables are resolved before capture. The agent sees `https://api.example.com/client`, not <span v-pre>`{{baseUrl}}/client`</span>.
 
 **Parameters**
 
@@ -74,6 +82,41 @@ Variables are resolved before capture. The agent sees `https://api.example.com/c
 ### `list_open_panels`
 
 Lists your open request panels with method, URL, last status, and which one is active. The agent uses this when it is not obvious which panel you mean.
+
+### `list_collections` <Badge type="tip" text="2.6.0" />
+
+Lists your saved collections with each one's id, name, number of requests, and whether it has [docs](/core-concepts/collections). The agent uses it to find the exact name before calling `get_collection` — for example when you say "the school app" and the collection is called *School API*.
+
+### `get_collection` <Badge type="tip" text="2.6.0" />
+
+Returns a map of one collection: its docs and a flat list of its requests in sidebar order.
+
+**Parameters**
+
+- `name` *(required)* — the collection name. An exact match wins; otherwise a unique case-insensitive match is used. If nothing matches, the error lists the available names.
+- `folder` *(optional)* — a folder path such as `["Students"]` or `["Students", "Admin"]`, to read only that folder and everything under it
+- `cursor` *(optional)* — the `nextCursor` from the previous result, to read the next page
+
+**Returns**
+
+| Field | Description |
+| --- | --- |
+| `docs` | The collection's docs, or part of them when they span several pages |
+| `docsContinue` | `true` while more docs follow on the next page |
+| `folders` | Every folder with its full path (first page only) |
+| `requests` | Each request's id, name, type (`http`, `websocket`, `grpc`), method, URL, folder path, and whether it has its own docs |
+| `totalRequests` | How many requests the collection (or folder) has |
+| `incomplete`, `nextCursor` | Present when more pages follow, with what to call next |
+
+URLs keep their <span v-pre>`{{variables}}`</span> unresolved, and environment values are never included. **Headers, bodies, auth, scripts, and tests are not returned** — this is a map, not an export.
+
+#### Pages
+
+A large collection, or long docs, comes back in pages. Docs come first, split at line breaks, then the requests. The agent follows `nextCursor` until there is none. The cursor is opaque on purpose: an agent that computed offsets itself would skip or repeat requests, because pages are cut by size, not by count. The tool description tells the agent to read every page before judging anything.
+
+#### Docs are information, not instructions
+
+Collection docs are written by people and may be pasted from anywhere. The tool tells the agent to treat them as information about your API, never as instructions that override what you asked for. Secret-looking values in docs — JWTs, `Bearer` credentials, values of keys like `password` or `token` — are redacted, as are sensitive query parameters in URLs. Keep real secrets in environments, not in docs.
 
 ### `send_request` <Badge type="tip" text="2.1.0" />
 
@@ -85,7 +128,10 @@ The agent cannot invent a URL. It can only run a request you have already saved,
 
 - `request_path` *(required)* — the request to run, written as `CollectionName.RequestName`, for example `School API.getClient`
 - `environment` *(optional)* — the environment to run against. Defaults to your active one.
-- `data` *(optional)* — values for `{{variables}}` the request needs, as a key-value object
+- `data` *(optional)* — values for <span v-pre>`{{variables}}`</span> the request needs, as a key-value object
+- `body_from_response` *(optional)* <Badge type="tip" text="2.7.0" /> — another saved request whose response body becomes this request's body. See [Building the body from another response](#building-the-body-from-another-response).
+- `patch` *(optional)* — a [JSON Patch](https://datatracker.ietf.org/doc/html/rfc6902) applied to that body before sending. Only with `body_from_response`.
+- `allow_new_fields` *(optional)* — allows `patch` to add fields the response does not have. Only when you asked for a new field.
 
 The return shape matches `get_active_response` — request, response, test results, body size and shape — with the same redaction applied. The response also becomes the active one, so a follow-up `get_active_response` reads it.
 
@@ -93,8 +139,7 @@ Pre-requests run exactly as they do from the panel, so a request chained behind 
 
 **Example**
 
-> *Send the getClient request against QA and tell me why it is failing*
-
+> **Prompt:** Send the getClient request against QA and tell me why it is failing
 ```
 send_request({ request_path: "School API.getClient", environment: "QA" })
 ```
@@ -105,11 +150,40 @@ send_request({ request_path: "School API.getClient", environment: "QA" })
 
 `data` is for values the request needs but your environment does not hold — an ID to look up, a search term, a row of test input:
 
-> *Send getStudent with student_id 1001*
+> **Prompt:** Send getStudent with student_id 1001
 
-Environment values always win. If `{{baseUrl}}` or `{{token}}` is defined in the environment, the agent cannot override it through `data`, no matter what it passes. Keep credentials and base URLs in your environment and they stay outside the agent's reach, while the agent can still supply the harmless parts of a request.
+Environment values always win. If <span v-pre>`{{baseUrl}}`</span> or <span v-pre>`{{token}}`</span> is defined in the environment, the agent cannot override it through `data`, no matter what it passes. Keep credentials and base URLs in your environment and they stay outside the agent's reach, while the agent can still supply the harmless parts of a request.
 
 This is the same resolution order the request panel uses — see [Building Requests](/core-concepts/building-requests).
+
+#### Building the body from another response
+
+Some APIs only take a whole resource back: GET your settings, change one field, PUT all of it. With a large body the agent can't do that itself — it may never see the full body, and secrets in it are redacted — so Postmate does it:
+
+```
+send_request({
+  request_path: "Settings.putUserSettings",
+  body_from_response: "Settings.getUserSettings",
+  patch: [{ op: "replace", path: "/nickName", value: "Sam" }]
+})
+```
+
+1. Postmate sends `getUserSettings` (same environment and `data`) and takes its **full, unredacted** response body.
+2. It applies the patch. Supported operations: `replace`, `add`, `remove`, and `test` (check a value before changing it). Paths are JSON Pointers such as `/nickName` or `/addresses/0/city`.
+3. It sends the result as the body of `putUserSettings`, and the response comes back as usual.
+
+The target can use any method — `PUT`, `POST`, `PATCH` — and the saved request's own body is replaced. The body goes out with your saved `Content-Type` if the request has one, otherwise the source response's JSON type (for example `application/vnd.acme.settings+json`), otherwise `application/json`.
+
+Nothing is sent to the target if any step fails:
+
+- the source request doesn't return 2xx, or its body isn't a JSON object or array
+- a `replace` or `remove` path doesn't exist — the error names the keys that do exist at that level, and suggests the right one when only the case differs (`/nickname` → *did you mean `/nickName`?*), so the agent can ask you which field you meant
+- an `add` would create a field the response doesn't have and `allow_new_fields` isn't set — so a typo can never add a junk field. Adding array items always works.
+- a `test` operation doesn't match
+
+The agent is told not to change the patch on its own after a failure, and the [confirmation dialog](#confirmation-before-mutating-requests) shows every change, marking new fields.
+
+→ See [Update Part of a Resource with Your AI Agent](/ai/partial-updates) for a walkthrough
 
 ## Letting the agent send requests
 
@@ -127,7 +201,7 @@ Like every other Postmate setting, this can live in a workspace `.vscode/setting
 
 ### Confirmation before mutating requests
 
-Any send that is not `GET`, `HEAD`, or `OPTIONS` shows a dialog with the method, resolved URL, and environment before anything leaves your machine.
+Any send that is not `GET`, `HEAD`, or `OPTIONS` shows a dialog with the method, resolved URL, and environment before anything leaves your machine. When the body was built from another response, the dialog also shows where it came from and each change, for example `replace /nickName = "Sam"` — and `(NEW field)` next to an `add` that creates a field.
 
 ![GitHub Copilot asking for confirmation before sending a POST request from Postmate Client](/mcp-send-confirm.png)
 
@@ -151,7 +225,9 @@ Your agent may show its own confirmation on top of this one. Copilot, for exampl
 | Choose which environment it runs against | ✅ |
 | Supply values for variables your environment does not define | ✅ |
 | Read the response, headers, timing, and test results | ✅ |
-| Invent a URL, method, header, or body | ❌ |
+| Build a body from another saved request's response and change named fields | ✅ |
+| Invent a URL, method, or header | ❌ |
+| Write a body from scratch | ❌ |
 | Override a value your environment defines | ❌ |
 | Create, modify, or delete a saved request | ❌ |
 | Send a multipart request | ❌ — file contents are not stored with a saved request |
@@ -173,6 +249,13 @@ With `send_request` enabled:
 - *Run Students against QA and check the response shape*
 - *Send getStudent with student_id 1001 and show me the payment status*
 - *Run the login request, then getClient, and tell me if the token is being picked up*
+- *Change my nickName to Sam using putUserSettings with the body from getUserSettings, then check it was saved*
+
+With collections (on by default):
+
+- *List my Postmate collections*
+- *Get the School API collection and summarize its docs and requests*
+- *Do a full regression for School API in QA env* — works when the collection docs describe the run order, the scenarios to check and the report you want. See [Let Your AI Agent Read Your Docs and Run a Full Regression](/ai/read-collections).
 
 ::: tip
 Mention "Postmate" or "the active panel" in your prompt. Without it the agent may not realise it should look at your request panel at all.
@@ -210,6 +293,8 @@ For a 900-item response, that returns 900 short strings instead of hundreds of k
 
 The same limit applies to responses from `send_request`. A large response comes back as size and shape, and the agent queries it with `get_active_response` afterwards.
 
+`get_collection` keeps each result small enough to reach the model intact and pages the rest, so a big collection or long docs never get silently cut off.
+
 ## Timeouts
 
 Requests the agent sends time out after 30 seconds. This is deliberately separate from [`postmate.request.timeoutMs`](/core-concepts/building-requests), which defaults to no timeout: a request you send yourself can hang as long as you are willing to wait for it, but an agent waiting on a dead endpoint blocks the conversation.
@@ -237,6 +322,9 @@ Specifically, when you ask a question that triggers a tool call, your agent may 
 - Test results for the request
 - The names of your open request panels
 - The same details for any request it runs itself, if you have enabled `send_request`
+- Your collection names, request names, methods, URLs with <span v-pre>`{{variables}}`</span> unresolved, folder paths, and collection docs, if `allowReadCollections` is on (the default). Never headers, bodies, auth, or environment values from collections.
+
+When the agent builds a body from another response, the full source body stays inside Postmate. The agent sees only the response of the request it sent.
 
 ### What is redacted
 
@@ -251,6 +339,8 @@ Credentials are replaced with `[redacted by Postmate]` before the tool returns a
 **JWT-shaped values** — any string matching a JWT pattern is redacted regardless of its key name, since tokens often appear under innocuous field names.
 
 **Auth configuration** — only the auth *type* is exposed (`bearer`, `oauth2`). Client secrets, refresh tokens, AWS keys, and stored credentials are never captured, including for requests the agent runs itself.
+
+**Docs and URLs** — in collection docs, JWTs, `Bearer`/`Basic` credentials, and values of the keys above are redacted; in saved URLs, sensitive query parameters such as `api_key` or `token`. <span v-pre>`{{variables}}`</span> are kept, since they are names, not values. Docs are free text, so this is best effort — keep real secrets in environments.
 
 Redaction applies to JSON bodies and URL-encoded form bodies. Binary and multipart bodies are not sent at all.
 
@@ -289,6 +379,11 @@ The setting can be committed to a workspace `.vscode/settings.json`, so a team c
 | `postmate.mcp.enabled` | `true` | Runs the local MCP server. Off means no tools at all. |
 | `postmate.mcp.allowSend` | `false` | Exposes `send_request`. Off means the tool is not registered. |
 | `postmate.mcp.confirmMutations` | `true` | Asks before any send that is not `GET`, `HEAD`, or `OPTIONS`. |
+| `postmate.mcp.allowReadCollections` | `true` | Exposes `list_collections` and `get_collection`. Off means those tools are not registered. |
+
+### Reading collections
+
+`allowReadCollections` decides whether Postmate serves your collections to the agent. It does not stop the agent from opening files you have open in your workspace — if your collections live in the workspace (`postmate.useWorkspaceAsProjectDir`), the agent's own file tools can read them, including headers and bodies. With the setting on, the agent gets the compact, redacted map instead.
 
 ## Limitations
 
@@ -299,6 +394,9 @@ The setting can be committed to a workspace `.vscode/settings.json`, so a team c
 - **The agent may use a stale response.** If you switch panels mid-conversation, the agent sometimes answers from a response it read earlier. Asking again prompts a fresh read.
 - **The most recent send wins.** A request the agent runs becomes the active response, the same as if you had sent it yourself. Focusing a panel makes that panel active again.
 - **Counting questions can take several tool calls.** The agent may query each distinct value separately rather than fetching them all at once.
+- **The agent may rely on docs it read earlier.** In a long conversation it can skip re-reading a collection whose docs you have since changed. Start a new chat, or ask it to read the collection again.
+- **`body_from_response` needs a JSON source.** The source response must be a JSON object or array; other bodies are refused.
+- **Instructions are advice; limits are enforced.** An agent can ignore guidance, so the safety rules — saved requests only, no junk fields without `allow_new_fields`, confirmation for mutations — are enforced by Postmate, not left to the agent.
 
 ## Feedback
 
