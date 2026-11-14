@@ -9,6 +9,9 @@ Tutorials, product updates, and deep dives on fast, local-first API testing.
 
 ## Latest Posts
 
+### [How to Build an AI QA Agent from Scratch: Regression Testing from Your API Docs](/blog/how-to-build-ai-qa-agent-from-scratch)
+*November 14, 2026 · 8 min read*
+
 ### [Thunder Client Requests Gone After the Update? How to Get Them Back Without Logging In](/blog/thunder-client-recover-requests)
 *November 01, 2026 · 5 min read*
 
