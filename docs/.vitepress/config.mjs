@@ -78,8 +78,6 @@ export default defineConfig({
 
     pageData.frontmatter.head ??= []
     pageData.frontmatter.head.push(
-        // ['title', {}, pageTitle],
-        // ['meta', { name: 'description', content: pageDescription }],
         ['meta', { property: 'og:title', content: pageTitle }],
         ['meta', { property: 'og:description', content: pageDescription }],
         ['meta', { property: 'og:url', content: canonicalUrl }],
@@ -129,6 +127,7 @@ export default defineConfig({
           text: 'Blog',
           items: [
             { text: 'All Posts', link: '/blog/' },
+            { text: 'How to Build an AI QA Agent from Scratch', link: '/blog/how-to-build-ai-qa-agent-from-scratch' },
             { text: 'Recover Thunder Client Requests Without Logging In', link: '/blog/thunder-client-recover-requests' },
             {text: 'My AI QA Agent Now Runs in CI: Headless, Guarded, No Test Scripts', link:'/blog/ai-qa-agent-ci-github-actions'},
             {text: 'How I Built an AI QA Agent for API Regression and Other Testing Tasks', link:'/blog/ai-qa-agent-api-regression'},
