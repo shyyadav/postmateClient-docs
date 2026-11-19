@@ -1,14 +1,21 @@
 import DefaultTheme from 'vitepress/theme'
 import './custom.css'
 import { useRoute } from 'vitepress'
-import { onMounted, watch, nextTick } from 'vue'
+import { h, onMounted, watch, nextTick } from 'vue'
 import mediumZoom from 'medium-zoom'
 import YouTubeEmbed from './YouTubeEmbed.vue'
 import ZoomVideo from './ZoomVideo.vue'
 import DemoRequestForm from './components/DemoRequestForm.vue'
+import NewsletterCta from './components/NewsletterCta.vue'
 
 export default {
   extends: DefaultTheme,
+  // Newsletter signup box at the end of every blog post (the component hides itself elsewhere)
+  Layout() {
+    return h(DefaultTheme.Layout, null, {
+      'doc-after': () => h(NewsletterCta)
+    })
+  },
   enhanceApp({ app }) {
     app.component('YouTubeEmbed', YouTubeEmbed)
     app.component('ZoomVideo', ZoomVideo)

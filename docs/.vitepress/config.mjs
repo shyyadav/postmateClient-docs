@@ -17,7 +17,9 @@ export default defineConfig({
   },
   
   sitemap: {
-    hostname: 'https://www.postmateclient.com'
+    hostname: 'https://www.postmateclient.com',
+    // Newsletter confirmation pages are noindex, keep them out of the sitemap too
+    transformItems: (items) => items.filter((i) => !/newsletter-(thanks|welcome)/.test(i.url))
   },
 
   head: [
@@ -110,6 +112,7 @@ export default defineConfig({
       { text: 'pm API', link: '/testing/pm-library' },
       { text: 'CLI', link: '/ci-cd/cli-reference', activeMatch: '/ci-cd/' },
       { text: 'Blog', link: '/blog/', activeMatch: '/blog/' },
+      { text: 'Newsletter', link: 'https://newsletter.postmateclient.com' },
       { text: 'Contact', link: '/contact' },
       {
         text: 'Links',
@@ -247,7 +250,7 @@ export default defineConfig({
     },
 
     footer: {
-      message: '<a href="/security">Security &amp; Privacy</a> · Questions? <a href="/contact">Contact</a> · <a href="mailto:help@postmateclient.com">help@postmateclient.com</a> · <a href="https://github.com/shyyadav/postmateClient-docs/issues">GitHub Issues</a>',
+      message: '<a href="/security">Security &amp; Privacy</a> · <a href="https://newsletter.postmateclient.com">Newsletter</a> · Questions? <a href="/contact">Contact</a> · <a href="mailto:help@postmateclient.com">help@postmateclient.com</a> · <a href="https://github.com/shyyadav/postmateClient-docs/issues">GitHub Issues</a>',
       // message: 'Released under the Postmate Client Proprietary License.',
       copyright: 'Copyright © 2026 Postmate Client'
     },

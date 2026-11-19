@@ -8,6 +8,8 @@
     { "source": "/blog/Best-Free-PostmanAlternatives-2026", "destination": "/blog/best-free-postman-alternatives-2026", "permanent": true },
     { "source": "/blog/How-to-compare-json-response", "destination": "/blog/how-to-compare-json-response", "permanent": true },
     { "source": "/docs/corporate-proxy", "destination": "/security/corporate-proxy", "permanent": true },
-    { "source": "/docs/certificates", "destination": "/security/client-certificates", "permanent": true }
+    { "source": "/docs/certificates", "destination": "/security/client-certificates", "permanent": true },
+    { "source": "/blog/build-ai-qa-agent-from-scratch", "destination": "/blog/how-to-build-ai-qa-agent-from-scratch", "permanent": true },
+    { "source": "/newsletter", "destination": "https://newsletter.postmateclient.com", "permanent": false }
   ]
 }
