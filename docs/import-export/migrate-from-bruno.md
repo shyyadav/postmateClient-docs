@@ -18,6 +18,10 @@ The exact list depends on your Bruno version. The steps below show the Postman e
 
 > *Tested with Bruno v4.2.0 on Windows, November 2026.*
 
+::: tip Moving to Postmate Client? You can skip the export
+Postmate Client 2.8.2 and later imports a Bruno collection folder directly: requests, folders, auth, scripts and environments, with no Postman file in between. See [Option B](#option-b-import-the-bruno-folder-directly-into-postmate-client).
+:::
+
 ## Step 1: Export your collection from Bruno
 
 1. Open your collection in **Bruno**.
@@ -46,14 +50,39 @@ Now pick your destination.
 
 Your collection appears in the sidebar with its folder structure intact.
 
-## Option B: Import into Postmate Client
+## Option B: Import the Bruno folder directly into Postmate Client
+
+No export needed. Postmate Client 2.8.2 and later reads the collection folder Bruno saves on your disk.
+
+1. In the **Postmate Client sidebar**, click the **hamburger menu (☰)** next to the collection search bar and select **Import Collection**.
+2. From the **"Select collection type"** dropdown, choose **Bruno**.
+3. Pick your Bruno collection folder: the one that contains `opencollection.yml`. If you pick the folder above it, Postmate finds the collection inside, or lets you choose when there are several.
+4. If the collection uses variables that none of its environments define, Postmate asks where to put them, the same as in a Postman import.
+
+Postmate imports the collection and its environments, then shows one summary notification listing anything that couldn't come across.
+
+**What the direct import brings over**
+
+- ✅ Requests, folders and Markdown docs
+- ✅ Headers and auth set on a folder or the collection. Postmate applies them to each request, so inherited auth keeps working
+- ✅ `bru.runRequest("Login")` becomes a Postmate pre-request, so a request that logs in first still does
+- ✅ Common script calls are translated: `res.getBody()` → `RESPONSE.body`, `bru.setVar()` → `pm.setVariable()`, `test()` / `expect()` → `pm.test()` / `pm.expect()`
+- ✅ Environments, including ones that extend another environment. New variables are added; values you already have in Postmate are never overwritten
+- ⚠️ Secret variables come across with an empty value. Bruno keeps secret values outside the collection, and Postmate doesn't read them, so fill them in the **Env** tab
+- ⚠️ Collection- and folder-level scripts, gRPC and WebSocket requests, digest/NTLM auth and file fields in multipart bodies are left out and listed in the summary
+
+**Older `.bru` collections:** the direct import supports Bruno's YAML format (OpenCollection), which has `opencollection.yml` in the collection folder. If your collection has `bruno.json` and `.bru` files instead, Postmate tells you so. Use [Option C](#option-c-import-the-postman-export-into-postmate-client) for those.
+
+## Option C: Import the Postman export into Postmate Client
+
+Use this for collections in Bruno's older `.bru` format, or if you already have the Postman export from Step 1.
 
 1. In the **Postmate Client sidebar**, click the **hamburger menu (☰)** next to the collection search bar.
 
    ![Postmate Client collections panel hamburger menu showing Import Collection option](/postman-import-menu.png)
    *Click the hamburger icon above your collections list to open the import menu.*
 
-2. Select **Import Postman/Postmate**.
+2. Select **Import Collection**.
 3. From the **"Select collection type"** dropdown, choose **Postman**.
 
    ![Postmate Client collection type selector showing Postmate and Postman options](/postman-import-select-type.png)
@@ -101,8 +130,6 @@ By default, Bruno translates common Postman script calls (such as `pm.test` and 
 2. In Bruno, click the **Environments** icon (top-right) → **Configure environments** → **Import environment**.
 3. Select the file. If an environment with the same name exists, choose **Replace**, **New** or **Skip**.
 
-See [Bruno's Postman migration guide](https://docs.usebruno.com/get-started/import-export-data/postman-migration) for bulk imports and the full list of translated script APIs.
-
 If you're leaving Postman because of the login requirement or cloud sync, Bruno isn't the only local-first option. See [migrating from Postman to Postmate Client](/import-export/migrate-from-postman) for a VS Code-native alternative.
 
 ## Quick reference
@@ -112,7 +139,8 @@ If you're leaving Postman because of the login requirement or cloud sync, Bruno 
 | 1 | In Bruno, collection **•••** menu → **Share** → **Export** → choose a format |
 | 2 | Click **Proceed** and save the file |
 | 3a | **To Postman:** **Import** → drag the `.json` file → **Import** |
-| 3b | **To Postmate Client:** **☰** → **Import Postman/Postmate** → choose **Postman** → select the `.json` file |
+| 3b | **To Postmate Client (no export):** **☰** → **Import Collection** → choose **Bruno** → select the collection folder |
+| 3c | **To Postmate Client (`.bru` collections):** **☰** → **Import Collection** → choose **Postman** → select the exported `.json` file |
 | 4 | Run the collection once and review scripts and assertions |
 | ↩ | **Postman → Bruno:** export from Postman as Collection v2.1, then in Bruno **+** → **Import Collection** |
 
@@ -148,9 +176,9 @@ You don't need one. Bruno has a built-in Postman export: **•••** → **Sha
 
 Export the collection from Postman as **Collection v2.1**, then in Bruno click **+** in the top-left sidebar → **Import Collection** and select the file. Environments are imported separately from **Environments → Configure environments → Import environment**.
 
-### Do I need a special Bruno importer for Postmate Client?
+### Can Postmate Client import a Bruno collection without exporting it?
 
-No. Bruno exports in Postman format, and Postmate Client imports Postman collections natively.
+Yes, from version 2.8.2. Choose **Bruno** as the collection type and pick the collection folder. It brings over requests, folders, auth, scripts and environments. For collections in the older `.bru` format, export to Postman from Bruno and import that file instead.
 
 ### Are gRPC requests included in the Postman export?
 
@@ -162,7 +190,7 @@ Not the ones in Bruno's **Assert** tab. They are left out of the Postman export,
 
 ### Will my Bruno scripts work after import?
 
-Mostly, yes. Bruno's Postman export translates common `bru.*` calls into `pm.*`, and Postmate Client converts those into its own `pm` library when you import. Run the collection once afterwards, and fix any script that uses a Bruno API without a `pm` equivalent.
+Mostly, yes. With the direct import, Postmate Client translates common `bru.*` and `res.*` calls itself and turns `bru.runRequest` into a pre-request. With the Postman route, Bruno's export translates `bru.*` calls into `pm.*` and Postmate converts those on import. Either way, run the collection once afterwards; any script call without a Postmate equivalent is listed in the import summary.
 
 ## Share your feedback
 
