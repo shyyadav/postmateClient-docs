@@ -140,7 +140,7 @@ Creating a table is step one. To use it in requests, attach it to an environment
 
 1. Open the **Env** tab in the sidebar.
 2. Open the environment you want to attach the table to (e.g. Dev).
-3. At the bottom of the environment editor, **select the data table** from the dropdown.
+3. At the top of the environment editor, **select the data table** from the dropdown.
 4. Click **Attach**.
 
 A new `dataTableName` entry appears in the environment, recording the attachment.
