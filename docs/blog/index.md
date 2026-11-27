@@ -9,6 +9,9 @@ Tutorials, product updates, and deep dives on fast, local-first API testing.
 
 ## Latest Posts
 
+### [Best Free API Testing Tools in 2027 (Free Plans Compared)](/blog/best-free-api-testing-tools-2027)
+*November 26, 2026 · 11 min read*
+
 ### [How to Build an AI QA Agent from Scratch: Regression Testing from Your API Docs](/blog/how-to-build-ai-qa-agent-from-scratch)
 *November 14, 2026 · 8 min read*
 
