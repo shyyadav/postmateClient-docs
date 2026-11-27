@@ -130,6 +130,7 @@ export default defineConfig({
           text: 'Blog',
           items: [
             { text: 'All Posts', link: '/blog/' },
+            { text: 'Best Free API Testing Tools in 2027', link: '/blog/best-free-api-testing-tools-2027' },
             { text: 'How to Build an AI QA Agent from Scratch', link: '/blog/how-to-build-ai-qa-agent-from-scratch' },
             { text: 'Recover Thunder Client Requests Without Logging In', link: '/blog/thunder-client-recover-requests' },
             {text: 'My AI QA Agent Now Runs in CI: Headless, Guarded, No Test Scripts', link:'/blog/ai-qa-agent-ci-github-actions'},
@@ -143,7 +144,8 @@ export default defineConfig({
             { text: '7 Best Free Postman Alternatives for Developers in 2026', link: '/blog/best-free-postman-alternatives-2026' },
             { text: 'How to Compare JSON Responses: 3 Practical Methods', link: '/blog/how-to-compare-json-response' },
             { text: 'Postmate Client vs Postman vs Thunder Client: Scripting Compared', link: '/blog/pre-post-request-scripts-vs-code' },
-            {text: 'Postmate Client vs Bruno: An Honest Comparison', link:'/blog/Postmate-Client-vs-bruno'}
+            {text: 'Postmate Client vs Bruno: An Honest Comparison', link:'/blog/Postmate-Client-vs-bruno'},
+            {text: 'best-free-api-testing-tools-2027', link: '/blog/best-free-api-testing-tools-2027'}
             
           ]
         }
